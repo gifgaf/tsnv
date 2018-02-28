@@ -334,9 +334,12 @@ input[type="text"]{
   text-align: center;
 }
 .content h1, h2, h3, h4, h5{
-  color: #060084;
+  color: #424242;
   text-align: center;
   margin: 0 0 1rem;
+ }
+ .content h1{
+  color: #060084;
  }
   p{margin: 0 0 0.7rem 0; text-align: left;}
 
@@ -344,12 +347,12 @@ input[type="text"]{
 button{
   min-width: 209px;
   font-size: 100%;
-  padding: 0.5rem 0; margin: 0 0 0.4rem 0;
+  padding: 0.6rem 0; margin: 0 0 0.4rem 0;
   cursor: pointer;
 }
 .primary{
   background: #060084;
-  border: 2px solid #060084; 
+  border: 1px solid #060084; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -361,7 +364,7 @@ button{
 }
 .contrast{
   background: #FFB325;
-  border: 2px solid #FFB325; 
+  border: 1px solid #FFB325; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
@@ -372,7 +375,7 @@ button{
 }
 .accent{ 
   background: #0d9900;
-  border: 2px solid #0d9900; 
+  border: 1px solid #0d9900; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -383,7 +386,7 @@ button{
 }
 .alert{ 
   background: #ff0000;
-  border: 2px solid #ff0000; 
+  border: 1px solid #ff0000; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -395,7 +398,7 @@ button{
 
 .cancel{ 
   background: transparent;
-  border: 2px solid #a1a1a1; 
+  border: 1px solid #a1a1a1; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
@@ -431,7 +434,7 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
 }
 
-.catalog li h5{color: #00111a; /*background:#FFB325 */}
+.catalog li h2{ font-size: 120%; font-weight: 700; color: #424242; /*background:#FFB325 */}
 .catalog p{;}
 .catalog a{ 
   position: absolute; background: url(../images/helix.svg) 50% 20% no-repeat; background-size: 100%;
@@ -521,6 +524,31 @@ button{
 .s16{width: 16px; height: 16px; padding: 0 0.3rem 0 0;}
 
 /*********************************************************** tables*/
+
+table{
+  width: 100%; font-size: 90%;
+  /*border: 1px solid #d7d7d7;*/
+  border-spacing: 0;
+  border-collapse: collapse;
+  vertical-align: middle;
+  text-align: center;
+  /*box-shadow: 0 3px 0px rgba(99,99,99,.2);*/
+  margin: 0 0 2rem 0;
+
+}
+
+th{
+  background: #fffdeb ;     
+  /*border: 1px solid #d7d7d7;*/
+  height:2.5rem;
+  color: ##424242;
+  font-weight: 500;}
+
+td{height:2.5rem; background-color: #fff;}
+
+tr:not(:first-child) {
+border-top: 1px solid #dadada;
+} 
 
 
 
@@ -670,7 +698,7 @@ border: none; background: url(../images/search.svg) no-repeat 98% 50%;
 }
 /************************************************************************ tsn-modal orderform*/
 .orderform{
-  display: block;
+  display: none;
   position: fixed;
   top: 32px;
   left: 50%;

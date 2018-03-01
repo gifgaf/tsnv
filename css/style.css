@@ -334,7 +334,7 @@ input[type="text"]{
   text-align: center;
 }
 .content h1, h2, h3, h4, h5{
-  color: #424242;
+  color: #555;
   text-align: center;
   margin: 0 0 1rem;
  }
@@ -434,7 +434,7 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
 }
 
-.catalog li h2{ font-size: 120%; font-weight: 700; color: #424242; /*background:#FFB325 */}
+.catalog li h2{ font-size: 120%; font-weight: 700; /*background:#FFB325 */}
 .catalog p{;}
 .catalog a{ 
   position: absolute; background: url(../images/helix.svg) 50% 20% no-repeat; background-size: 100%;
@@ -538,10 +538,10 @@ table{
 }
 
 th{
-  background: #fffdeb ;     
+  background: #faede5 ;     
   /*border: 1px solid #d7d7d7;*/
   height:2.5rem;
-  color: ##424242;
+  color: #555;
   font-weight: 500;}
 
 td{height:2.5rem; background-color: #fff;}

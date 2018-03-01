@@ -198,13 +198,71 @@ input[type=submit]:hover{
   background: #fff;
   color: #000;
 }
-
 input[type="text"]{
   font-size: 100%;
   width:100%; height: 2.2rem;
   padding: 0 0.3rem;
   border-bottom: 1px solid #a1a1a1;
 }
+
+.radiobtn{}
+
+input[type="radio"]{
+  display: none;
+}
+input[type="radio"]:checked + label:before {
+  border-color: #060084;
+  animation: ripple 0.2s linear forwards;
+}
+input[type="radio"]:checked + label:after {
+  transform: scale(1);
+}
+.radiobtn label {
+  display: inline-block;
+  /*height: 20px;*/
+  position: relative;
+  padding: 0 30px;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.radiobtn label:before, .radiobtn label:after {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  transition: all .1s ease;
+  transition-property: transform, border-color;
+}
+.radiobtn label:before {
+  left: 0; top: 0;
+  width: 18px;  height: 18px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+}
+.radiobtn label:after {
+  top: 5px; left: 5px;
+  width: 12px; height: 12px;
+  transform: scale(0);
+  background: #060084;
+}
+
+/*********************************************************** forms*/
+.fild{position: relative;}
+.fild .bar{display: block; width: 100%;}
+.fild .bar:before, .fild .bar:after{
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 0;
+  position: absolute;
+  background: #060084;
+  transition: 0.2s ease all;
+}
+.bar:before{left: 50%;} .bar:after{right: 50%;}
+.fild input:focus ~ .bar:before, .fild input:focus ~ .bar:after{width: 50%;}
+
+.fild .s24{fill: #a1a1a1;}
+
+
+
 
 /************************************************************************ popsnav*/
 .popsnav{
@@ -334,7 +392,7 @@ input[type="text"]{
   text-align: center;
 }
 .content h1, h2, h3, h4, h5{
-  color: #555;
+  color: #444;
   text-align: center;
   margin: 0 0 1rem;
  }
@@ -347,12 +405,13 @@ input[type="text"]{
 button{
   min-width: 209px;
   font-size: 100%;
-  padding: 0.6rem 0; margin: 0 0 0.4rem 0;
+  padding: 0.5rem 0; margin: 0 0 0.4rem 0;
   cursor: pointer;
 }
 .primary{
   background: #060084;
-  border: 1px solid #060084; 
+  border:1px solid #060084;
+  border-bottom: 2px solid #060084; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -364,7 +423,8 @@ button{
 }
 .contrast{
   background: #FFB325;
-  border: 1px solid #FFB325; 
+  border:1px solid #FFB325;
+  border-bottom: 2px solid #FFB325; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
@@ -375,7 +435,8 @@ button{
 }
 .accent{ 
   background: #0d9900;
-  border: 1px solid #0d9900; 
+  border:1px solid #0d9900; 
+  border-bottom: 2px solid #0d9900; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -386,7 +447,8 @@ button{
 }
 .alert{ 
   background: #ff0000;
-  border: 1px solid #ff0000; 
+  border:1px solid #ff0000;  
+  border-bottom: 2px solid #ff0000; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
@@ -398,7 +460,8 @@ button{
 
 .cancel{ 
   background: transparent;
-  border: 1px solid #a1a1a1; 
+  border:1px solid #a1a1a1;
+  border-bottom: 2px solid #a1a1a1; 
   border-radius: 0.3rem; 
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
@@ -498,6 +561,8 @@ button{
   margin: 0 0 0.7rem;
 }
 
+.col2 h2{font-size: 120%;}
+
 .col3{  
   display: flex; list-style: none; 
   flex-wrap: wrap;
@@ -538,7 +603,7 @@ table{
 }
 
 th{
-  background: #faede5 ;     
+  background: #fff8e3/*fff9e5/*fff0c5*/ ;     
   /*border: 1px solid #d7d7d7;*/
   height:2.5rem;
   color: #555;
@@ -550,26 +615,11 @@ tr:not(:first-child) {
 border-top: 1px solid #dadada;
 } 
 
+caption{ font-size:110%;   font-weight: 500;   color: #666;  }
 
 
-/*********************************************************** forms*/
-.fild{position: relative;}
-.fild .bar{display: block; width: 100%;}
-.fild .bar:before, .fild .bar:after{
-  content: "";
-  height: 2px;
-  width: 0;
-  bottom: 0;
-  position: absolute;
-  background: #060084;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-.bar:before{left: 50%;} .bar:after{right: 50%;}
-.fild input:focus ~ .bar:before, .fild input:focus ~ .bar:after{width: 50%;}
 
-.fild .s24{fill: #a1a1a1;}
+
 
 /************************************************************************ footnav*/
 .footnav{
@@ -698,7 +748,7 @@ border: none; background: url(../images/search.svg) no-repeat 98% 50%;
 }
 /************************************************************************ tsn-modal orderform*/
 .orderform{
-  display: none;
+  display: block;
   position: fixed;
   top: 32px;
   left: 50%;

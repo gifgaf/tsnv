@@ -596,45 +596,95 @@
 </footer>
 
 <div class="orderform">
-    <span class="action-close">
-      <svg class="s24"><use xlink:href="#close"></use></svg>
-    </span>
-    <div class="radiobtn">
-      <input id="1" type="radio" name="product" value="pennon" checked >
-        <label for="1">Заказать вымпел</label>
-      <input id="2" type="radio" name="product" value="allproducts">
-        <label for="2">Все продукты</label>
-     </div>   
-    <h2>Заказать вымпел | Все продукты</h2>
-    <form>
-    <ul class="col2">
-    <li class="fild">
-      <select>
-        <option>Выберите модель* </option>
-        <option>Вымпел атласный</option>
-        <option>Модель 02</option>
-      </select>
-    <span class="bar"></span>
-    </li>
-    <li class="fild"><input type="text" placeholder="Ваше имя *"><span class="bar"></span></li>
-    <li class="fild"><input type="text" placeholder="E-mail *"><span class="bar"></span></li>
-    <li class="fild"><input type="text" placeholder="Tелефон *"><span class="bar"></span></li>
-    <li class="fild"><textarea name="comment" placeholder="Ваш комментарий"></textarea></li>
-    <li class="fild"><svg class="s24"><use xlink:href="#file"></use></svg>
-    <input type="file" placeholder="file">
-    <span class="bar"></span>
-    </li>
-    <li class="fild">6</li>
-    <li class="fild">7</li>
-    <li class="fild">8</li>
-    <li class="fild">9</li>
-    <li class="fild">10</li>
-    <li class="fild">11</li>
-    </ul>
-    
-  <input type="submit" name="" value="Отмена" class="cancel" />
-  <input type="submit" name="" value="Отправить" class="primary" />
-  </form>
+  <svg class="s32 action-close"><use xlink:href="#close"></use></svg>
+  <div class="tabs">
+    <input id="tab1" type="radio" name="tabs" value="pennon" checked >
+    <label for="tab1">Заказать вымпел</label>
+    <input id="tab2" type="radio" name="tabs" value="allproducts">
+    <label for="tab2">Все продукты</label>
+    <section id="content-tab1">
+      <form>
+      <ul class="col2">
+      <li class="fild"><input type="text" placeholder="Ваше имя *"><span class="bar"></span></li>
+      <li class="fild"><input type="text" placeholder="E-mail *"><span class="bar"></span></li>
+      <li class="fild"><input type="text" placeholder="Tелефон *"><span class="bar"></span></li>
+      <li class="fild"><textarea name="comment" placeholder="Ваш комментарий"></textarea></li>
+      <li class="fild">
+        <select>
+          <option>Выберите модель* </option>
+          <option>Вымпел атласный</option>
+          <option>Модель 02</option>
+        </select>
+      <span class="bar"></span>
+      </li>
+      <li class="fild">
+        <svg class="s24"><use xlink:href="#file"></use></svg>
+        <input type="file" placeholder="file">
+        <span class="bar"></span>
+      </li>
+      <li class="fild">6</li>
+      <li class="radiobtn">
+        <input id="1" type="radio" name="product" value="pennon" checked >
+        <label for="1">Черный</label>
+        <input id="2" type="radio" name="product" value="allproducts">
+        <label for="2">Белый</label>
+      </li>
+      <li class="fild">8</li>
+      <li class="fild">9</li>
+      <li class="fild">10</li>
+      <li class="fild">11</li>
+      </ul>
+      <input type="submit" name="" value="Отмена" class="cancel" />
+      <input type="submit" name="" value="Отправить" class="primary" />
+      </form>
+    </section>
+    <section id="content-tab2">
+      <form>
+          <ul class="radiobtn col3">
+            <li>
+              <input id="bandany" type="radio" name="products" value="bandany">
+              <label for="bandany">Банданы</label>
+            </li>
+            <li>
+              <input id="banner" type="radio" name="products" value="banner">
+              <label for="banner">Баннеры</label>
+            </li>
+            <li>
+              <input id="beysbolki" type="radio" name="products" value="beysbolki">
+              <label for="beysbolki">Бейсболки</label>
+            </li>
+            <li>
+              <input id="pennon" type="radio" name="products" value="pennon" checked >
+              <label for="pennon">Вымпел</label>
+            </li>
+            <li>
+              <input id="galsuk" type="radio" name="products" value="galsuk">
+              <label for="galsuk">Галстуки</label>  
+            </li>
+            <li>
+              <input id="garland" type="radio" name="products" value="garland">
+              <label for="garland">Гирлянды флажков</label>  
+            </li>
+            <li>
+              <input id="diary" type="radio" name="products" value="diary">
+              <label for="diary">Ежедневники</label>  
+            </li>
+            <li>
+              <input id="vests" type="radio" name="products" value="vests">
+              <label for="vests">Жилеты и накидки</label>  
+            </li>
+            <li>
+              <input id="gonfalon" type="radio" name="products" value="gonfalon">
+              <label for="gonfalon">Знамена</label>
+            </li>
+            <li>
+              <input id="calender" type="radio" name="products" value="calender">
+              <label for="calender">Календари на ткани</label>  
+            </li>
+          </ul>
+      </form>
+    </section>
+  </div>  
 </div>
 <div class="overlay"></div>
 

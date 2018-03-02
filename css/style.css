@@ -219,10 +219,8 @@ input[type="radio"]:checked + label:after {
 }
 .radiobtn label {
   display: inline-block;
-  /*height: 20px;*/
   position: relative;
   padding: 0 30px;
-  margin-bottom: 0;
   cursor: pointer;
 }
 .radiobtn label:before, .radiobtn label:after {
@@ -244,14 +242,16 @@ input[type="radio"]:checked + label:after {
   background: #060084;
 }
 
+.radiobtn li{text-align: left; margin: 0!important;}
+
 /*********************************************************** forms*/
-.fild{position: relative;}
+.fild{position: relative; box-sizing: border-box;}
 .fild .bar{display: block; width: 100%;}
 .fild .bar:before, .fild .bar:after{
   content: "";
   height: 2px;
   width: 0;
-  bottom: 0;
+  margin: -2px 0 0 0;
   position: absolute;
   background: #060084;
   transition: 0.2s ease all;
@@ -556,7 +556,7 @@ button{
 
   .col2 li{
   list-style: none;
-  position: relative;
+  /*position: relative;*/
   width: 49.5%;
   margin: 0 0 0.7rem;
 }
@@ -578,6 +578,26 @@ button{
 
 /*********************************************************** tabs*/
 .tabs{}
+.tabs>section {
+  display: none;
+ }
+ .tabs>label {
+  display: inline-block;
+  padding: 0.3rem;
+  border: 0px solid #ddd;
+  cursor: pointer;
+  font-size: 110%; font-weight: 500;
+  /*margin: 0 0 0.7rem;  */
+}
+.tabs>input:checked+label {
+  border-bottom: 3px solid #060084;
+}
+/* Активация секций с помощью псевдокласса :checked */
+#tab1:checked~#content-tab1, #tab2:checked~#content-tab2, #tab3:checked~#content-tab3, #tab4:checked~#content-tab4 {
+  display: block;
+}
+
+.tabs>section{background: #fff; padding: 0.5rem}
 
 /*********************************************************** icons*/
 .s96{width: 96px; height: 96px;}
@@ -615,7 +635,7 @@ tr:not(:first-child) {
 border-top: 1px solid #dadada;
 } 
 
-caption{ font-size:110%;   font-weight: 500;   color: #666;  }
+caption{ font-size:110%;   font-weight: 500;   color: #444;  }
 
 
 
@@ -757,11 +777,11 @@ border: none; background: url(../images/search.svg) no-repeat 98% 50%;
   width: calc(100% - 2rem);
   max-width: 812px;
   overflow: auto;
-  background: #e3e4e9; border: 1px solid #cacace; border-bottom: 1px solid #999;
+  background: #d7d7de/*e3e4e9*/; border: 1px solid #cacace; border-bottom: 1px solid #999;
   z-index: 11;
   border-radius: 5px;
   box-shadow: 0 1rem 0 rgba(0,0,0,.24);
-  padding: 2.5rem 0.5rem;
+  padding: 2.5rem 0;
   text-align: center;
   }
 
@@ -770,7 +790,7 @@ border: none; background: url(../images/search.svg) no-repeat 98% 50%;
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.5rem 0.0rem 0.5rem 0.5rem;
+  padding: 0.7rem;
 }
 
 .orderform h2{}

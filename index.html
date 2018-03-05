@@ -121,13 +121,8 @@
 
 <nav class="popsnav">
   <h2>Популярная продукция</h2>
-  <div class="fild">
-    <form>
-    <input type="text" placeholder="Выбор по названию">
-    <span class="bar"></span>
-    </form>
-  </div>
 <ul>
+  <li><form><input type="text" placeholder="Выбор по названию"></form></li>
   <li><a href="#">Транспаранты</a></li>
   <li><a href="#">Фартуки</a></li>
   <li class="dropdown"><a href="#">Флаги</a><!--change-->
@@ -488,13 +483,13 @@
 </table>
 
   <form>
-  <input type="submit" name="" value="Заполнить форму заказа" class="primary" />
-  <button class="primary">Задать вопрос</button>
+  <input type="submit" name="" value="Заполнить форму заказа" class="is-primary" />
+  <button class="is-primary">Задать вопрос</button>
   </form>
 </section>
 
 <aside class="asidenav">
-<button class="accent">Заказать</button>
+<button class="is-accent">Заказать</button>
 <h2>Спец предложения</h2>
 <ul>
   <li>
@@ -579,14 +574,11 @@
 <ul>
   <form>
     <li>
-    <div class="fild">
-        <input type="search" placeholder="">
-        <input type="submit" name="" value="" class="submit">
-        <span class="bar"></span>
-    </div>
+      <input type="search" placeholder="">
+      <input type="submit" name="" value="" class="submit">
     </li>
-    <li><button class="contrast">Задать вопрос</button></li>
-    <li><button class="contrast">Подписаться на уведомления</button></li>
+    <li><button class="is-contrast">Задать вопрос</button></li>
+    <li><button class="is-contrast">Подписаться на уведомления</button></li>
   </form>
 <ul>
 </section>
@@ -605,37 +597,35 @@
     <section id="content-tab1">
       <form>
       <ul class="col2">
-      <li class="fild"><input type="text" placeholder="Ваше имя *"><span class="bar"></span></li>
-      <li class="fild"><input type="text" placeholder="E-mail *"><span class="bar"></span></li>
-      <li class="fild"><input type="text" placeholder="Tелефон *"><span class="bar"></span></li>
-      <li class="fild"><textarea name="comment" placeholder="Ваш комментарий"></textarea></li>
-      <li class="fild">
+      <li><input type="text" id="name"><label for="name">Ваше имя *</label></li>
+      <li><input type="text" id="email"><label for="email">E-mail *</label></li>
+      <li><input type="text" id="phone"><label for="phone">Ваш телефон *</label></li>
+      <li><textarea id="comment" name="comment"></textarea><label for="comment">Ваш комментарий *</label></li>
+      <li>
         <select>
-          <option>Выберите модель* </option>
+          <option>Выберите модель*</option>
           <option>Вымпел атласный</option>
           <option>Модель 02</option>
         </select>
-      <span class="bar"></span>
       </li>
-      <li class="fild">
+      <li>
         <svg class="s24"><use xlink:href="#file"></use></svg>
         <input type="file" placeholder="file">
-        <span class="bar"></span>
       </li>
-      <li class="fild">6</li>
+      <li>6</li>
       <li class="radiobtn">
         <input id="1" type="radio" name="product" value="pennon" checked >
         <label for="1">Черный</label>
         <input id="2" type="radio" name="product" value="allproducts">
         <label for="2">Белый</label>
       </li>
-      <li class="fild">8</li>
-      <li class="fild">9</li>
-      <li class="fild">10</li>
-      <li class="fild">11</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
       </ul>
-      <input type="submit" name="" value="Отмена" class="cancel" />
-      <input type="submit" name="" value="Отправить" class="primary" />
+      <input type="submit" name="" value="Отмена" class="is-cancel" />
+      <input type="submit" name="" value="Отправить" class="is-primary" />
       </form>
     </section>
     <section id="content-tab2">

@@ -175,7 +175,7 @@ border: none; background: url(../images/search.svg) no-repeat 0.3rem 0.3rem;
 
 .mainnav .dropdown>a:after {right: 0.07rem;}
 
-/************************************************************************ input*/
+/************************************************************************ inputs*/
 input[type="search"]::-ms-clear{display: none;}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -190,7 +190,6 @@ input[type=submit]{
   font-size: 100%;
   width: 209px;
   padding: 0.5rem 0; margin: 0 0 0.4rem 0;
-  box-shadow: 0 3px 0px rgba(99,99,99,.2);
   cursor: pointer;
   /*color: #fff;*/
 }
@@ -198,12 +197,53 @@ input[type=submit]:hover{
   background: #fff;
   color: #000;
 }
+
 input[type="text"]{
   font-size: 100%;
   width:100%; height: 2.2rem;
-  padding: 0 0.3rem;
-  border-bottom: 1px solid #a1a1a1;
+  padding: 1rem  0.3rem 0.5rem;
+  background: white no-repeat;
+  background-image: linear-gradient(to bottom, #060084, #060084), linear-gradient(to bottom, #a1a1a1, #a1a1a1); 
+  /* sizes for the 2 images (default state) */
+  background-size: 0 1px, 100% 1px; 
+  /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
+  background-position: 50% 100%, 50% 100%;
+  /* animation solely on background-size */
+  transition: background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
+input[type="text"]:focus {
+  /* sizes for the 2 images (focus state) */
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+}
+input[type="text"]~label{
+position: absolute;
+left:0.3rem; top:0.7rem;
+}
+
+textarea{
+  font-size:1rem;   font-family: 'Fira Sans', sans-serif; line-height: 1.5;
+  box-sizing: border-box;
+  width:100%; height: 2.2rem;
+  border: none;
+  background: white no-repeat;
+  background-image: linear-gradient(to bottom, #060084, #060084), linear-gradient(to bottom, #a1a1a1, #a1a1a1); 
+  background-size: 0 2px, 100% 1px; 
+  background-position: 50% 100%, 50% 100%;
+  transition: all 0.4s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+textarea:focus{
+  background-size: 100% 2px, 100% 1px;
+  outline: none;
+  height: 18rem;
+}
+textarea~label{
+  position: absolute;
+  left:0.3rem; top:0.7rem;
+}
+
+
 
 .radiobtn{}
 
@@ -244,7 +284,7 @@ input[type="radio"]:checked + label:after {
 
 .radiobtn li{text-align: left; margin: 0!important;}
 
-/*********************************************************** forms*/
+/*********************************************************** forms kmasap*/
 .fild{position: relative; box-sizing: border-box;}
 .fild .bar{display: block; width: 100%;}
 .fild .bar:before, .fild .bar:after{
@@ -257,6 +297,7 @@ input[type="radio"]:checked + label:after {
   transition: 0.2s ease all;
 }
 .bar:before{left: 50%;} .bar:after{right: 50%;}
+
 .fild input:focus ~ .bar:before, .fild input:focus ~ .bar:after{width: 50%;}
 
 .fild .s24{fill: #a1a1a1;}
@@ -408,7 +449,7 @@ button{
   padding: 0.5rem 0; margin: 0 0 0.4rem 0;
   cursor: pointer;
 }
-.primary{
+.is-primary{
   background: #060084;
   border:1px solid #060084;
   border-bottom: 2px solid #060084; 
@@ -417,11 +458,11 @@ button{
   color: #fff;
 
 }
-.primary:hover{
+.is-primary:hover{
   background: #fff;
   color: #000;
 }
-.contrast{
+.is-contrast{
   background: #FFB325;
   border:1px solid #FFB325;
   border-bottom: 2px solid #FFB325; 
@@ -429,11 +470,11 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
 }
-.contrast:hover{
+.is-contrast:hover{
   background: #fff;
   color: #000;
 }
-.accent{ 
+.is-accent{ 
   background: #0d9900;
   border:1px solid #0d9900; 
   border-bottom: 2px solid #0d9900; 
@@ -441,11 +482,11 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
 }
-.accent:hover{
+.is-accent:hover{
   background: #fff;
   color: #000;
 }
-.alert{ 
+.is-alert{ 
   background: #ff0000;
   border:1px solid #ff0000;  
   border-bottom: 2px solid #ff0000; 
@@ -453,12 +494,12 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #fff;
 }
-.alert:hover{
+.is-alert:hover{
   background: #fff;
   color: #000;
 }
 
-.cancel{ 
+.is-cancel{ 
   background: transparent;
   border:1px solid #a1a1a1;
   border-bottom: 2px solid #a1a1a1; 
@@ -466,7 +507,7 @@ button{
   box-shadow: 0 3px 0px rgba(99,99,99,.2);
   color: #000;
 }
-.cancel:hover{
+.is-cancel:hover{
   background: #e3e4e9;
   color: #000;
 }
@@ -556,7 +597,7 @@ button{
 
   .col2 li{
   list-style: none;
-  /*position: relative;*/
+  position: relative;
   width: 49.5%;
   margin: 0 0 0.7rem;
 }
@@ -597,7 +638,7 @@ button{
   display: block;
 }
 
-.tabs>section{background: #fff; padding: 0.5rem}
+.tabs>section{/*background: #fff;*/ padding: 0.5rem}
 
 /*********************************************************** icons*/
 .s96{width: 96px; height: 96px;}

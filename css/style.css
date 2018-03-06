@@ -175,7 +175,7 @@ border: none; background: url(../images/search.svg) no-repeat 0.3rem 0.3rem;
 
 .mainnav .dropdown>a:after {right: 0.07rem;}
 
-/************************************************************************ inputs*/
+/************************************************************************ inputs, textarea*/
 input[type="search"]::-ms-clear{display: none;}
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -205,7 +205,7 @@ input[type="text"]{
   background: white no-repeat;
   background-image: linear-gradient(to bottom, #060084, #060084), linear-gradient(to bottom, #a1a1a1, #a1a1a1); 
   /* sizes for the 2 images (default state) */
-  background-size: 0 1px, 100% 1px; 
+  background-size: 0 2px, 100% 1px; 
   /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
   background-position: 50% 100%, 50% 100%;
   /* animation solely on background-size */
@@ -222,7 +222,7 @@ left:0.3rem; top:0.7rem;
 }
 
 textarea{
-  font-size:1rem;   font-family: 'Fira Sans', sans-serif; line-height: 1.5;
+  font-size:1rem; line-height: 1.5;
   box-sizing: border-box;
   width:100%; height: 2.2rem;
   border: none;
@@ -243,10 +243,13 @@ textarea~label{
   left:0.3rem; top:0.7rem;
 }
 
-
+select{
+  font-size:1rem;   font-family: 'Fira Sans', sans-serif; line-height: 1.5;
+  box-sizing: border-box;
+  width:100%; height: 2.2rem;
+}
 
 .radiobtn{}
-
 input[type="radio"]{
   display: none;
 }
@@ -281,9 +284,47 @@ input[type="radio"]:checked + label:after {
   transform: scale(0);
   background: #060084;
 }
-
 .radiobtn li{text-align: left; margin: 0!important;}
 
+.chckbx{}
+.chckbx label{
+  display: inline-block;
+  position: relative;
+  padding: 0 30px;
+  cursor: pointer;
+}
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]+label:after {
+  content: '';
+  position: absolute; left:0.45rem; top:0.1rem;
+  width: 0.4rem;
+  height: 0.8rem;
+  border: 3px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  transform: rotate(45deg) scale3D(.15,.15,1);
+  transition: .2s cubic-bezier(.25,.8,.25,1); 
+}  
+input[type="checkbox"]+label:before {
+  content: '';
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  border-radius: 2px;
+  background-color: white;
+  position: absolute; left:0;
+  box-sizing: border-box;
+  width: 22px;
+  height: 22px;
+  transition: background-color 0.1s;
+}
+input[type="checkbox"]:checked+label:before {
+  background-color: #060084;
+  border: 2px solid  #060084;
+}
+input[type="checkbox"]:checked+label:after {
+  transform: rotate(45deg) scale3D(1,1,1);
+}
 /*********************************************************** forms kmasap*/
 .fild{position: relative; box-sizing: border-box;}
 .fild .bar{display: block; width: 100%;}
@@ -638,7 +679,7 @@ button{
   display: block;
 }
 
-.tabs>section{/*background: #fff;*/ padding: 0.5rem}
+.tabs>section{/*background: #fff;*/ padding: 1.5rem 0.5rem 0.5rem}
 
 /*********************************************************** icons*/
 .s96{width: 96px; height: 96px;}
@@ -692,7 +733,7 @@ caption{ font-size:110%;   font-weight: 500;   color: #444;  }
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  border-top: 3px solid #a1a1a1;
+  border-top: 2px solid #a1a1a1;
   font-size: 84%;
   color: #706582;
   padding: 1rem 0 0 0;

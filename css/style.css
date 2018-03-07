@@ -5,7 +5,7 @@ body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol,
   outline: none;
   box-sizing: border-box;
 }
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&subset=cyrillic-ext');
+/*@import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,700&subset=cyrillic-ext');*/
 a{color: #274BFF;}
 a:hover{color: #FFB325;}
 a:visited{color: #7c0191;}
@@ -200,8 +200,8 @@ input[type=submit]:hover{
 
 input[type="text"]{
   font-size: 100%;
-  width:100%; height: 2.2rem;
-  padding: 1rem  0.3rem 0.5rem;
+  width:100%;
+  padding: 0.5rem  0.3rem; margin: 0.9rem 0 0;
   background: white no-repeat;
   background-image: linear-gradient(to bottom, #060084, #060084), linear-gradient(to bottom, #a1a1a1, #a1a1a1); 
   /* sizes for the 2 images (default state) */
@@ -209,7 +209,7 @@ input[type="text"]{
   /* positions for the 2 images. Change both "50%" to "0%" or "100%" and tri again */
   background-position: 50% 100%, 50% 100%;
   /* animation solely on background-size */
-  transition: background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: background-size .2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 input[type="text"]:focus {
   /* sizes for the 2 images (focus state) */
@@ -217,30 +217,39 @@ input[type="text"]:focus {
   outline: none;
 }
 input[type="text"]~label{
-position: absolute;
-left:0.3rem; top:0.7rem;
+  position: absolute;
+  left:0.3rem; top:1.2rem;
+  transition: .3s cubic-bezier(.25,.8,.25,1);  
+}
+input[type="text"]:focus~label{
+  top:0rem; color: #060084;
+  font-size:13px; font-style: italic;
+  transition: .3s cubic-bezier(.25,.8,.25,1);  
 }
 
 textarea{
-  font-size:1rem; line-height: 1.5;
+  font-size:1rem; font-family: 'Fira Sans', sans-serif; line-height: 1.5;
   box-sizing: border-box;
-  width:100%; height: 2.2rem;
+  padding: 0.5rem  0.3rem; margin: 0.9rem 0 0;
+  width:100%;   height: 2.2rem;
   border: none;
   background: white no-repeat;
   background-image: linear-gradient(to bottom, #060084, #060084), linear-gradient(to bottom, #a1a1a1, #a1a1a1); 
   background-size: 0 2px, 100% 1px; 
   background-position: 50% 100%, 50% 100%;
-  transition: all 0.4s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all .4s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 
 textarea:focus{
+  background-color: #fffef9;
   background-size: 100% 2px, 100% 1px;
   outline: none;
-  height: 18rem;
+  height: 12rem;
+  transition: height 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
 }
 textarea~label{
   position: absolute;
-  left:0.3rem; top:0.7rem;
+  left:0.3rem; top:1.4rem;
 }
 
 select{

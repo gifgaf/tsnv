@@ -576,6 +576,10 @@ button{
   color: #000;
 }
 
+.is-warning{
+  font-size:13px;
+  color: #ff0000;
+}
 /*********************************************************** catalog*/
 .cards{
   width: 245px; box-sizing: border-box; display: inline-block;
@@ -747,7 +751,7 @@ th{
 td{height:2.5rem; background-color: #fff;}
 
 tr:not(:first-child) {
-border-top: 1px solid #dadada;
+border-top: 1px solid #d7d7de;
 } 
 
 caption{ font-size:110%;   font-weight: 500;   color: #444;  }

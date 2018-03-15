@@ -4,11 +4,10 @@
           center: {lat: 59.979, lng: 30.354}
         });
 
-        var image = "./images/tsn-map-icon.svg";
         var marker = new google.maps.Marker({
           position: {lat: 59.9788, lng: 30.3538},
           map: map,
-          icon: image,
+          icon: 'images/tsn-map-icon.svg',
           title: 'ТСН Печать на ткани',
           visible: true,
           animation: google.maps.Animation.DROP,

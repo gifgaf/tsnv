@@ -884,7 +884,7 @@ border: none; background: url(../images/search.svg) no-repeat 98% 50%;
 
 /************************************************************************ google_map*/
 #map{
-  background: #777; width: 100%; height: 21rem;
+  background: #777; width: 100%; height: 21rem; margin: 0 0 2rem 0;
 }
 
 /************************************************************************ orderform*/

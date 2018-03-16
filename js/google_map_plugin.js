@@ -14,12 +14,6 @@
           position: {lat: 59.9788, lng: 30.3538}
         });
 
-        function toggleBounce() {
-          if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-          } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-          }
-        }
+
       }
 

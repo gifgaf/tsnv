@@ -744,10 +744,10 @@ table{
 }
 
 th{
-  background: #fff8e3/*fff9e5/*fff0c5*/ ;     
+  background: #fff3d7/*fff9e5/*fff0c5*/ ;     
   /*border: 1px solid #d7d7d7;*/
   height:2.5rem;
-  color: #555;
+  color: #111;
   font-weight: 500;}
 
 td{height:2.5rem; background-color: #fff;}

@@ -13,7 +13,4 @@
           animation: google.maps.Animation.DROP,
           position: {lat: 59.9788, lng: 30.3538}
         });
-
-
       }
-

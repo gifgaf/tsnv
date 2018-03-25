@@ -4,7 +4,9 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
+import './stylus/main.styl'
 import 'vuetify/dist/vuetify.min.css'
+import 'babel-polyfill'
 
 Vue.use(Vuetify, { theme: {
   primary: '#060084',

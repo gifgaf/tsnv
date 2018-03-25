@@ -10,8 +10,8 @@ import 'babel-polyfill'
 
 Vue.use(Vuetify, { theme: {
   primary: '#060084',
-  secondary: '#FFB325',
-  accent: '#FFB325',
+  secondary: '#ffb325',
+  accent: '#ffb325',
   error: '#f44336',
   warning: '#ffeb3b',
   info: '#2196f3',

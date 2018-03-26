@@ -20,12 +20,12 @@
       </v-list-tile>
     </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="primary" flat dark>
+    <v-toolbar class="primary" dark>
       <v-toolbar-title>ТСН</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn flat v-for="item in menuItems" :key="item.title">
-        <v-icon left>{{ item.icon }}</v-icon>{{ item.title }}</v-btn>
+        <v-icon left class=" secondary--text">{{ item.icon }}</v-icon>{{ item.title }}</v-btn>
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary hidden-sm-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
@@ -42,10 +42,10 @@ export default {
       drawer: false,
       menuItems: [
         { icon: 'home', title: 'О компании' },
-        { icon: '', title: 'Продукция от А до Я' },
-        { icon: '', title: 'Как заказать' },
-        { icon: '', title: 'Требования к макетам' },
-        { icon: '', title: 'Контакты' }
+        { icon: 'flag', title: 'Продукция от А до Я' },
+        { icon: 'mail_outline', title: 'Как заказать' },
+        { icon: 'attach_file', title: 'Требования к макетам' },
+        { icon: 'contacts', title: 'Контакты' }
       ]
     }
   }

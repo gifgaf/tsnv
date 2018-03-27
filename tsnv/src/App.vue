@@ -34,7 +34,7 @@
     </v-list>
     </v-navigation-drawer>
     <v-toolbar class="primary" dark>
-      <v-toolbar-title class="secondary--text"><h1>ТСНв</h1></v-toolbar-title>
+      <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-xs-only">
         <v-btn flat v-for="item in menuItems" :key="item.title">
@@ -42,10 +42,16 @@
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary hidden-sm-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
+    <v-container grid-list-md>
+        <v-layout row wrap>
+          <v-flex xs12>
+            <main>
+              <h1 class="text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
+            </main>
+          </v-flex>
+        </v-layout>
+    </v-container>
 
-    <main>
-      <h1 class="text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
-    </main>
   </v-app>
 </template>
 

@@ -49,7 +49,17 @@
           <v-flex xs12>
             <main>
               <v-card color="purple" dark>
-                <v-card-title primary class="title">Lorem</v-card-title>
+                <v-card-title primary class="title">popmenu</v-card-title>
+                <v-card-text
+                v-text="lorem">
+                </v-card-text>
+              </v-card>
+            </main>
+          </v-flex>
+          <v-flex xs12>
+            <main>
+              <v-card color="deep-purple" dark>
+                <v-card-title primary class="title">main</v-card-title>
                 <v-card-text
                 v-text="lorem">
                 </v-card-text>
@@ -59,7 +69,7 @@
           <v-flex xs12>
             <main>
               <v-card color="indigo" dark>
-                <v-card-title primary class="title">Lorem</v-card-title>
+                <v-card-title primary class="title">leftmenu</v-card-title>
                 <v-card-text
                 v-text="lorem">
                 </v-card-text>
@@ -70,7 +80,7 @@
     </v-container>
   <v-footer height="auto" class="primary">
     <v-card flat tile>
-      <v-card-title class="teal white--text">
+      <v-card-title class="primary white--text">
         <strong class="subheading">Get connected with us on social networks!</strong>
         <v-btn
           v-for="icon in icons"
@@ -118,7 +128,7 @@
         </v-layout>
       </v-card-text>
       <v-card-actions class="grey lighten-2 justify-center">
-        &copy;2018 — <strong>Vuetify</strong>
+        &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.
       </v-card-actions>
     </v-card>
   </v-footer>
@@ -131,11 +141,11 @@ export default {
     return {
       drawer: false,
       menuItems: [
-        { icon: 'home', title: 'О компании' },
-        { icon: 'flag', title: 'Продукция от А до Я' },
-        { icon: 'mail_outline', title: 'Как заказать' },
-        { icon: 'attach_file', title: 'Требования к макетам' },
-        { icon: 'contacts', title: 'Контакты' }
+        { icon: '', title: 'О компании' },
+        { icon: '', title: 'Продукция от А до Я' },
+        { icon: '', title: 'Как заказать' },
+        { icon: '', title: 'Требования к макетам' },
+        { icon: '', title: 'Контакты' }
       ],
       popmenuItems: [
         { icon: 'flag', title: 'Банданы' },
@@ -148,6 +158,34 @@ export default {
         { icon: 'flag', title: 'Фото на подарки' },
         { icon: 'flag', title: 'Фотошторы' },
         { icon: 'flag', title: 'Футболки с логотипом' }
+      ],
+      partItems: [
+        { icon: '', title: 'Флажная продукция', description: 'Печать фирменных, государственных, ведомственных, спортивных и пр. флагов и знамен любого размера.' },
+        { icon: '', title: 'Транспаранты и растяжки', description: 'Для агитационных, праздничных и спортивных мероприятий.' },
+        { icon: '', title: 'Корпоративная и промо одежда', description: 'Пошив галстуков, платков, шарфов, бандан, футболок и бейсболок, промо-накидок, жилетов, фартуков.' },
+        { icon: '', title: 'Широкоформатная печать на ткани', description: 'Изготовление штор, занавесов, ролл штор с фото, покрывал, скатертей...' },
+        { icon: '', title: 'Широкоформатная печать', description: 'Фотообои на стену, баннеры, плакаты, фотопечать на ткани.' },
+        { icon: '', title: 'Изготовление флагштоков', description: 'Флагштоков мобильных, флагштоков-мачт, фасадных, настольных, автомобильных и офисных.' },
+        { icon: '', title: 'Корпоративные и праздничные подарки', description: 'Футболки, подушки, пазлы, тарелки, кружки, подарочные мешочки, календари на ткани, сумки.' },
+        { icon: '', title: 'Печать наклеек', description: 'На шампанское, на упаковку, на продукцию.' },
+        { icon: '', title: 'Наградная продукция', description: 'Ленты мисс, ленты выпускника, вымпелы.' },
+        { icon: '', title: 'Для спорта и тимбилдинга', description: 'Стартовые майки, спортивные номера, волчатники, нанесение на спортивную форму.' },
+        { icon: '', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды' },
+        { icon: '', title: 'Для спорта и тимбилдинга', description: 'Гербы, штандарты, знамена.' }
+      ],
+      rows: [
+        {
+          title: 'Company Name',
+          children: ['Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit']
+        },
+        {
+          title: 'Products',
+          children: ['MDBootstrap', 'MDWordPress', 'BrandFlow', 'Bootstrap Angular']
+        },
+        {
+          title: 'Useful Links',
+          children: ['Your account', 'Become an Affiliate', 'Shipping Rates', 'Helper']
+        }
       ],
       lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
     }

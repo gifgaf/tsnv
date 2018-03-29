@@ -68,11 +68,10 @@
           </v-flex>
         </v-layout>
     </v-container>
-  <v-footer height="auto">
+  <v-footer height="auto" class="primary">
     <v-card flat tile>
       <v-card-title class="teal white--text">
         <strong class="subheading">Get connected with us on social networks!</strong>
-        <v-spacer></v-spacer>
         <v-btn
           v-for="icon in icons"
           :key="icon"
@@ -122,7 +121,7 @@
         &copy;2018 — <strong>Vuetify</strong>
       </v-card-actions>
     </v-card>
-  </v-footer>    
+  </v-footer>
   </v-app>
 </template>
 

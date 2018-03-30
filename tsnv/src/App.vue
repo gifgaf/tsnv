@@ -78,58 +78,28 @@
           </v-flex>
         </v-layout>
     </v-container>
-  <v-footer height="auto" class="primary">
-    <v-card flat tile>
-      <v-card-title class="primary white--text">
-        <strong class="subheading">Get connected with us on social networks!</strong>
+    <v-footer height="auto" class=''>
+    <v-card
+      flat
+      tile
+      class="primary white--text text-xs-center"
+    >
+      <v-card-text>
         <v-btn
           v-for="icon in icons"
           :key="icon"
           icon
-          dark
-          class="mx-3"
+          class="mx-3 white--text"
         >
           <v-icon size="24px">{{ icon }}</v-icon>
         </v-btn>
-      </v-card-title>
-      <v-card-text class="grey lighten-3">
-        <v-layout>
-          <v-flex
-            v-for="(col, i) in rows"
-            :key="i"
-            xs3
-          >
-            <span class="body-2" v-text="col.title.toUpperCase()"/>
-            <div
-              v-for="(child, i) in col.children"
-              :key="i"
-              v-text="child"
-            />
-          </v-flex>
-          <v-flex xs3 layout column>
-            <span class="body-2">CONTACT</span>
-            <div>
-              <v-icon size="18px" class="mr-3">fas fa-home</v-icon>
-              New York, NY 10012, US
-            </div>
-            <div>
-              <v-icon size="18px" class="mr-3">fas fa-envelope</v-icon>
-              info@example.com
-            </div>
-            <div>
-              <v-icon size="18px" class="mr-3">fas fa-phone</v-icon>
-              + 01 234 567 88
-            </div>
-            <div>
-              <v-icon size="18px" class="mr-3">fas fa-print</v-icon>
-              + 01 234 567 89
-            </div>
-          </v-flex>
-        </v-layout>
       </v-card-text>
-      <v-card-actions class="grey lighten-2 justify-center">
+      <v-card-text class="white--text pt-0">
+        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+      </v-card-text>
+      <v-card-text class="black80 white--text">
         &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.
-      </v-card-actions>
+      </v-card-text>
     </v-card>
   </v-footer>
   </v-app>
@@ -173,20 +143,7 @@ export default {
         { icon: '', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды' },
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Гербы, штандарты, знамена.' }
       ],
-      rows: [
-        {
-          title: 'Company Name',
-          children: ['Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur adipisicing elit']
-        },
-        {
-          title: 'Products',
-          children: ['MDBootstrap', 'MDWordPress', 'BrandFlow', 'Bootstrap Angular']
-        },
-        {
-          title: 'Useful Links',
-          children: ['Your account', 'Become an Affiliate', 'Shipping Rates', 'Helper']
-        }
-      ],
+      icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram'],
       lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
     }
   }

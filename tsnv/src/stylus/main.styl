@@ -1,6 +1,8 @@
 @import '../../node_modules/vuetify/src/stylus/main'
 
 $body-font-family = 'Fira Sans'
+html
+  font-size 16px!important
 .application.theme--light
   background-color #eff0f4!important
   box-sizing border-box
@@ -13,3 +15,20 @@ $body-font-family = 'Fira Sans'
   min-width 40px!important
 .black80
   background-color rgba(0,0,0,0.3)
+main h1
+  font-size 30px
+main h2
+  font-size 27px font-weight 500
+main h3
+  font-size 24px font-weight 500
+main h4
+  font-size 22px font-weight 500
+main h5
+  font-size 20px font-weight 500
+main h6
+  font-size 18px font-weight 500
+@media only screen and (min-width 960px){
+    .container{
+        max-width 1200px
+    }
+}

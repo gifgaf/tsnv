@@ -38,35 +38,51 @@
     <v-toolbar class="primary" dark>
       <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-xs-only">
+      <v-toolbar-items class="hidden-sm-and-down">
         <v-btn flat v-for="item in menuItems" :key="item.title">
-        <v-icon left class=" secondary--text">{{ item.icon }}</v-icon>{{ item.title }}</v-btn>
+        <v-icon left class="secondary--text">{{ item.icon }}</v-icon>{{ item.title }}</v-btn>
       </v-toolbar-items>
-      <v-toolbar-side-icon class="secondary hidden-sm-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
     <v-container grid-list-md>
         <v-layout row wrap>
-          <v-flex xs12>
+          <v-flex xs12 xs12 sm3 lg2 class='hidden-sm-and-down'>
             <main>
               <v-card color="purple" dark>
-                <v-card-title primary class="title">popmenu</v-card-title>
-                <v-card-text
-                v-text="lorem">
+                <v-card-title primary class="title text-xs-center">Популярная продукция</v-card-title>
+                <v-card-text>
+                  <v-list-tile>
+                    <v-text-field 
+                      placeholder="Выбор по названию"
+                      prepend-icon="search"
+                      id="search"
+                      clearable
+                      single-line
+                      key="search"
+                      v-model="search"
+                      ref="search"
+                      >
+                    </v-text-field>
+                  </v-list-tile>
+                  <v-list-tile v-for="item in popmenuItems" :key="item.title" @click="">
+                  <v-list-tile-content>{{ item.title }}</v-list-tile-content>
+                </v-list-tile>
                 </v-card-text>
               </v-card>
             </main>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs12 sm6 lg8>
             <main>
-              <v-card color="deep-purple" dark>
-                <v-card-title primary class="title">main</v-card-title>
-                <v-card-text
-                v-text="lorem">
+              <v-card>
+                <v-card-title primary class="title"><h1 class="primary--text text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
+                </v-card-title>
+                <v-card-text 
+                  v-text="lorem">
                 </v-card-text>
               </v-card>
             </main>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs12 sm3 lg2>
             <main>
               <v-card color="indigo" dark>
                 <v-card-title primary class="title">leftmenu</v-card-title>
@@ -144,7 +160,8 @@ export default {
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Гербы, штандарты, знамена.' }
       ],
       icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram'],
-      lorem: `Lorem ipsum dolor sit amet, mel at clita quando. Te sit oratio vituperatoribus, nam ad ipsum posidonium mediocritatem, explicari dissentiunt cu mea. Repudiare disputationi vim in, mollis iriure nec cu, alienum argumentum ius ad. Pri eu justo aeque torquatos.`
+      lorem: `Мы занимаемся изготовлением всех видов продукции для рекламных целей, спорта, подарков и пр. которые делаются из ткани. Наша специализация – это изготовление флагов всех видов: флагов стран, флагов с логотипом, настольных флагов, флагов "парус", "виндер", "пляжный", автофлагов. Также выполним изготовление вымпелов, платков с логотипом, шарфов, бандан, галстуков и бейсболок, что востребовано сейчас очень широко.
+                      Для того, чтобы вы могли заказать все в одном месте, мы печатаем не только на ткани, но и на бумаге, и холсте, и баннере. Печать плакатов и постеров, печать баннеров — все это мы сделаем для вас.`
     }
   }
 }

@@ -4,30 +4,31 @@
       temporary
       v-model="drawer"
       absolute>
-    <v-list dense>
+    <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo">
       <v-divider></v-divider>
-      <v-list-tile v-for="item in menuItems" :key="item.title" @click="">
+      <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
           <v-icon left>{{ item.icon }}</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>{{ item.title }}</v-list-tile-content>
       </v-list-tile>
-      <v-divider></v-divider>
-        <v-list-tile>
-          <v-text-field 
-            placeholder="Выбор по названию"
-            prepend-icon="search"
-            id="search"
-            clearable
-            single-line
-            key="search"
-            v-model="search"
-            ref="search"
-            >
-          </v-text-field>
-        </v-list-tile>
-      <v-list-tile v-for="item in popmenuItems" :key="item.title" @click="">
+      <v-list-tile>
+        <v-text-field 
+          placeholder="Выбор по названию"
+          append-icon="search"
+          id="search"
+          solo
+          flat
+          clearable
+          single-line
+          key="search"
+          v-model="search"
+          ref="search"
+          >
+        </v-text-field>
+      </v-list-tile>
+      <v-list-tile ripple v-for="item in popmenuItems" :key="item.title" @click="">
         <v-list-tile-action>
           <v-icon left>{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -44,38 +45,51 @@
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
     </v-toolbar>
-    <v-container grid-list-md>
+    <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12 xs12 sm3 lg2 class='hidden-sm-and-down'>
-            <main>
-              <v-card color="purple" dark>
-                <v-card-title primary class="title text-xs-center">Популярная продукция</v-card-title>
-                <v-card-text>
-                  <v-list-tile>
-                    <v-text-field 
-                      placeholder="Выбор по названию"
-                      prepend-icon="search"
-                      id="search"
-                      clearable
-                      single-line
-                      key="search"
-                      v-model="search"
-                      ref="search"
-                      >
-                    </v-text-field>
-                  </v-list-tile>
-                  <v-list-tile v-for="item in popmenuItems" :key="item.title" @click="">
-                  <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-                </v-list-tile>
-                </v-card-text>
-              </v-card>
-            </main>
+            <nav>
+            <v-toolbar dense dark class="primary elevation-0">
+              <v-toolbar-title >Популярная продукция</v-toolbar-title>
+              </v-toolbar>
+              <v-text-field 
+                placeholder="Выбор по названию"
+                append-icon="search"
+                id="search"
+                clearable
+                solo
+                single-line
+                key="search"
+                v-model="search"
+                ref="search"
+                >
+              </v-text-field>
+            <v-list class="transparent">
+              <v-list-tile ripple dense class="secondary mb-1 elevation-1" v-for="item in popmenuItems" :key="item.title" @click="">
+                <v-list-tile-content >{{ item.title }}</v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+            </nav>
           </v-flex>
           <v-flex xs12 sm6 lg8>
             <main>
-              <v-card>
+              <v-card flat class="transparent">
                 <v-card-title primary class="title"><h1 class="primary--text text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
                 </v-card-title>
+                <v-card-text>                
+                <v-text-field 
+            placeholder="Выбор по названию"
+            append-icon="search"
+            id="search"
+            clearable
+            solo
+            single-line
+            key="search"
+            v-model="search"
+            ref="search"
+            >
+          </v-text-field>
+          </v-card-text>
                 <v-card-text 
                   v-text="lorem">
                 </v-card-text>
@@ -83,14 +97,14 @@
             </main>
           </v-flex>
           <v-flex xs12 sm3 lg2>
-            <main>
+            <nav>
               <v-card color="indigo" dark>
-                <v-card-title primary class="title">leftmenu</v-card-title>
+                <v-card-title primary class="title text-sm-center">leftmenu</v-card-title>
                 <v-card-text
                 v-text="lorem">
                 </v-card-text>
               </v-card>
-            </main>
+            </nav>
           </v-flex>
         </v-layout>
     </v-container>

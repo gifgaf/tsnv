@@ -36,14 +36,43 @@
       </v-list-tile>
     </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="primary" dark>
+    <v-toolbar class="primary" light dense>
       <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
+     <!-- <v-text-field
+        dark
+        color="secondary"
+        append-icon="search"
+        label="Поиск..."
+        solo-inverted
+        flat
+      ></v-text-field>-->
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="item in menuItems" :key="item.title">
-        <v-icon left class="secondary--text">{{ item.icon }}</v-icon>{{ item.title }}</v-btn>
-      </v-toolbar-items>
+      <v-btn icon dark><v-icon class="secondary--text">search</v-icon></v-btn>  
+      <v-chip v-for="item in contactItems" :key="item.title"
+      color="primary" 
+      text-color="white">
+        <v-avatar>
+          <v-icon class="secondary--text">{{ item.icon }}</v-icon>
+        </v-avatar>
+        {{ item.title }}
+      </v-chip>    
       <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-tabs
+        class="hidden-sm-and-down" 
+        centered
+        color="secondary"
+        slot="extension"
+        slider-color="primary"
+      >
+        <v-tab
+          class="noupper"
+          v-for="item in menuItems"
+          :key="item.title"
+          :href="`#tab-${item.title}`"
+        >
+        {{ item.title }}
+        </v-tab>
+      </v-tabs>
     </v-toolbar>
     <v-container grid-list-lg>
         <v-layout row wrap>
@@ -76,20 +105,6 @@
               <v-card flat class="transparent">
                 <v-card-title primary class="title"><h1 class="primary--text text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
                 </v-card-title>
-                <v-card-text>                
-                <v-text-field 
-            placeholder="Выбор по названию"
-            append-icon="search"
-            id="search"
-            clearable
-            solo
-            single-line
-            key="search"
-            v-model="search"
-            ref="search"
-            >
-          </v-text-field>
-          </v-card-text>
                 <v-card-text 
                   v-text="lorem">
                 </v-card-text>
@@ -147,6 +162,10 @@ export default {
         { icon: '', title: 'Требования к макетам' },
         { icon: '', title: 'Контакты' }
       ],
+      contactItems: [
+        { icon: 'phone', title: '(812) 335-86-61' },
+        { icon: 'email', title: 'tsnv@bk.ru' }
+      ],
       popmenuItems: [
         { icon: 'flag', title: 'Банданы' },
         { icon: 'flag', title: 'Баннеры' },
@@ -173,7 +192,6 @@ export default {
         { icon: '', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды' },
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Гербы, штандарты, знамена.' }
       ],
-      icons: ['fab fa-facebook', 'fab fa-twitter', 'fab fa-google-plus', 'fab fa-linkedin', 'fab fa-instagram'],
       lorem: `Мы занимаемся изготовлением всех видов продукции для рекламных целей, спорта, подарков и пр. которые делаются из ткани. Наша специализация – это изготовление флагов всех видов: флагов стран, флагов с логотипом, настольных флагов, флагов "парус", "виндер", "пляжный", автофлагов. Также выполним изготовление вымпелов, платков с логотипом, шарфов, бандан, галстуков и бейсболок, что востребовано сейчас очень широко.
                       Для того, чтобы вы могли заказать все в одном месте, мы печатаем не только на ткани, но и на бумаге, и холсте, и баннере. Печать плакатов и постеров, печать баннеров — все это мы сделаем для вас.`
     }

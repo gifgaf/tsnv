@@ -3,7 +3,8 @@
     <v-navigation-drawer class="secondary"
       temporary
       v-model="drawer"
-      absolute>
+      absolute
+      >
     <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo">
       <v-divider></v-divider>
@@ -38,16 +39,17 @@
     </v-navigation-drawer>
     <v-toolbar class="primary" light dense>
       <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
-     <!-- <v-text-field
+      <v-text-field
+        class="ml-5 secondary--text"
         dark
-        color="secondary"
+        clearable
         append-icon="search"
         label="Поиск..."
         solo-inverted
         flat
-      ></v-text-field>-->
-      <v-spacer></v-spacer>
-      <v-btn icon dark><v-icon class="secondary--text">search</v-icon></v-btn>  
+      ></v-text-field>
+      <!--<v-spacer></v-spacer>
+      <v-btn icon dark><v-icon class="secondary--text">search</v-icon></v-btn>  -->
       <v-chip v-for="item in contactItems" :key="item.title"
       color="primary" 
       text-color="white">
@@ -76,7 +78,7 @@
     </v-toolbar>
     <v-container grid-list-lg>
         <v-layout row wrap>
-          <v-flex xs12 xs12 sm3 lg2 class='hidden-sm-and-down'>
+          <v-flex  xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <nav>
             <v-toolbar dense dark class="primary elevation-0">
               <v-toolbar-title >Популярная продукция</v-toolbar-title>
@@ -100,7 +102,7 @@
             </v-list>
             </nav>
           </v-flex>
-          <v-flex xs12 sm6 lg8>
+          <v-flex xs12 sm8 md6 lg8>
             <main>
               <v-card flat class="transparent">
                 <v-card-title primary class="title"><h1 class="primary--text text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
@@ -111,7 +113,7 @@
               </v-card>
             </main>
           </v-flex>
-          <v-flex xs12 sm3 lg2>
+          <v-flex xs12 sm2 md3 lg2>
             <nav>
               <v-card color="indigo" dark>
                 <v-card-title primary class="title text-sm-center">leftmenu</v-card-title>

@@ -6,7 +6,7 @@
       absolute
       >
     <v-list>
-      <img src="/static/tsn-logo-b.svg" alt="logo">
+      <img src="/static/tsn-logo-b.svg" alt="logo" class="ml-2">
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -40,12 +40,12 @@
     <v-toolbar class="primary" light dense>
       <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
       <v-text-field
-        class="ml-5 secondary--text"
-        dark
+        class="ml-4"
         clearable
         append-icon="search"
         label="Поиск..."
-        solo-inverted
+        solo
+        dark
         flat
       ></v-text-field>
       <!--<v-spacer></v-spacer>
@@ -80,9 +80,7 @@
         <v-layout row wrap>
           <v-flex  xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <nav>
-            <v-toolbar dense dark class="primary elevation-0">
-              <v-toolbar-title >Популярная продукция</v-toolbar-title>
-              </v-toolbar>
+            <h2 class="primary mb-2">Популярная продукция</h2>
               <v-text-field 
                 placeholder="Выбор по названию"
                 append-icon="search"
@@ -115,12 +113,10 @@
           </v-flex>
           <v-flex xs12 sm2 md3 lg2>
             <nav>
-              <v-card color="indigo" dark>
-                <v-card-title primary class="title text-sm-center">leftmenu</v-card-title>
-                <v-card-text
-                v-text="lorem">
-                </v-card-text>
-              </v-card>
+              <v-btn round block large color="success" dark>Заказать</v-btn>
+              <h2 class="primary mb-2">Спец-предложения</h2>
+              <h2 class="primary mb-2">Новости</h2>
+              <h2 class="primary mb-2">Отзывы</h2>
             </nav>
           </v-flex>
         </v-layout>

@@ -10,7 +10,7 @@ html
   font-family Fira+Sans,sans-serif!important
 .overlay:before
   background-color transparent!important
-  background: radial-gradient(ellipse at center, rgba(109,129,199,0.3) 0%,rgba(19,11,48,0.7) 100%);
+  background radial-gradient(ellipse at center, rgba(109,129,199,0.3) 0%,rgba(19,11,48,0.7) 100%);
 .list__tile__action
   min-width 40px!important
 .black80
@@ -22,6 +22,12 @@ html
   font-size 16px!important
 .toolbar__content .chip
   font-size 16px!important
+nav h2
+  font-size 16px
+  text-align center
+  color #fff 
+  padding 12px 0  
+
 main h1
   font-size 30px
 main h2
@@ -39,8 +45,13 @@ main h5
 main h6
   font-size 18px 
   font-weight 500
-.input-group--focused
-  background hsla(0,0%,100%,.24)!important
+.toolbar__content .input-group 
+  background hsla(0,0%,0%,.2)!important
+  color white!important
+  width 240px!important
+.toolbar__content .input-group--focused
+  background hsla(0,0%,100%,.2)!important
+
 
 @media only screen and (min-width 960px){
     .container{

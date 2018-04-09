@@ -40,7 +40,7 @@
     <v-toolbar class="primary" light dense>
       <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
       <v-text-field
-        class="ml-4"
+        class="ml-4 white--text"
         clearable
         append-icon="search"
         label="Поиск..."
@@ -59,12 +59,13 @@
         {{ item.title }}
       </v-chip>    
       <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-tabs
+      <v-tabs 
         class="hidden-sm-and-down" 
         centered
         color="secondary"
         slot="extension"
         slider-color="primary"
+        show-arrows
       >
         <v-tab
           class="noupper"
@@ -114,37 +115,86 @@
           <v-flex xs12 sm2 md3 lg2>
             <nav>
               <v-btn round block large color="success" dark>Заказать</v-btn>
-              <h2 class="primary mb-2">Спец-предложения</h2>
-              <h2 class="primary mb-2">Новости</h2>
-              <h2 class="primary mb-2">Отзывы</h2>
+              <h2 class="primary mb-1">Спец-предложения</h2>
+                <v-card class="secondary mb-2">
+                  <v-card-media src="./static/special_offer/9maya.png" height="140px">
+                  </v-card-media>
+                  <v-card-actions>
+                    <v-btn flat round block>9 мая</v-btn>
+                  </v-card-actions>
+                </v-card>
+                <v-card class="secondary mb-2">
+                  <v-card-media src="/static/special_offer/9maya.png" height="140px">
+                  </v-card-media>
+                  <v-card-actions>
+                    <v-btn flat round block>1 мая</v-btn>
+                  </v-card-actions>
+                </v-card>
+              <h2 class="primary">Новости</h2>
+              <v-card flat class="mb-2 news">
+                <v-card-title>
+                    <v-divider></v-divider>                
+                    <span class="grey--text ">19 апреля 2018</span>
+                    <span>Павел Пиляк !!!link, программист, написал нам новый сайт, оставляйтотзывы, самые интересные пожелания будут учтены.</span>
+                    <v-divider></v-divider>                
+                    <span class="grey--text ">12 апреля 2018</span>
+                    <span>Jgznm Павел Пиляк !!!link, программист, написал нам новый сайт, оставляйтотзывы, самые интересные пожелания будут учтены.</span>
+                </v-card-title>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn flat color="orange">Все новости</v-btn>
+                </v-card-actions>
+              </v-card>
+              <h2 class="primary">Отзывы</h2>
+              <v-list three-line>
+                <v-list-tile 
+                avatar
+                ripple
+                @click=""
+                >
+                  <v-list-tile-avatar>
+                    <img src="/static/user_avatar/avatar.jpg">
+                  </v-list-tile-avatar>
+                  <v-list-tile-content>
+                    <v-list-tile-action-text class="grey--text"> 20 апреля 2018</v-list-tile-action-text>
+                    <v-list-tile-title>Петр Серафимбюльивович Иванов</v-list-tile-title>
+                    <v-list-tile-sub-title>На этом сайте все по-взрослому! Нужно бесплатно  регистрироватьсязавести «счета»</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-divider inset></v-divider>
+                <v-list-tile 
+                ripple
+                @click=""
+                >
+                  <v-list-tile-avatar>
+                    <v-icon>person</v-icon>
+                  </v-list-tile-avatar>
+                  <v-list-tile-content>
+                    <v-list-tile-action-text class="grey--text"> 22 апреля 2018</v-list-tile-action-text>
+                    <v-list-tile-title>Пивонов</v-list-tile-title>
+                    <v-list-tile-sub-title>Спасибо за падушка!</v-list-tile-sub-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-divider inset></v-divider>
+              </v-list>              
             </nav>
           </v-flex>
         </v-layout>
     </v-container>
-    <v-footer height="auto" class=''>
-    <v-card
-      flat
-      tile
-      class="primary white--text text-xs-center"
-    >
-      <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          icon
-          class="mx-3 white--text"
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-      </v-card-text>
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
-      <v-card-text class="black80 white--text">
-        &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.
-      </v-card-text>
-    </v-card>
-  </v-footer>
+    <v-footer height="100%" class='primary'>
+      <v-container grid-list-lg>
+        <v-layout row wrap>
+          <v-flex xs12 sm3 v-for="i in 4" :key="`i${i}`">
+            <v-card dark flat class="transparent pl-5">
+              <v-card-text class="px-0">{{i}}</v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>  
+         <div class="bottom__footer">
+           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru   обязательна.
+         </div>
+      </v-container>
+    </v-footer>
   </v-app>
 </template>
 
@@ -158,7 +208,9 @@ export default {
         { icon: '', title: 'Продукция от А до Я' },
         { icon: '', title: 'Как заказать' },
         { icon: '', title: 'Требования к макетам' },
-        { icon: '', title: 'Контакты' }
+        { icon: '', title: 'Контакты' },
+        { icon: '', title: 'Новости' },
+        { icon: '', title: 'Отзывы' }
       ],
       contactItems: [
         { icon: 'phone', title: '(812) 335-86-61' },
@@ -189,6 +241,14 @@ export default {
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Стартовые майки, спортивные номера, волчатники, нанесение на спортивную форму.' },
         { icon: '', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды' },
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Гербы, штандарты, знамена.' }
+      ],
+      newsItems: [
+      {date: '15 января 3001', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды'},
+      {date: '15 января 1606', title: 'Наградная продукция', description: 'Ролл-ап стенды, X-стенды, L-стенды'}
+      ],
+      chitItems: [
+      {date: '15 января 3001', userName: 'Пиванов Вольдемар', comment: 'Очень хорошо', src: '/static/doc-images/cards/house.jpg'},
+      {date: '15 января 3001', userName: 'Пиванов Вольдемар', comment: 'Очень хорошо', src: '/static/doc-images/cards/house.jpg'}
       ],
       lorem: `Мы занимаемся изготовлением всех видов продукции для рекламных целей, спорта, подарков и пр. которые делаются из ткани. Наша специализация – это изготовление флагов всех видов: флагов стран, флагов с логотипом, настольных флагов, флагов "парус", "виндер", "пляжный", автофлагов. Также выполним изготовление вымпелов, платков с логотипом, шарфов, бандан, галстуков и бейсболок, что востребовано сейчас очень широко.
                       Для того, чтобы вы могли заказать все в одном месте, мы печатаем не только на ткани, но и на бумаге, и холсте, и баннере. Печать плакатов и постеров, печать баннеров — все это мы сделаем для вас.`

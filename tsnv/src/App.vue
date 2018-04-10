@@ -29,7 +29,11 @@
           >
         </v-text-field>
       </v-list-tile>
-      <v-list-tile ripple v-for="item in popmenuItems" :key="item.title" @click="">
+      <v-list-tile 
+        ripple 
+        v-for="item in popmenuItems" 
+        :key="item.title" 
+        @click="">
         <v-list-tile-action>
           <v-icon left>{{ item.icon }}</v-icon>
         </v-list-tile-action>
@@ -69,7 +73,7 @@
       >
         <v-tab
           class="noupper"
-          v-for="item in menuItems"
+          v-for="item in menuItems.slice(0, 5)"
           :key="item.title"
           :href="`#tab-${item.title}`"
         >
@@ -184,9 +188,48 @@
     <v-footer height="100%" class='primary'>
       <v-container grid-list-lg>
         <v-layout row wrap>
-          <v-flex xs12 sm3 v-for="i in 4" :key="`i${i}`">
+          <v-flex xs12 sm3>
+            <v-card dark flat class="transparent pl-5 black08">
+              <ul>
+                <li v-for="item in menuItems" :key="item.title" @click="">
+                {{item.title}}
+                </li>
+              </ul>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 sm3>
             <v-card dark flat class="transparent pl-5">
-              <v-card-text class="px-0">{{i}}</v-card-text>
+              <ul>
+                <li v-for="item in partItems.slice(0,6)" :key="item.title" @click="">
+                {{item.title}}
+                </li>
+              </ul>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 sm3>
+            <v-card dark flat class="transparent pl-5 black08">
+              <ul>
+                <li v-for="item in partItems.slice(6,12)" :key="item.title" @click="">
+                {{item.title}}
+                </li>
+              </ul>
+            </v-card>
+          </v-flex>
+          <v-flex xs12 sm3>
+            <v-card flat class="transparent pl-5">
+              <v-text-field 
+                placeholder="Поиск"
+                append-icon="search"
+                id="search"
+                flat
+                solo
+                clearable
+                key="search"
+                v-model="search"
+                ref="search"
+                >
+              </v-text-field>
+              <v-btn block color="secondary noupper">Подписка</v-btn>
             </v-card>
           </v-flex>
         </v-layout>  
@@ -229,7 +272,7 @@ export default {
         { icon: 'flag', title: 'Футболки с логотипом' }
       ],
       partItems: [
-        { icon: '', title: 'Флажная продукция', description: 'Печать фирменных, государственных, ведомственных, спортивных и пр. флагов и знамен любого размера.' },
+        { icon: '', title: 'Флажная продукция', description: 'Печать фирменных, государственных, ведомственных, спортивных и других флагов и знамен любого размера.' },
         { icon: '', title: 'Транспаранты и растяжки', description: 'Для агитационных, праздничных и спортивных мероприятий.' },
         { icon: '', title: 'Корпоративная и промо одежда', description: 'Пошив галстуков, платков, шарфов, бандан, футболок и бейсболок, промо-накидок, жилетов, фартуков.' },
         { icon: '', title: 'Широкоформатная печать на ткани', description: 'Изготовление штор, занавесов, ролл штор с фото, покрывал, скатертей...' },

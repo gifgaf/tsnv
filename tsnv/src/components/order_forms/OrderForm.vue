@@ -1,7 +1,6 @@
 <template>
-  <v-layout row justify-center>
-    <v-dialog v-model="dialog" persistent max-width="800px">
-      <v-btn color="primary" dark slot="activator">Open Dialog</v-btn>
+    <v-dialog v-model="dialog" max-width="800px">
+      <v-btn round block large dark color="success" slot="activator">Заказать</v-btn>
       <v-card>
         <v-card-title>
           <span class="headline">User Profile</span>
@@ -47,7 +46,7 @@
               </v-flex>
             </v-layout>
           </v-container>
-          <small>*indicates required field</small>
+          <small>*Я  согласен(-на) на обработку персональных данных</small>
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -56,7 +55,6 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
-  </v-layout>
 </template>
 
 <script>
@@ -66,3 +64,7 @@
     })
   }
 </script>
+
+<style scoped>
+.dialog__container{width: 100%;}
+</style>

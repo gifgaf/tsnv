@@ -1,70 +1,109 @@
 <template>
-    <v-dialog v-model="dialog" max-width="800px">
+    <v-dialog v-model="dialog" origin="top left" max-width="800px">
+      <v-tabs icons-and-text centered show-arrows class="noupper" color="blue-grey lighten-5" >
+        <v-tabs-slider color="primary"></v-tabs-slider>
+        <v-tab href="#tab-1">
+          Заказать вымпел
+        </v-tab>
+        <v-tab href="#tab-2">
+          Все товары
+        </v-tab>
+        <v-tab-item id='tab-1'>
+          <v-card>
+              <v-container grid-list-lg>
+                <v-layout wrap>
+                  <v-flex xs12 sm6 md6>
+                    <v-text-field
+                    label="Ваше имя"
+                    required 
+                    hint="на Патриса Лумумбу напоминает" 
+                    v-model="title"
+                    :rules="[rules.required]"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md6>
+                    <v-text-field 
+                    label="Email"
+                    required
+                    hint="за такой имэйл можно и в глаз"
+                    v-model="email"
+                    :rules="[rules.required, rules.email]"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md6>
+                  <v-text-field
+                    label="Ваш телефон"
+                    required
+                    prepend-icon="phone"
+                    hint="Ты с какова района, чувак"
+                    :mask="mask"
+                    single-line
+                    :rules="[rules.required]"
+                    v-model="patronphone"
+                  ></v-text-field>
+                  </v-flex>
+                  <v-flex xs12 sm6 md6>              
+                    <v-text-field 
+                      label="Комментарий" 
+                      required
+                      hint="и кнопку не забудь нажать, вомбат"
+                      :rules="[rules.required]"
+                      v-model="comments"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-checkbox 
+                     color="success"
+                     v-model="terms"
+                     label='Я согласен(-на) на обработку персональных данных'
+                     :rules="[rules.required]"
+                  ></v-checkbox>
+                </v-layout>
+              </v-container>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
+              <v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item id='tab-2'>
+          <v-card flat>
+            <v-card-text>{{ text }}</v-card-text>
+          </v-card>
+        </v-tab-item>
+      </v-tabs>
+
+
+
       <v-btn round block large dark color="success" slot="activator">Заказать</v-btn>
-      <v-card>
-        <v-card-title>
-          <span class="headline">User Profile</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container grid-list-md>
-            <v-layout wrap>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal first name" required></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6 md4>
-                <v-text-field
-                  label="Legal last name"
-                  hint="example of persistent helper text"
-                  persistent-hint
-                  required
-                ></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Email" required></v-text-field>
-              </v-flex>
-              <v-flex xs12>
-                <v-text-field label="Password" type="password" required></v-text-field>
-              </v-flex>
-              <v-flex xs12 sm6>
-                <v-select
-                  label="Age"
-                  required
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                ></v-select>
-              </v-flex>
-              <v-flex xs12 sm6>
-                <v-select
-                  label="Interests"
-                  multiple
-                  autocomplete
-                  chips
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                ></v-select>
-              </v-flex>
-            </v-layout>
-          </v-container>
-          <small>*Я  согласен(-на) на обработку персональных данных</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
-        </v-card-actions>
-      </v-card>
+      
     </v-dialog>
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      dialog: false
-    })
+export default {
+  data () {
+    return {
+      dialog: false,
+      terms: false,
+      mask: '(###) ### - ####',
+      title: '',
+      email: '',
+      patronphone: '',
+      comments: '',
+      rules: {
+        required: (value) => !!value || 'Обязательное поле.',
+        email: (value) => {
+          const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          return pattern.test(value) || 'Кривой e-mail.'
+        }
+      }
+    }
   }
+}
 </script>
 
 <style scoped>
 .dialog__container{width: 100%;}
+.tabs__div{ text-transform: unset!important;}
 </style>

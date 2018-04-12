@@ -99,7 +99,10 @@
                 >
               </v-text-field>
             <v-list class="transparent">
-              <v-list-tile ripple dense class="secondary mb-1 elevation-1" v-for="item in popmenuItems" :key="item.title" @click="">
+              <v-list-tile 
+                ripple dense 
+                class="secondary mb-1 elevation-1" 
+                v-for="item in popmenuItems" :key="item.title" @click="">
                 <v-list-tile-content >{{ item.title }}</v-list-tile-content>
               </v-list-tile>
             </v-list>

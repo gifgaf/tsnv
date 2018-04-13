@@ -3,10 +3,10 @@
       <v-tabs icons-and-text centered show-arrows class="noupper" color="blue-grey lighten-5" >
         <v-tabs-slider color="primary"></v-tabs-slider>
         <v-tab href="#tab-1">
-          Заказать вымпел
+          <h3>Заказать вымпел</h3>
         </v-tab>
         <v-tab href="#tab-2">
-          Все товары
+          <h3>Все товары</h3>
         </v-tab>
         <v-tab-item id='tab-1'>
           <v-card>
@@ -68,7 +68,116 @@
         </v-tab-item>
         <v-tab-item id='tab-2'>
           <v-card flat>
-            <v-card-text>{{ text }}</v-card-text>
+            <v-card-text>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(0,4)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup1" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(4,8)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup2" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(8,10)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+                            <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(0,4)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup1" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(4,8)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup2" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(8,10)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+                            <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(0,4)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup1" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(4,8)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup2" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(8,10)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+                            <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(0,4)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup1" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(4,8)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+              <v-flex xs12 > 
+              <v-radio-group v-model="radioGroup2" row>
+              <v-radio 
+                v-for="item in popmenuItems.slice(8,10)" :key="item.title"
+                :label="item.title"
+                :value="item.title"
+              ></v-radio>
+              </v-radio-group>
+              </v-flex>
+            </v-card-text>
           </v-card>
         </v-tab-item>
       </v-tabs>
@@ -87,6 +196,9 @@ export default {
       dialog: false,
       terms: false,
       mask: '(###) ### - ####',
+      radioGroup: 1,
+      radioGroup1: 2,
+      radioGroup2: 3,
       title: '',
       email: '',
       patronphone: '',
@@ -97,7 +209,19 @@ export default {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
           return pattern.test(value) || 'Кривой e-mail.'
         }
-      }
+      },
+      popmenuItems: [
+        { icon: 'flag', title: 'Банданы' },
+        { icon: 'flag', title: 'Баннеры' },
+        { icon: 'flag', title: 'Бейсболки' },
+        { icon: 'flag', title: 'Флаги' },
+        { icon: '', title: 'Флажки на палочке' },
+        { icon: 'flag', title: 'Флагштоки' },
+        { icon: 'flag', title: 'Фотообои' },
+        { icon: 'flag', title: 'Фото на подарки' },
+        { icon: 'flag', title: 'Фотошторы' },
+        { icon: 'flag', title: 'Футболки с логотипом' }
+      ]
     }
   }
 }

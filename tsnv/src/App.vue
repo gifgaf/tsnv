@@ -121,7 +121,7 @@
           </v-flex>
           <v-flex xs12 sm2 md3 lg2>
             <nav>
-              <OrderForm/>
+              <Vimpel/>
               <h2 class="primary mb-1">Спец-предложения</h2>
                 <v-card class="secondary mb-2">
                   <v-card-media src="./static/special_offer/9maya.png" height="140px">
@@ -237,7 +237,6 @@
           </v-flex>
         </v-layout>  
          <div class="bottom__footer">
-                         <Vimpel/>
            &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru   обязательна.
          </div>
       </v-container>
@@ -246,11 +245,10 @@
 </template>
 
 <script>
-import OrderForm from '@/components/order_forms/OrderForm.vue'
 import Vimpel from '@/components/order_forms/Vimpel.vue'
 export default {
   name: 'app',
-  components: { OrderForm, Vimpel },
+  components: { Vimpel },
   data () {
     return {
       drawer: false,

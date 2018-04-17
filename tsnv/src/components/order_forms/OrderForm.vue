@@ -51,12 +51,14 @@
                       v-model="comments"
                     ></v-text-field>
                   </v-flex>
+                  <v-flex xs12> 
                   <v-checkbox 
                      color="success"
                      v-model="terms"
                      label='Я согласен(-на) на обработку персональных данных'
                      :rules="[rules.required]"
                   ></v-checkbox>
+                  </v-flex>
                 </v-layout>
               </v-container>
             <v-card-actions>

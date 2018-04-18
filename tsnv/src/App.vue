@@ -1,12 +1,24 @@
 <template>
   <v-app>
-    <v-navigation-drawer class="secondary"
+    <v-navigation-drawer 
+      class="secondary"
       temporary
       v-model="drawer"
-      absolute
+      app
       >
     <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo" class="ml-2">
+      <v-chip 
+      flat
+      v-for="item in contactItems" :key="item.title"
+      color="primary" 
+      text-color="white"
+      >
+        <v-avatar>
+          <v-icon class="secondary--text">{{ item.icon }}</v-icon>
+        </v-avatar>
+        {{ item.title }}
+      </v-chip> 
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -54,9 +66,12 @@
       ></v-text-field>
       <!--<v-spacer></v-spacer>
       <v-btn icon dark><v-icon class="secondary--text">search</v-icon></v-btn>  -->
-      <v-chip v-for="item in contactItems" :key="item.title"
+      <v-chip 
+      class="hidden-sm-and-down"  
+      v-for="item in contactItems" :key="item.title"
       color="primary" 
-      text-color="white">
+      text-color="white"
+      >
         <v-avatar>
           <v-icon class="secondary--text">{{ item.icon }}</v-icon>
         </v-avatar>

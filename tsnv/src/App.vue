@@ -136,7 +136,7 @@
           </v-flex>
           <v-flex xs12 sm2 md3 lg2>
             <nav>
-              <Vimpel/>
+              <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>
                 <v-card class="secondary mb-2">
                   <v-card-media src="./static/special_offer/9maya.png" height="140px">
@@ -260,10 +260,10 @@
 </template>
 
 <script>
-import Vimpel from '@/components/order_forms/Vimpel.vue'
+import VimpelForm from '@/components/order_forms/VimpelForm.vue'
 export default {
   name: 'app',
-  components: { Vimpel },
+  components: { VimpelForm },
   data () {
     return {
       drawer: false,

@@ -59,14 +59,33 @@
                       label="Форма вымпела"
                       :items="vimpelShape"
                       v-model="vimpelshape"
-                    ></v-select>
+                    >
+                      <template slot="selection" slot-scope="data">
+                          <v-list-tile-content>
+                            <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
+                          </v-list-tile-content>
+                          <v-list-tile-action>
+                            <v-icon> {{ data.item.icon }} </v-icon>
+                          </v-list-tile-action>
+                      </template>
+                      <template slot="item" slot-scope="data">
+                        <template>
+                          <v-list-tile-content>
+                            <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
+                          </v-list-tile-content>
+                          <v-list-tile-action>
+                            <v-icon> {{ data.item.icon }} </v-icon>
+                          </v-list-tile-action>
+                        </template>
+                      </template>  
+                    </v-select>
                   </v-flex>
                   <v-flex xs12 sm6 md6>
                     <v-text-field 
                     type="file"
                     label="Прикрепить файл макета"
                     hint="ваш макет" 
-                    v-model="vimpeldummy"
+                    v-model="vimpelfile"
                     multiple
                     prepend-icon="attach_file"
                     ></v-text-field>
@@ -109,7 +128,6 @@
                     v-model="vimpeladress"
                     ></v-text-field>
                   </v-flex>
-
                   <v-flex xs12 sm6 md6>
                     <v-text-field
                     label="Ваше имя"
@@ -130,13 +148,14 @@
                   </v-flex>
                   <v-flex xs12 sm6 md6>
                   <v-text-field
-                    label="Ваш телефон"
+                    placeholder="Ваш телефон"
                     required
                     prepend-icon="phone"
                     hint="xxx xxxxxxx"
                     :mask="phonemask"
                     :rules="[rules.required]"
                     v-model="patronphone"
+                    prefix="+7"
                   ></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6 md6>              
@@ -207,6 +226,7 @@ export default {
       vimpeladress: null,
       vimpelpayment: null,
       vimpelpaymentdetails: null,
+      vimpelfile: null,
       rules: {
         required: (value) => !!value || 'Обязательное поле.',
         email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'
@@ -215,7 +235,12 @@ export default {
       vimpelSize: ['10х15 см', '15х21 см', '21х30 см', '30х40 см', 'Указать размер в комментарии'],
       vimpelStitch: ['обстрочка шнуром', 'дополнение кистями в цвет шнура', 'обстрочка шнуром + дополнение кистями (серебро и золото)', 'дополнение бахромой'],
       vimpelPrint: ['Одна сторона', 'Две стороны (+20% к стоимости)'],
-      vimpelShape: ['Прямоугольный', 'Пятиугольный', 'Пятиугольный1', 'Треугольный', 'Пятиугольный2', 'Прямоугольный'],
+      vimpelShape: [
+       {icon: 'flag', item: 'Прямоугольный'},
+       {icon: 'flag', item: 'Пятиугольный1'},
+       {icon: 'flag', item: 'Треугольный'},
+       {icon: 'flag', item: 'Пятиугольный2'},
+       {icon: 'flag', item: 'Прямоугольный'}],
       vimpelFurniture: ['красный', 'желтый', 'green'],
       vimpelDelivery: ['самовывоз', 'доставка по СПб (указать адрес)', 'доставка по России (указать адрес)', 'отправка ТК по России'],
       vimpelPayment: ['б/н - прикрепить реквизиты', 'предоплата наличными в офисе'],

@@ -45,7 +45,25 @@
                       label="Цвет шнура и\или кистей"
                       :items="vimpelFurniture"
                       v-model="vimpelfurniture"
-                    ></v-select>
+                    >
+                      <template slot="selection" slot-scope="data">
+                        <v-list-tile-avatar>
+                          <img :src="data.item.avatar">
+                        </v-list-tile-avatar>
+                        <v-list-tile-content>
+                          <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
+                        </v-list-tile-content>
+                      </template>
+                      <template slot="item" slot-scope="data">
+                        <v-list-tile-content>
+                          <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
+                        </v-list-tile-content>                    
+                        <v-list-tile-avatar>
+                          <img :src="data.item.avatar">
+                        </v-list-tile-avatar>
+                      </template>
+                      </v-select>
+
                   </v-flex>
                   <v-flex xs12 sm6 md6>
                     <v-select
@@ -91,12 +109,25 @@
                     ></v-text-field>
                   </v-flex>
                   <v-flex xs12 sm6 md6>
-                    <v-text-field
-                    label="Желаемая дата изготовления"
-                    hint="формат даты xx/xx/хххх"
-                    :mask="datemask" 
-                    v-model="vimpeldata"
-                    ></v-text-field>
+                    <v-menu
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      :nudge-right="0"
+                      max-width="290px"
+                      min-width="290px">
+                      <v-text-field
+                        slot="activator"
+                        label="Желаемая дата изготовления"
+                        v-model="vimpeldate"
+                        prepend-icon="event"
+                        readonly
+                        clearable>
+                      </v-text-field>
+                      <v-date-picker v-model="vimpeldate"  locale="ru-RU" no-title scrollable autosave>
+                      </v-date-picker>
+                    </v-menu>
                   </v-flex>
                   <v-flex xs12 sm6 md6>
                     <v-select
@@ -165,11 +196,11 @@
                       v-model="vimpelpaymentdetails"
                     ></v-text-field>
                   </v-flex>
-                  <v-checkbox 
-                     color="success"
-                     v-model="terms"
-                     label='Согласен(-на) на обработку персональных данных'
-                     :rules="[rules.required]"
+                  <v-checkbox
+                    color="success"
+                    v-model="terms"
+                    label='Согласен(-на) на обработку персональных данных'
+                    :rules="[rules.required]"
                   ></v-checkbox>
                 </v-layout>
               </v-container>
@@ -216,7 +247,7 @@ export default {
       vimpelmodel: null,
       vimpelamount: null,
       vimpelsize: null,
-      vimpeldata: null,
+      vimpeldate: null,
       vimpelshape: null,
       vimpelstitch: null,
       vimpelprint: null,
@@ -236,12 +267,18 @@ export default {
       vimpelStitch: ['обстрочка шнуром', 'дополнение кистями в цвет шнура', 'обстрочка шнуром + дополнение кистями (серебро и золото)', 'дополнение бахромой'],
       vimpelPrint: ['Одна сторона', 'Две стороны (+20% к стоимости)'],
       vimpelShape: [
-       {icon: 'flag', item: 'Прямоугольный'},
-       {icon: 'flag', item: 'Пятиугольный1'},
-       {icon: 'flag', item: 'Треугольный'},
-       {icon: 'flag', item: 'Пятиугольный2'},
-       {icon: 'flag', item: 'Прямоугольный'}],
-      vimpelFurniture: ['красный', 'желтый', 'green'],
+        {icon: 'flag', item: 'Прямоугольный', avatar: ''},
+        {icon: 'flag', item: 'Пятиугольный1', avatar: ''},
+        {icon: 'flag', item: 'Треугольный', avatar: ''},
+        {icon: 'flag', item: 'Пятиугольный2', avatar: ''},
+        {icon: 'flag', item: 'Прямоугольный', avatar: ''}
+      ],
+      vimpelFurniture: [
+        {title: 'золотой', avatar: '/static/vimpel/goldcord.png'},
+        {title: 'желтый', avatar: '/static/vimpel/yellowcord.png'},
+        {title: 'золотой', avatar: '/static/vimpel/gold1cord.png'},
+        {title: 'зеленый', avatar: '/static/vimpel/greencord.png'}
+      ],
       vimpelDelivery: ['самовывоз', 'доставка по СПб (указать адрес)', 'доставка по России (указать адрес)', 'отправка ТК по России'],
       vimpelPayment: ['б/н - прикрепить реквизиты', 'предоплата наличными в офисе'],
       popmenuItems: [
@@ -267,8 +304,5 @@ export default {
 .radio-group .input-group{display: inline-block; width: 192px;}
 .card__actions {justify-content: center;}
 .container.grid-list-lg .layout .flex{padding: 0 8px;}
-input[type = file] {
-  opacity: 0;
-}
     
 </style>

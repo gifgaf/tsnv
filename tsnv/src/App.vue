@@ -125,13 +125,8 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <v-card flat class="transparent">
-                <v-card-title primary class="title"><h1 class="primary--text text-xs-center">Добро пожаловать на сайт предприятия «ТСН» !</h1>
-                </v-card-title>
-                <v-card-text 
-                  v-text="lorem">
-                </v-card-text>
-              </v-card>
+              <h1 class="primary--text text-xs-center mb-2">Добро пожаловать на сайт предприятия «ТСН» !</h1>
+              <Catalog/>
             </main>
           </v-flex>
           <v-flex xs12 sm2 md3 lg2>
@@ -261,9 +256,10 @@
 
 <script>
 import VimpelForm from '@/components/order_forms/VimpelForm.vue'
+import Catalog from '@/components/Catalog.vue'
 export default {
   name: 'app',
-  components: { VimpelForm },
+  components: { VimpelForm, Catalog },
   data () {
     return {
       drawer: false,

@@ -107,6 +107,7 @@
                 id="search"
                 clearable
                 solo
+                flat
                 single-line
                 key="search"
                 v-model="search"
@@ -280,6 +281,7 @@ export default {
         { icon: 'flag', title: 'Банданы' },
         { icon: 'flag', title: 'Баннеры' },
         { icon: 'flag', title: 'Бейсболки' },
+        { icon: 'flag', title: 'Вымпелы' },
         { icon: 'flag', title: 'Флаги' },
         { icon: '', title: 'Флажки на палочке' },
         { icon: 'flag', title: 'Флагштоки' },

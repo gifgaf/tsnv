@@ -126,7 +126,7 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <h1 class="primary--text text-xs-center mb-2">Добро пожаловать на сайт предприятия «ТСН» !</h1>
+              <h1 class="primary--text text-xs-center mb-2">Продукция от А до Я</h1>
               <Catalog/>
             </main>
           </v-flex>

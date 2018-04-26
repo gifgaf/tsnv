@@ -1,15 +1,15 @@
 <template>
   <v-layout wrap>
-    <v-flex xs12 text-xs-center mb-2>
-       <v-btn
-       fab small light color="secondary" class='mx-0 my-0 noupper'
-       v-for="item in abc"
-       :key="item"
-       @click="">
-         {{ item }}
-       </v-btn>
+    <v-flex xs12 text-xs-center mb-3>
+      <h1 class="primary--text  mb-2">Продукция от А до Я</h1>
+      <v-btn
+      fab small light color="secondary" class='mx-0 my-0 noupper'
+      v-for="item in abc"
+      :key="item"
+      @click="">
+        {{ item }}
+      </v-btn>
     </v-flex>
-
     <v-flex xs12 sm6 lg3
       v-for="item in cards" 
       :key="item.title"
@@ -17,19 +17,14 @@
       <v-card class="">
         <v-card-media
           :src="item.picsrc"
-          height="240px"
+          height="220px"
+          style="cursor: pointer;"
+          @click=""
         >
         </v-card-media>
-        <v-card-title primary-title text-xs-centerclass="">
-            <div class="headline"> {{ item.title }} </div>
+        <v-card-title primary-title class="justify-center">
+            <div class="headblock"> {{ item.title }} </div>
         </v-card-title>
-        <p class="grey--text"> {{ item.description }} </p>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn icon class="noupper primary--text">
-            <v-icon>arrow_forward</v-icon>
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
@@ -73,10 +68,13 @@
 }
 .card{
   padding: 5px;
+  color: rgba(0,0,0,.8);
+  border: 1px solid #e4dfec;
 }
-.headline {
-    font-size: 18px!important;
-    font-weight: 600;
-    line-height: 18px!important;
+.headblock {
+    font-size: 22px!important;
+    font-weight: 800!important;
+    line-height: 21px!important;
+    font-stretch: semi-condensed;
 }    
 </style>

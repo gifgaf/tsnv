@@ -64,8 +64,6 @@
         dark
         flat
       ></v-text-field>
-      <!--<v-spacer></v-spacer>
-      <v-btn icon dark><v-icon class="secondary--text">search</v-icon></v-btn>  -->
       <v-chip 
       class="hidden-sm-and-down"  
       v-for="item in contactItems" :key="item.title"
@@ -126,11 +124,10 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <h1 class="primary--text text-xs-center mb-2">Продукция от А до Я</h1>
               <Catalog/>
             </main>
           </v-flex>
-          <v-flex xs12 sm2 md3 lg2>
+          <v-flex xs12 sm4 md3 lg2>
             <nav>
               <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>

@@ -2,10 +2,10 @@
     <v-dialog v-model="dialog" origin="top left" max-width="800px">
       <v-tabs icons-and-text centered  show-arrows class="noupper" color="blue-grey lighten-5" >
         <v-tabs-slider color="primary"></v-tabs-slider>
-        <v-tab class="primary--text" href="#tab-1" >
+        <v-tab class="" href="#tab-1" >
           <h3>Заказать вымпел</h3>
         </v-tab>
-        <v-tab class="primary--text" href="#tab-2">
+        <v-tab class="" href="#tab-2">
           <h3>Выбор товара</h3>
         </v-tab>
         <v-tab-item id='tab-1'>
@@ -95,14 +95,14 @@
                             <v-icon> {{ data.item.icon }} </v-icon>
                           </v-list-tile-action>
                         </template>
-                      </template>  
+                      </template>
                     </v-select>
                   </v-flex>
                   <v-flex xs12 sm6 md6>
-                    <v-text-field 
+                    <v-text-field
                     type="file"
                     label="Прикрепить файл макета"
-                    hint="ваш макет" 
+                    hint="ваш макет"
                     v-model="vimpelfile"
                     multiple
                     prepend-icon="attach_file"
@@ -155,7 +155,7 @@
                   <v-flex xs12 sm6 md6>
                     <v-text-field
                     label="Адрес доставки"
-                    hint="Ваш адрес" 
+                    hint="Ваш адрес"
                     v-model="vimpeladress"
                     ></v-text-field>
                   </v-flex>
@@ -163,7 +163,7 @@
                     <v-text-field
                     label="Ваше имя"
                     required 
-                    hint="Ваше имя" 
+                    hint="Ваше имя"
                     v-model="title"
                     :rules="[rules.required]"
                     ></v-text-field>
@@ -189,7 +189,7 @@
                     prefix="+7"
                   ></v-text-field>
                   </v-flex>
-                  <v-flex xs12 sm6 md6>              
+                  <v-flex xs12 sm6 md6>
                     <v-text-field 
                       label="Комментарий к заказу" 
                       hint="дополнительно"

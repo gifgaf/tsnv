@@ -72,9 +72,9 @@
   border: 1px solid #e4dfec;
 }
 .headblock {
-    font-size: 22px!important;
-    font-weight: 800!important;
+    font-size: 21px!important;
+    font-weight: 700!important;
     line-height: 21px!important;
-    font-stretch: semi-condensed;
-}    
+    transform: scaleX(0.94);
+}
 </style>

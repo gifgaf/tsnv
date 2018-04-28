@@ -124,7 +124,9 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <Catalog/>
+              <news/>
+              <reviews/>
+              <catalog/>              
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2>
@@ -254,10 +256,12 @@
 
 <script>
 import VimpelForm from '@/components/order_forms/VimpelForm.vue'
-import Catalog from '@/components/Catalog.vue'
+import catalog from '@/components/catalog.vue'
+import news from '@/components/news.vue'
+import reviews from '@/components/reviews.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, Catalog },
+  components: { VimpelForm, catalog, news, reviews },
   data () {
     return {
       drawer: false,

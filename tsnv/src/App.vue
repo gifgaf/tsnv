@@ -126,7 +126,7 @@
             <main>
               <news/>
               <reviews/>
-              <catalog/>              
+              <catalog/>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2>
@@ -193,7 +193,7 @@
                   </v-list-tile-content>
                 </v-list-tile>
                 <v-divider inset></v-divider>
-              </v-list>              
+              </v-list>
             </nav>
           </v-flex>
         </v-layout>
@@ -245,9 +245,9 @@
               <v-btn block color="secondary noupper">Подписка</v-btn>
             </v-card>
           </v-flex>
-        </v-layout>  
+        </v-layout>
          <div class="bottom__footer">
-           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru   обязательна.
+           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.
          </div>
       </v-container>
     </v-footer>

@@ -124,8 +124,8 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <news/>
               <reviews/>
+              <news/>
               <catalog/>
             </main>
           </v-flex>

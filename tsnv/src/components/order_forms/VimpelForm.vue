@@ -1,11 +1,11 @@
 <template>
     <v-dialog v-model="dialog" origin="top left" max-width="800px">
-      <v-tabs icons-and-text centered  show-arrows class="noupper" color="blue-grey lighten-5" >
+      <v-tabs icons-and-text centered show-arrows class="noupper" color="blue-grey lighten-5" >
         <v-tabs-slider color="primary"></v-tabs-slider>
-        <v-tab class="" href="#tab-1" >
+        <v-tab href="#tab-1" >
           <h3>Заказать вымпел</h3>
         </v-tab>
-        <v-tab class="" href="#tab-2">
+        <v-tab href="#tab-2">
           <h3>Выбор товара</h3>
         </v-tab>
         <v-tab-item id='tab-1'>
@@ -304,5 +304,9 @@ export default {
 .radio-group .input-group{display: inline-block; width: 192px;}
 .card__actions {justify-content: center;}
 .container.grid-list-lg .layout .flex{padding: 0 8px;}
-    
+
+.tabs__item {
+  background-color: #060084!important;
+}
+
 </style>

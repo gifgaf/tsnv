@@ -9,7 +9,7 @@
 <script>
 export default {
   data: () => ({
-    picview: false
+
   })
 }
 </script>

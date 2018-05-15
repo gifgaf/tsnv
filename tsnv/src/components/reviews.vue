@@ -3,24 +3,28 @@
     <v-flex xs12 text-xs-center>
       <h1 class="primary--text">Отзывы наших клиентов</h1>
     </v-flex>
-    <v-flex xs12>
+    <v-flex xs12
+    v-for="item in userreview"
+    :key="item.uid"
+    >
       <v-card>
         <v-container fluid grid-list-lg>
           <v-layout row>
-            <v-flex>
               <div>
-                <div class="headline">Светлана</div>
-                <div>г. Москва</div>
+                <div class="headline"> {{ item.name }} </div>
+                <div>г. {{ item.сity }} </div>
                 <rating/>
-                <div>Сыну (9 лет) очень нравится мультфильм "Остров сокровищ". Заказали ему на день рождения пиратский флаг с черепом и костями. По выходным заказы видимо не отправляют, т.к. заказ сделала в субботу утром, а отправили только в понедельник. В остальном все понравилось. Сын в восторге от флага, повесили над кроватью.</div>
+                <div> {{ item.review }} </div>
               </div>
-            </v-flex>
           </v-layout>
-          <v-layout row>
-            <v-flex sx4>
+          <v-layout row class="centre">
+            <v-flex sx4 md3
+            v-for="(item,i) in upic"
+            :key="i"
+            >
               <v-card-media
-                :src="/static/reviews/skeletons.jpg"
-                height="200px"
+                :src="userreview.upic.src"
+                height="150px"
                 style="cursor: pointer;"
                 @click.stop="picview = true"
               >
@@ -75,10 +79,30 @@ export default {
   components: { ReviewsForm, rating, picview },
   data: () => ({
     page: 1,
-    picview: false
+    picview: false,
+    userreview: [
+      { uid: 3543,
+        name: 'Ольга',
+        сity: 'Москва',
+        review: 'Сыну (9 лет) очень нравится мультфильм "Остров сокровищ". Заказали ему на день рождения пиратский флаг с черепом и костями. По выходным заказы видимо не отправляют, т.к. заказ сделала в субботу утром, а отправили только в понедельник. В остальном все понравилось. Сын в восторге от флага, повесили над кроватью.',
+        upic: [
+          { src: '/static/reviews/girl.jpg' },
+          { src: '/static/reviews/scelet.jpg' }
+        ]
+      },
+      { uid: 3568,
+        name: 'Волдеморт',
+        сity: 'Лондон',
+        review: 'Сыну (9 лет) очень нравится мультфильм "Остров сокровищ". Заказали ему на день рождения пиратский флаг с черепом и костями. По выходным заказы видимо не отправляют, т.к. заказ сделала в субботу утром, а отправили только в понедельник. В остальном все понравилось. Сын в восторге от флага, повесили над кроватью.',
+        upic: [
+          { src: '/static/reviews/girl.jpg' },
+          { src: '/static/reviews/scelet.jpg' }
+        ]
+      }
+    ]
   })
 }
 </script>
 <style scoped>
-.card__media{max-width:200pxp; justify-content: center;}
+.centre{ justify-content: center;}
 </style>

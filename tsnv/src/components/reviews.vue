@@ -42,18 +42,15 @@
       <ReviewsForm/>
     </v-flex>
     <v-dialog v-model="picview" origin="center top" width="auto">
-    <div class="closebtn"></div>
-     <v-icon>cancel</v-icon>
-     <v-icon>arrow_back_ios</v-icon>
-     <v-icon>arrow_forward_ios</v-icon>
-      <v-card-media
-        src="/static/reviews/skelet.jpg"
-        height="70vh"
-        style="cursor: pointer;"
-        @click.stop="picview = true"
-        contain
-      >
-      </v-card-media>
+          <v-btn icon @click.native="picview = false">
+            <v-icon color="secondary">cancel</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon color="secondary">arrow_forward_ios</v-icon>
+          </v-btn>
+          <v-btn icon>
+            <v-icon color="secondary">arrow_back_ios</v-icon>
+          </v-btn>
     </v-dialog>
   </v-layout>
 
@@ -73,8 +70,8 @@ export default {
         review: 'Сыну (9 лет) очень нравится мультфильм "Остров сокровищ". Заказали ему на день рождения пиратский флаг с черепом и костями. По выходным заказы видимо не отправляют, т.к. заказ сделала в субботу утром, а отправили только в понедельник. В остальном все понравилось. Сын в восторге от флага, повесили над кроватью.',
         upic: [
           { src: '/static/reviews/skelet.jpg' },
-          { src: '/static/reviews/skelet.jpg' },
-          { src: '/static/reviews/skelet.jpg' }
+          { src: '/static/reviews/girl.jpg' },
+          { src: '/static/reviews/flag.jpg' }
         ]
       },
       { name: 'Волдеморт',
@@ -90,6 +87,11 @@ export default {
         review: 'Для того, чтобы вы могли заказать все в одном месте, мы печатаем не только на ткани, но и на бумаге, и холсте, и баннере. Печать плакатов и постеров, печать баннеров — все это мы сделаем для вас.',
         upic: [ ]
       }
+    ],
+    tmpic: [
+      { src: '/static/reviews/skelet.jpg' },
+      { src: '/static/reviews/girl.jpg' },
+      { src: '/static/reviews/flag.jpg' }
     ]
   })
 }
@@ -97,11 +99,6 @@ export default {
 <style scoped>
 .centre{ justify-content: center;}
 .icon{
-  font-size: 48px
-}
-.closebtn{
-  width: 50px;
-  height: 50px;
-  background: red;
+  font-size: 42px
 }
 </style>

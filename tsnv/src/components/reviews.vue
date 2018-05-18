@@ -10,24 +10,24 @@
       <v-card>
         <v-container fluid grid-list-lg>
           <v-layout row>
-              <div>
-                <div class="headline"> {{ item.name }} </div>
-                <div>г. {{ item.сity }} </div>
-                <rating/>
-                <div> {{ item.review }} </div>
-              </div>
+            <div>
+              <div class="headline"> {{ item.name }} </div>
+              <div>г. {{ item.сity }} </div>
+              <rating/>
+              <div> {{ item.review }} </div>
+            </div>
           </v-layout>
-          <v-layout v-if="!userreviews.upic" row class="centre">
+          <v-layout v-if="!userreviews.upic" row class="centere">
             <v-flex sx4 md3
             v-for="(item,i) in item.upic"
             :key="i"
             >
               <v-card-media
+                flat
                 :src="item.src"
-                height="150px"
+                height="200px"
                 style="cursor: pointer;"
                 @click.stop="picview = true"
-                contain
               >
               </v-card-media>
             </v-flex>
@@ -41,16 +41,25 @@
     <v-flex xs12 text-xs-center>
       <ReviewsForm/>
     </v-flex>
-    <v-dialog v-model="picview" origin="center top" width="auto">
-          <v-btn icon @click.native="picview = false">
-            <v-icon color="secondary">cancel</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon color="secondary">arrow_forward_ios</v-icon>
-          </v-btn>
-          <v-btn icon>
-            <v-icon color="secondary">arrow_back_ios</v-icon>
-          </v-btn>
+    <v-dialog v-model="picview" fullscreen>
+      <div class="rel">
+        <v-btn fab icon small @click.native="picview = false" class="close_icon secondary">
+          <v-icon color="black">close</v-icon>
+        </v-btn>
+        <v-btn fab icon small class="forward-icon secondary">
+          <v-icon color="black">arrow_forward_ios</v-icon>
+        </v-btn>
+        <v-btn fab icon small class="back-icon secondary">
+          <v-icon color="white">arrow_back_ios</v-icon>
+        </v-btn>
+        <v-card-media
+          src="/static/reviews/flag.jpg"
+          height="100vh"
+          @click.stop="picview = true"
+          contain
+        >
+        </v-card-media>
+      </div>
     </v-dialog>
   </v-layout>
 
@@ -97,8 +106,10 @@ export default {
 }
 </script>
 <style scoped>
-.centre{ justify-content: center;}
-.icon{
-  font-size: 42px
-}
+.icon{font-size: 32px!important;}
+.centere{ justify-content: center;}
+.close_icon{ position: absolute; right: 0; top:0; z-index: 1;}
+.back-icon{ position: absolute; left: 0; top:50%; z-index: 1; text-align: center;}
+.forward-icon{position: absolute; right: 0; top:50%; z-index: 1; }
+.rel{position: relative; background: radial-gradient(ellipse at center, rgba(109,129,199,0.3) 0%,rgba(19,11,48,0.9) 100%); }
 </style>

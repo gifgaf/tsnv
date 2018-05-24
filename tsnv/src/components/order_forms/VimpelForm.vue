@@ -77,6 +77,7 @@
                       label="Форма вымпела"
                       :items="vimpelShape"
                       v-model="vimpelshape"
+                      prepend-icon="attach_file"
                     >
                       <template slot="selection" slot-scope="data">
                           <v-list-tile-content>
@@ -274,10 +275,10 @@ export default {
         {icon: 'flag', item: 'Прямоугольный', avatar: ''}
       ],
       vimpelFurniture: [
-        {title: 'золотой', avatar: '/static/vimpel/goldcord.png'},
-        {title: 'желтый', avatar: '/static/vimpel/yellowcord.png'},
-        {title: 'золотой', avatar: '/static/vimpel/gold1cord.png'},
-        {title: 'зеленый', avatar: '/static/vimpel/greencord.png'}
+        {icon: 'flag', title: 'золотой', avatar: '/static/vimpel/goldcord.png'},
+        {icon: 'flag', title: 'желтый', avatar: '/static/vimpel/yellowcord.png'},
+        {icon: 'flag', title: 'золотой', avatar: '/static/vimpel/gold1cord.png'},
+        {icon: 'flag', title: 'зеленый', avatar: '/static/vimpel/greencord.png'}
       ],
       vimpelDelivery: ['самовывоз', 'доставка по СПб (указать адрес)', 'доставка по России (указать адрес)', 'отправка ТК по России'],
       vimpelPayment: ['б/н - прикрепить реквизиты', 'предоплата наличными в офисе'],

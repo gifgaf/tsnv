@@ -13,7 +13,6 @@
             <div>
               <div class="headline"> {{ item.name }} </div>
               <div>г. {{ item.сity }} </div>
-              <rating/>
               <div> {{ item.review }} </div>
             </div>
           </v-layout>
@@ -33,6 +32,15 @@
             </v-flex>
           </v-layout>
         </v-container>
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn icon color="primary--text">
+            <v-icon>favorite</v-icon>
+          </v-btn>
+          <v-btn icon color="primary--text">
+            <v-icon>share</v-icon>
+          </v-btn>
+        </v-card-actions>
       </v-card>
     </v-flex>
     <v-flex xs12 text-xs-center>
@@ -50,14 +58,20 @@
           <v-icon color="black">arrow_forward_ios</v-icon>
         </v-btn>
         <v-btn fab icon small class="back-icon secondary">
-          <v-icon color="white">arrow_back_ios</v-icon>
+          <v-icon color="black">arrow_back_ios</v-icon>
         </v-btn>
         <v-card-media
-          src="/static/reviews/flag.jpg"
+          src="/static/reviews/sskelet.jpg"
           height="100vh"
           @click.stop="picview = true"
-          contain
+          auto
         >
+        <v-btn class="social-icon primary--text">
+          VK
+        </v-btn>
+        <v-btn class="social-icon primary--text">
+          F
+        </v-btn>
         </v-card-media>
       </div>
     </v-dialog>
@@ -108,8 +122,9 @@ export default {
 <style scoped>
 .icon{font-size: 32px!important;}
 .centere{ justify-content: center;}
-.close_icon{ position: absolute; right: 0; top:0; z-index: 1;}
-.back-icon{ position: absolute; left: 0; top:50%; z-index: 1; text-align: center;}
-.forward-icon{position: absolute; right: 0; top:50%; z-index: 1; }
+.close_icon{ position: absolute; right: 1%; top:1%; z-index: 1;}
+.back-icon{ position: absolute; left: 1%; top:50%; z-index: 1; text-align: center;}
+.forward-icon{position: absolute; right: 1%; top:50%; z-index: 1; }
+.social-icon{position: absolute; right: 50%; bottom:1%; z-index: 1; padding: 0;}
 .rel{position: relative; background: radial-gradient(ellipse at center, rgba(109,129,199,0.3) 0%,rgba(19,11,48,0.9) 100%); }
 </style>

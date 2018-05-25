@@ -49,6 +49,7 @@
     <v-flex xs12 text-xs-center>
       <ReviewsForm/>
     </v-flex>
+    <!-- if img.width > 1200 => fullscreen???-->
     <v-dialog v-model="picview" fullscreen>
       <div class="rel">
         <v-btn fab icon small @click.native="picview = false" class="close_icon secondary">
@@ -80,10 +81,8 @@
 </template>
 <script>
 import ReviewsForm from '@/components/order_forms/ReviewsForm.vue'
-import rating from '@/components/rating.vue'
-import picview from '@/components/picview.vue'
 export default {
-  components: { ReviewsForm, rating, picview },
+  components: { ReviewsForm },
   data: () => ({
     page: 1,
     picview: false,

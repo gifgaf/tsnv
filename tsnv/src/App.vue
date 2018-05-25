@@ -242,7 +242,7 @@
                 ref="search"
                 >
               </v-text-field>
-              <v-btn block color="secondary noupper">Подписка</v-btn>
+              <v-btn block color="secondary noupper">Заказать звонок</v-btn>
             </v-card>
           </v-flex>
         </v-layout>

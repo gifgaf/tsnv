@@ -163,6 +163,6 @@ export default {
   background-color: #060084!important;
 }
 .icon{font-size: 32px!important;}
-.close_icon{ position: absolute; right: 1%; top:1%; z-index: 1;}
+.close_icon{ position: absolute; right: 0%; top: 0%; z-index: 1; margin: 0;}
 
 </style>

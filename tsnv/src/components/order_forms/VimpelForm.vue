@@ -229,7 +229,7 @@
               </v-card>
             </v-tab-item>
           </v-tabs>
-      <v-btn round block large dark color="success" slot="activator">Заказать</v-btn>
+      <v-btn round block large dark color="success" slot="activator">Заказать вымпел</v-btn>
     </v-dialog>
 </template>
 

@@ -13,7 +13,7 @@
       v-for="item in contactItems" :key="item.title"
       color="primary" 
       text-color="white"
-      >
+      > <!-- replace with button-->
         <v-avatar>
           <v-icon class="secondary--text">{{ item.icon }}</v-icon>
         </v-avatar>
@@ -64,12 +64,12 @@
         dark
         flat
       ></v-text-field>
-      <v-chip 
+      <v-chip  
       class="hidden-sm-and-down"  
       v-for="item in contactItems" :key="item.title"
       color="primary" 
       text-color="white"
-      >
+      > <!-- replace with button-->
         <v-avatar>
           <v-icon class="secondary--text">{{ item.icon }}</v-icon>
         </v-avatar>
@@ -275,8 +275,9 @@ export default {
         { icon: '', title: 'Отзывы' }
       ],
       contactItems: [
+        { icon: 'email', title: 'tsnv@bk.ru' },
         { icon: 'phone', title: '(812) 335-86-61' },
-        { icon: 'email', title: 'tsnv@bk.ru' }
+        { icon: 'phone_callback', title: 'Перезвоните мне' }
       ],
       popmenuItems: [
         { icon: 'flag', title: 'Банданы' },

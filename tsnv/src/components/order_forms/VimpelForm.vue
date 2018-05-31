@@ -68,11 +68,10 @@
                           </v-select>
                       </v-flex>
                       <v-flex xs12 sm6 md6>
-                        <v-select
-                          label="Количество сторон для печати"
-                          :items="vimpelPrint"
-                          v-model="vimpelprint"
-                        ></v-select>
+                        <v-radio-group column>
+                          <v-radio label="Одна сторона" value="radio-1" ></v-radio>
+                          <v-radio label="Две стороны (+20% к стоимости)" value="radio-2"></v-radio>
+                        </v-radio-group>
                       </v-flex>
                       <v-flex xs12 sm6 md6>
                         <v-select
@@ -303,7 +302,7 @@ export default {
 <style scoped>
 .dialog__container{width: 100%; position: relative;}
 .tabs__div{ text-transform: unset!important;}
-.radio-group .input-group{display: inline-block; width: 192px;}
+.radio-group .input-group{display: inline-block;}
 .card__actions {justify-content: center;}
 .container.grid-list-lg .layout .flex{padding: 0 8px;}
 

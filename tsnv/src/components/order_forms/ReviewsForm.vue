@@ -43,6 +43,16 @@
               </v-flex>
               <v-flex xs12>
                 <v-text-field
+                type="file"
+                label="Прикрепить файл макета"
+                hint="ваш макет"
+                v-model="vimpelfile"
+                multiple
+                prepend-icon="attach_file"
+                ></v-text-field>
+              </v-flex>
+              <v-flex xs12>
+                <v-text-field
                   required
                   multi-line
                   label="Ваш комментарий" 
@@ -62,6 +72,7 @@
           </v-container>
           <v-card-actions class="pb-5">
           <v-btn class="primary" large flat @click="dialog = false">Отмена</v-btn>
+          <v-btn class="primary" large flat @click="dialog = false">Вся такая</v-btn>
           <v-btn class="primary" large flat @click="dialog = false">Отправить отзыв</v-btn>
           </v-card-actions>
         </v-card>

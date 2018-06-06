@@ -8,9 +8,12 @@
           </v-btn>
           <v-flex xs12 class="mt-5">
             <v-select
-              :items="states"
+              :items="products"
               v-model="a1"
-              label="Заказать вымпел"
+              label="Заказать"
+              solo-inverted
+              full-width="true"
+              flat
               autocomplete
             ></v-select>
           </v-flex>
@@ -67,7 +70,7 @@
             </v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
-            <v-radio-group row>
+            <v-radio-group column>
               <v-radio label="Одна сторона" value="radio-1" color="primary"></v-radio>
               <v-radio label="Две стороны (+20% к стоимости)" value="radio-2" color="primary"></v-radio>
             </v-radio-group>
@@ -224,20 +227,6 @@
         <v-btn class="primary" large flat @click="dialog = false">Заказать</v-btn>
       </v-card-actions>
     </v-card>
-    <v-card flat>
-      <v-card-text>
-        <v-flex xs12 > 
-        <v-radio-group v-model="radioGroup" >
-        <v-radio 
-          color="primary" 
-          v-for="item in popmenuItems" :key="item.title"
-          :label="item.title"
-          :value="item.title"
-        ></v-radio>
-        </v-radio-group>
-        </v-flex>
-      </v-card-text>
-    </v-card>
     <v-btn round block large dark color="success" slot="activator">Заказать вымпел</v-btn>
   </v-dialog>
 </template>
@@ -269,6 +258,7 @@ export default {
       vimpelpayment: null,
       vimpelpaymentdetails: null,
       vimpelfile: null,
+      a1: null,
       rules: {
         required: (value) => !!value || 'Обязательное поле.',
         email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'
@@ -303,6 +293,8 @@ export default {
         { icon: 'flag', title: 'Фото на подарки' },
         { icon: 'flag', title: 'Фотошторы' },
         { icon: 'flag', title: 'Футболки с логотипом' }
+      ],
+      products: [ 'Банданы', 'Баннеры', 'Бейсболки', 'Флаги', 'Флажки на палочке', 'Флагштоки', 'Фотообои', 'Фото на подарки', 'Фотошторы', 'Футболки с логотипом'
       ]
     }
   }
@@ -312,7 +304,7 @@ export default {
 <style scoped>
 .dialog__container{width: 100%; position: relative;}
 .tabs__div{ text-transform: unset!important;}
-.radio-group .input-group{display: inline-block; width: 192px;}
+.radio-group .input-group{display: inline-block;}
 .card__actions {justify-content: center;}
 .container.grid-list-lg .layout .flex{padding: 0 8px;}
 
@@ -321,6 +313,8 @@ export default {
 }
 
 .icon{font-size: 32px!important;}
+.formtitle.label{font-size: 24px!important;}
+
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
 
 </style>

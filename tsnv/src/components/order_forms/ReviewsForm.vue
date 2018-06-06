@@ -71,12 +71,12 @@
             </v-layout>
           </v-container>
           <v-card-actions class="pb-5">
-          <v-btn class="primary" large flat @click="dialog = false">Отмена</v-btn>
-          <v-btn class="primary" large flat @click="dialog = false">Вся такая</v-btn>
-          <v-btn class="primary" large flat @click="dialog = false">Отправить отзыв</v-btn>
+          <v-btn class="primary noupper" large flat @click="dialog = false">Отмена</v-btn>
+          <v-btn class="primary noupper" large flat @click="dialog = false">Вся такая</v-btn>
+          <v-btn class="primary noupper" large flat @click="dialog = false">Отправить отзыв</v-btn>
           </v-card-actions>
         </v-card>
-      <v-btn round large dark color="primary" slot="activator">Оставить отзыв</v-btn>
+      <v-btn round large dark class="noupper" color="primary" slot="activator">Оставить отзыв</v-btn>
   </v-dialog>
 </template>
 

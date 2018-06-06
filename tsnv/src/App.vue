@@ -8,6 +8,7 @@
       >
     <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo" class="ml-2">
+      <v-divider></v-divider>
       <v-chip 
       flat
       v-for="item in contactItems" :key="item.title"
@@ -20,6 +21,7 @@
         {{ item.title }}
       </v-chip> 
       <v-divider></v-divider>
+      <div class="px-1"><VimpelForm/></div>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
           <v-icon left>{{ item.icon }}</v-icon>
@@ -129,7 +131,7 @@
               <catalog/>
             </main>
           </v-flex>
-          <v-flex xs12 sm4 md3 lg2>
+          <v-flex xs12 sm4 md3 lg2 text-xs-center>
             <nav>
               <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>
@@ -313,5 +315,6 @@ export default {
 </script>
 
 <style scoped>
+.pac{padding: 0 8px;}
 
 </style>

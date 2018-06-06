@@ -6,15 +6,16 @@
           <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
             <v-icon>close</v-icon>
           </v-btn>
-          <v-flex xs12 class="mt-5">
+          <v-flex xs12 class="mt-5 mb-3">
             <v-select
+              class="in"
               :items="products"
               v-model="a1"
               label="Заказать"
-              solo-inverted
+              solo
+              combobox
               full-width="true"
               flat
-              autocomplete
             ></v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
@@ -36,6 +37,7 @@
               label="Размер вымпела"
               :items="vimpelSize"
               v-model="vimpelsize"
+              combobox
             ></v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
@@ -223,11 +225,11 @@
         </v-layout>
       </v-container>
       <v-card-actions class="pb-5">
-        <v-btn class="primary" large flat @click="dialog = false">Отмена</v-btn>
-        <v-btn class="primary" large flat @click="dialog = false">Заказать</v-btn>
+        <v-btn class="primary noupper" large flat @click="dialog = false">Отмена</v-btn>
+        <v-btn class="primary noupper" large flat @click="dialog = false">Заказать</v-btn>
       </v-card-actions>
     </v-card>
-    <v-btn round block large dark color="success" slot="activator">Заказать вымпел</v-btn>
+    <v-btn round block large dark class="noupper px-2" color="success" slot="activator">Заказать вымпел</v-btn>
   </v-dialog>
 </template>
 
@@ -264,7 +266,7 @@ export default {
         email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'
       },
       vimpelModel: ['Атласный твердый с прокладкой', 'Атласный мягкий', 'Бумажный ламинированный'],
-      vimpelSize: ['10х15 см', '15х21 см', '21х30 см', '30х40 см', 'Указать размер в комментарии'],
+      vimpelSize: ['10х15 см', '15х21 см', '21х30 см', '30х40 см', 'Указать размер: '],
       vimpelStitch: ['обстрочка шнуром', 'дополнение кистями в цвет шнура', 'обстрочка шнуром + дополнение кистями (серебро и золото)', 'дополнение бахромой'],
       vimpelPrint: ['Одна сторона', 'Две стороны (+20% к стоимости)'],
       vimpelShape: [
@@ -294,7 +296,7 @@ export default {
         { icon: 'flag', title: 'Фотошторы' },
         { icon: 'flag', title: 'Футболки с логотипом' }
       ],
-      products: [ 'Банданы', 'Баннеры', 'Бейсболки', 'Флаги', 'Флажки на палочке', 'Флагштоки', 'Фотообои', 'Фото на подарки', 'Фотошторы', 'Футболки с логотипом'
+      products: [ 'Банданы', 'Баннеры', 'Бейсболки', 'Вымпел', 'Флаги', 'Флажки на палочке', 'Флагштоки', 'Фотообои', 'Фото на подарки', 'Фотошторы', 'Футболки с логотипом'
       ]
     }
   }
@@ -316,5 +318,6 @@ export default {
 .formtitle.label{font-size: 24px!important;}
 
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
+.in {border-bottom: 1px solid #060084; background-color: #eee!important;}
 
 </style>

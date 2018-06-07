@@ -16,7 +16,6 @@
               combobox
               full-width="true"
               flat
-
             ></v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
@@ -230,7 +229,7 @@
         <v-btn class="primary noupper" large flat @click="dialog = false">Заказать</v-btn>
       </v-card-actions>
     </v-card>
-    <v-btn round block large dark class="noupper px-2" color="success" slot="activator">Заказать футболки с лого</v-btn>
+    <v-btn round dark block class="noupper" color="success" slot="activator">Заказать футболки с лого</v-btn>
   </v-dialog>
 </template>
 

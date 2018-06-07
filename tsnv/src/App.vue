@@ -9,19 +9,17 @@
     <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo" class="ml-2">
       <v-divider></v-divider>
-      <v-chip 
-      flat
-      v-for="item in contactItems" :key="item.title"
-      color="primary" 
-      text-color="white"
-      > <!-- replace with button-->
-        <v-avatar>
-          <v-icon class="secondary--text">{{ item.icon }}</v-icon>
-        </v-avatar>
-        {{ item.title }}
-      </v-chip> 
+      <span class="p">
+        <v-icon left class="secondary--text">phone</v-icon>
+        (812) 335-86-61
+      </span>
+      <span class="p">
+        <v-icon left class="secondary--text">email</v-icon>
+        tsnv@bk.ru
+      </span>
+      <CallbackForm></CallbackForm>
+      <sVimpelForm class="px-1"></sVimpelForm>
       <v-divider></v-divider>
-      <div class="px-1"><VimpelForm/></div>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
           <v-icon left>{{ item.icon }}</v-icon>
@@ -56,9 +54,10 @@
     </v-list>
     </v-navigation-drawer>
     <v-toolbar class="primary" light dense>
-      <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo"></v-toolbar-title>
+      <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo">
+      </v-toolbar-title>
       <v-text-field
-        class="ml-4 white--text"
+        class="ml-4 white--text hidden-sm-and-down"
         clearable
         append-icon="search"
         label="Поиск..."
@@ -66,17 +65,18 @@
         dark
         flat
       ></v-text-field>
-      <v-chip  
-      class="hidden-sm-and-down"  
-      v-for="item in contactItems" :key="item.title"
-      color="primary" 
-      text-color="white"
-      > <!-- replace with button-->
-        <v-avatar>
-          <v-icon class="secondary--text">{{ item.icon }}</v-icon>
-        </v-avatar>
-        {{ item.title }}
-      </v-chip>    
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <span class="p">
+        <v-icon left class="secondary--text">phone</v-icon>
+        (812) 335-86-61
+        </span>
+        <span class="p">
+        <v-icon left class="secondary--text">email</v-icon>
+        tsnv@bk.ru
+        </span>
+        <CallbackForm class="p"></CallbackForm>
+      </v-toolbar-items>
       <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-tabs 
         class="hidden-sm-and-down" 
@@ -258,12 +258,14 @@
 
 <script>
 import VimpelForm from '@/components/order_forms/VimpelForm.vue'
+import sVimpelForm from '@/components/order_forms/sVimpelForm.vue'
+import CallbackForm from '@/components/order_forms/CallbackForm.vue'
 import catalog from '@/components/catalog.vue'
 import news from '@/components/news.vue'
 import reviews from '@/components/reviews.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, catalog, news, reviews },
+  components: { VimpelForm, sVimpelForm, CallbackForm, catalog, news, reviews },
   data () {
     return {
       drawer: false,
@@ -315,6 +317,13 @@ export default {
 </script>
 
 <style scoped>
-.pac{padding: 0 8px;}
+.p{
+  display: inline-block; 
+  color: #fff; 
+  background-color: #060084; 
+  margin: 8px 0; padding: 4px 16px;
+  border-radius: 28px;
+}
+
 
 </style>

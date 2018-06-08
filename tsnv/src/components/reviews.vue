@@ -1,6 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12 text-xs-center>
+      <h1 class="primary--text">Результаты поиска: «бонданки»</h1>
       <h1 class="primary--text">Отзывы наших клиентов</h1>
     </v-flex>
     <v-flex xs12

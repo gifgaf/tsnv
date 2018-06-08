@@ -26,7 +26,7 @@
             </v-layout>
           </v-container>
           <v-card-actions class="pb-2">
-          <v-btn class="primary noupper" large flat @click="dialog = false">Отмена</v-btn>
+          <v-btn class="primary noupper" large flat @click="dialog = false">Перезвоните мне</v-btn>
           </v-card-actions>
         </v-card>
       <v-btn round flat class="primary noupper" slot="activator">

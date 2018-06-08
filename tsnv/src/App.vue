@@ -9,16 +9,16 @@
     <v-list>
       <img src="/static/tsn-logo-b.svg" alt="logo" class="ml-2">
       <v-divider></v-divider>
-      <span class="p">
-        <v-icon left class="secondary--text">phone</v-icon>
-        (812) 335-86-61
-      </span>
-      <span class="p">
+      <span class="likebutton mx-2">
         <v-icon left class="secondary--text">email</v-icon>
         tsnv@bk.ru
       </span>
+      <span class="likebutton mx-2">
+        <v-icon left class="secondary--text">phone</v-icon>
+        (812) 335-86-61
+      </span>
       <CallbackForm></CallbackForm>
-      <sVimpelForm class="px-1"></sVimpelForm>
+      <VimpelForm small class="px-1"></VimpelForm>
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -54,30 +54,30 @@
     </v-list>
     </v-navigation-drawer>
     <v-toolbar class="primary" light dense>
-      <v-toolbar-title class="secondary--text"><img src="/static/tsn-logo.svg" alt="logo">
+      <v-toolbar-title class="secondary--text">
+      <img src="/static/tsn-logo.svg" alt="logo">
       </v-toolbar-title>
-      <v-text-field
-        class="ml-4 white--text hidden-sm-and-down"
+      <v-text-field 
+        class="mx-2"
+        color="amber darken-1"
         clearable
         append-icon="search"
         label="Поиск..."
-        solo
         dark
-        flat
+        solo
       ></v-text-field>
-      <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <span class="p">
-        <v-icon left class="secondary--text">phone</v-icon>
-        (812) 335-86-61
-        </span>
-        <span class="p">
+        <span class="likebutton">
         <v-icon left class="secondary--text">email</v-icon>
         tsnv@bk.ru
         </span>
-        <CallbackForm class="p"></CallbackForm>
+        <span class="likebutton">
+        <v-icon left class="secondary--text">phone</v-icon>
+        (812) 335-86-61
+        </span>
+        <CallbackForm class="likebutton"></CallbackForm>
       </v-toolbar-items>
-      <v-toolbar-side-icon class="secondary hidden-md-and-up" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-tabs 
         class="hidden-sm-and-down" 
         centered
@@ -100,7 +100,7 @@
         <v-layout row wrap>
           <v-flex  xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <nav>
-            <h2 class="primary mb-2">Популярная продукция</h2>
+            <h2 class="primary mb-2">Наша продукция</h2>
               <v-text-field 
                 placeholder="Выбор по названию"
                 append-icon="search"
@@ -195,6 +195,8 @@
                   </v-list-tile-content>
                 </v-list-tile>
                 <v-divider inset></v-divider>
+                <v-spacer></v-spacer>
+                <v-btn flat left color="orange">Все отзывы</v-btn>
               </v-list>
             </nav>
           </v-flex>
@@ -258,14 +260,13 @@
 
 <script>
 import VimpelForm from '@/components/order_forms/VimpelForm.vue'
-import sVimpelForm from '@/components/order_forms/sVimpelForm.vue'
 import CallbackForm from '@/components/order_forms/CallbackForm.vue'
 import catalog from '@/components/catalog.vue'
 import news from '@/components/news.vue'
 import reviews from '@/components/reviews.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, sVimpelForm, CallbackForm, catalog, news, reviews },
+  components: { VimpelForm, CallbackForm, catalog, news, reviews },
   data () {
     return {
       drawer: false,
@@ -317,11 +318,11 @@ export default {
 </script>
 
 <style scoped>
-.p{
+.likebutton {
   display: inline-block; 
   color: #fff; 
   background-color: #060084; 
-  margin: 8px 0; padding: 4px 16px;
+  margin: 4px 0; padding: 8px;
   border-radius: 28px;
 }
 

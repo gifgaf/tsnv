@@ -11,7 +11,7 @@
               class="in"
               :items="products"
               v-model="a1"
-              label="Заказать"
+              label="Заказать: Вымпел"
               solo
               combobox
               full-width="true"
@@ -110,7 +110,6 @@
             label="Прикрепить файл макета"
             hint="ваш макет"
             v-model="vimpelfile"
-            multiple
             prepend-icon="attach_file"
             ></v-text-field>
           </v-flex>
@@ -145,7 +144,7 @@
           </v-flex>
           <v-flex xs12>
             <v-text-field
-            label="Прикрепить реквизиты"
+            label="Добавить реквизиты"
             hint="ваши реквизиты" 
             v-model="vimpeldummy"
             ></v-text-field>
@@ -230,7 +229,7 @@
         <v-btn class="primary noupper" large flat @click="dialog = false">Заказать</v-btn>
       </v-card-actions>
     </v-card>
-    <v-btn round block large dark class="noupper px-2" color="success" slot="activator">Заказать футболки с лого</v-btn>
+    <v-btn round block dark class="noupper px-2" color="success" slot="activator">Заказать</v-btn>
   </v-dialog>
 </template>
 

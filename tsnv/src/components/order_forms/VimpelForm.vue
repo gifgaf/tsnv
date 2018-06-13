@@ -1,12 +1,12 @@
 <template>
   <v-dialog v-model="dialog" origin="top left" max-width="800px">
+    <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
+      <v-icon>close</v-icon>
+    </v-btn>
     <v-card>
       <v-container grid-list-lg>
         <v-layout wrap>
-          <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
-            <v-icon>close</v-icon>
-          </v-btn>
-          <v-flex xs12 class="mt-5 mb-3">
+          <v-flex xs12 class="mt-0 mb-3">
             <v-select
               class="in"
               :items="products"
@@ -206,21 +206,13 @@
               v-model="terms"
               color="green"
             >
-              <div slot="label" @click.stop="">
+              <div slot="label" @click.stop="" class="terms">
                 Do you accept the
                 <a href="javascript:;" @click.stop="terms = true">terms</a>
                 and
                 <a href="javascript:;" @click.stop="conditions = true">conditions?</a>
               </div>
             </v-checkbox>
-          </v-flex>
-          <v-flex xs12>
-            <v-checkbox
-              color="success"
-              v-model="terms"
-              label='Согласен(-на) на обработку персональных данных'
-              :rules="[rules.required]"
-            ></v-checkbox>
           </v-flex>
         </v-layout>
       </v-container>
@@ -316,6 +308,7 @@ export default {
 
 .icon{font-size: 32px!important;}
 .formtitle.label{font-size: 24px!important;}
+.terms{ font-size: 14px!important; }
 
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
 .in {border-bottom: 1px solid #060084; background-color: #ECEFF1!important;}

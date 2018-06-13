@@ -1,11 +1,11 @@
 <template>
     <v-dialog v-model="dialog" origin="top left" max-width="800px">
+        <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
+          <v-icon>close</v-icon>
+        </v-btn>
         <v-card>
           <v-container grid-list-lg>
             <v-layout wrap>
-              <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
-                <v-icon>close</v-icon>
-              </v-btn>
               <v-flex xs12 text-xs-center class="my-4">
                 <h3>Оставить отзыв</h3>
               </v-flex>

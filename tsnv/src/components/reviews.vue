@@ -52,10 +52,10 @@
     </v-flex>
     <!-- if img.width > 1200 => fullscreen???-->
     <v-dialog v-model="picview" fullscreen>
+      <v-btn fab icon small @click.native="picview = false" class="close_icon secondary">
+        <v-icon color="black">close</v-icon>
+      </v-btn>
       <div class="rel">
-        <v-btn fab icon small @click.native="picview = false" class="close_icon secondary">
-          <v-icon color="black">close</v-icon>
-        </v-btn>
         <v-btn fab icon small class="forward-icon secondary">
           <v-icon color="black">arrow_forward_ios</v-icon>
         </v-btn>
@@ -63,7 +63,7 @@
           <v-icon color="black">arrow_back_ios</v-icon>
         </v-btn>
         <v-card-media
-          src="/static/reviews/sskelet.jpg"
+          src="/static/reviews/sskelett.jpg"
           height="100vh"
           @click.stop="picview = true"
           auto
@@ -122,7 +122,7 @@ export default {
 <style scoped>
 .icon{font-size: 32px!important;}
 .centere{ justify-content: center;}
-.close_icon{ position: absolute; right: 1%; top:1%; z-index: 1;}
+.close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
 .back-icon{ position: absolute; left: 1%; top:50%; z-index: 1; text-align: center;}
 .forward-icon{position: absolute; right: 1%; top:50%; z-index: 1; }
 .social-icon{position: absolute; right: 50%; bottom:1%; z-index: 1; padding: 0;}

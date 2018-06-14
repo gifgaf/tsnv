@@ -1,6 +1,6 @@
 <template>
   <v-dialog v-model="dialog" origin="top left" max-width="800px">
-    <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
+    <v-btn fab icon small @click.native="dialog = false" class="close_icon secondary black--text">
       <v-icon>close</v-icon>
     </v-btn>
     <v-card>
@@ -85,12 +85,12 @@
               v-model="vimpelshape"
             >
               <template slot="selection" slot-scope="data">
-                  <v-list-tile-content>
-                    <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
-                  </v-list-tile-content>
-                  <v-list-tile-action>
-                    <v-icon> {{ data.item.icon }} </v-icon>
-                  </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
+                </v-list-tile-content>
+                <v-list-tile-action>
+                  <v-icon> {{ data.item.icon }} </v-icon>
+                </v-list-tile-action>
               </template>
               <template slot="item" slot-scope="data">
                 <template>
@@ -164,10 +164,11 @@
             v-model="vimpeladress"
             ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12>
             <v-text-field
             label="Ваше имя"
-            required 
+            required
+            prepend-icon="person"
             hint="Ваше имя"
             v-model="title"
             :rules="[rules.required]"
@@ -177,6 +178,7 @@
             <v-text-field 
             label="Email"
             required
+            prepend-icon="email"
             hint="емайл"
             v-model="email"
             :rules="[rules.required, rules.email]"
@@ -194,14 +196,16 @@
             prefix="+7"
           ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12>
             <v-text-field 
               label="Комментарий к заказу" 
               hint="дополнительно"
+              multi-line
+              rows="3"
               v-model="vimpelpaymentdetails"
             ></v-text-field>
           </v-flex>
-          <v-flex xs12>
+          <v-flex xs12 class="mt-3">
             <v-checkbox
               v-model="terms"
               color="green"
@@ -217,7 +221,6 @@
         </v-layout>
       </v-container>
       <v-card-actions class="pb-5">
-        <v-btn class="primary noupper" large flat @click="dialog = false">Отмена</v-btn>
         <v-btn class="primary noupper" large flat @click="dialog = false">Заказать</v-btn>
       </v-card-actions>
     </v-card>
@@ -306,11 +309,10 @@ export default {
   background-color: #060084!important;
 }
 
-.icon{font-size: 32px!important;}
-.formtitle.label{font-size: 24px!important;}
-.terms{ font-size: 14px!important; }
-
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
 .in {border-bottom: 1px solid #060084; background-color: #ECEFF1!important;}
+.icon{font-size: 24px!important;}
+.terms{ font-size: 14px!important; }
+
 
 </style>

@@ -1,6 +1,6 @@
 <template>
     <v-dialog v-model="dialog" origin="top left" max-width="800px">
-        <v-btn fab icon small @click.native="dialog = false" class="close_icon primary">
+        <v-btn fab icon small @click.native="dialog = false" class="close_icon secondary black--text">
           <v-icon>close</v-icon>
         </v-btn>
         <v-card>
@@ -55,6 +55,7 @@
                 <v-text-field
                   required
                   multi-line
+                  rows="3"
                   label="Ваш комментарий" 
                   hint="дополнительно"
                   v-model="vimpelpaymentdetails"
@@ -62,16 +63,21 @@
               </v-flex>
               <v-flex xs12 class="mt-3">
                 <v-checkbox
-                  color="success"
                   v-model="terms"
-                  label='Согласен(-на) на обработку персональных данных'
+                  color="green"
                   :rules="[rules.required]"
-                ></v-checkbox>
+                >
+                  <div slot="label" @click.stop="" class="terms">
+                    Do you accept the
+                    <a href="javascript:;" @click.stop="terms = true">terms</a>
+                    and
+                    <a href="javascript:;" @click.stop="conditions = true">conditions?</a>
+                  </div>
+                </v-checkbox>
               </v-flex>
             </v-layout>
           </v-container>
           <v-card-actions class="pb-5">
-          <v-btn class="primary noupper" large flat @click="dialog = false">Отмена</v-btn>
           <v-btn class="primary noupper" large flat @click="dialog = false">Отправить</v-btn>
           </v-card-actions>
         </v-card>
@@ -84,24 +90,7 @@ export default {
   data () {
     return {
       dialog: false,
-      rules: {
-        required: (value) => !!value || 'Обязательное поле.',
-        email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'
-      }
-    }
-  }
-}
-</script>
-
-<style scoped>
-</style>
-
-<script>
-export default {
-  data () {
-    return {
-      dialog: false,
-      terms: true,
+      terms: false,
       phonemask: '(###) ### - ####',
       datemask: '##/##/2018',
       radioGroup: 1,
@@ -172,7 +161,8 @@ export default {
 .tabs__item {
   background-color: #060084!important;
 }
-.icon{font-size: 32px!important;}
-.close_icon{ position: absolute; right: 0%; top: 0%; z-index: 1; margin: 0;}
+.close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
+.icon{font-size: 24px!important;}
+.terms{ font-size: 14px!important; }
 
 </style>

@@ -18,7 +18,7 @@
         (812) 335-86-61
       </span>
       <CallbackForm></CallbackForm>
-      <VimpelForm small class="px-1"></VimpelForm>
+      <VimpelForm class="px-2"></VimpelForm>
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -86,9 +86,25 @@
         slider-color="primary"
         show-arrows
       >
+        <v-menu offset-y open-on-hover>
+          <v-tab
+            class="noupper"
+            slot="activator"
+            v-for="item in menuItems.slice(0, 1)"
+            :key="item.title"
+            :href="`#tab-${item.title}`"
+          >
+            {{ item.title }}
+          </v-tab>
+          <v-list>
+            <v-list-tile v-for="(item, index) in menuItems.slice(6, 7)" :key="index" @click="">
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+        </v-menu>
         <v-tab
           class="noupper"
-          v-for="item in menuItems.slice(0, 5)"
+          v-for="item in menuItems.slice(1, 5)"
           :key="item.title"
           :href="`#tab-${item.title}`"
         >
@@ -96,6 +112,11 @@
         </v-tab>
       </v-tabs>
     </v-toolbar>
+    <div class="secondary text-xs-center hidden-sm-and-down">
+        <v-btn flat>Link One</v-btn>
+        <v-btn flat>Link Two</v-btn>
+        <v-btn flat>Link Three</v-btn>
+    </div>
     <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex  xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
@@ -126,12 +147,12 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <reviews/>
+              <ReViews/>
               <news/>
               <catalog/>
             </main>
           </v-flex>
-          <v-flex xs12 sm4 md3 lg2 text-xs-center>
+          <v-flex xs12 sm4 md3 lg2 >
             <nav>
               <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>
@@ -263,10 +284,10 @@ import VimpelForm from '@/components/order_forms/VimpelForm.vue'
 import CallbackForm from '@/components/order_forms/CallbackForm.vue'
 import catalog from '@/components/catalog.vue'
 import news from '@/components/news.vue'
-import reviews from '@/components/reviews.vue'
+import ReViews from '@/components/ReViews.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, catalog, news, reviews },
+  components: { VimpelForm, CallbackForm, catalog, news, ReViews },
   data () {
     return {
       drawer: false,
@@ -326,5 +347,8 @@ export default {
   border-radius: 28px;
 }
 
+.toolbar__content{
+   justify-content: center;
+}
 
 </style>

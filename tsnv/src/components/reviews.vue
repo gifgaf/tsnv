@@ -48,7 +48,7 @@
       <v-pagination :length="5" v-model="page" circle></v-pagination>
     </v-flex>
     <v-flex xs12 text-xs-center>
-      <ReviewsForm/>
+      <BaseForm/>
     </v-flex>
     <!-- if img.width > 1200 => fullscreen???-->
     <v-dialog v-model="picview" fullscreen>
@@ -81,9 +81,9 @@
 
 </template>
 <script>
-import ReviewsForm from '@/components/order_forms/ReviewsForm.vue'
+import BaseForm from '@/components/order_forms/BaseForm.vue'
 export default {
-  components: { ReviewsForm },
+  components: { BaseForm },
   data: () => ({
     page: 1,
     picview: false,
@@ -120,7 +120,7 @@ export default {
 }
 </script>
 <style scoped>
-.icon{font-size: 32px!important;}
+.icon{font-size: 24px!important;}
 .centere{ justify-content: center;}
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
 .back-icon{ position: absolute; left: 1%; top:50%; z-index: 1; text-align: center;}

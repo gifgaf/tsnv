@@ -53,7 +53,7 @@
       </v-list-tile>
     </v-list>
     </v-navigation-drawer>
-    <v-toolbar class="primary" light dense>
+    <v-toolbar class="primary" light dense flat>
       <v-toolbar-title class="secondary--text">
       <img src="/static/tsn-logo.svg" alt="logo">
       </v-toolbar-title>
@@ -64,6 +64,7 @@
         append-icon="search"
         label="Поиск..."
         dark
+        flat
         solo
       ></v-text-field>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -78,44 +79,20 @@
         <CallbackForm class="likebutton"></CallbackForm>
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-tabs 
-        class="hidden-sm-and-down" 
-        centered
-        color="secondary"
-        slot="extension"
-        slider-color="primary"
-        show-arrows
-      >
+      </v-tabs>
+    </v-toolbar>
+    <div class="topmenu secondary text-xs-center hidden-sm-and-down elevation-3">
         <v-menu offset-y open-on-hover>
-          <v-tab
-            class="noupper"
-            slot="activator"
-            v-for="item in menuItems.slice(0, 1)"
-            :key="item.title"
-            :href="`#tab-${item.title}`"
-          >
-            {{ item.title }}
-          </v-tab>
+          <v-btn slot="activator" flat class="noupper" @click="">О компании <v-icon right>arrow_drop_down</v-icon></v-btn>
           <v-list>
-            <v-list-tile v-for="(item, index) in menuItems.slice(6, 7)" :key="index" @click="">
+            <v-list-tile v-for="(item, index) in menuItems.slice(5, 7)" :key="index" @click="">
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
-        </v-menu>
-        <v-tab
-          class="noupper"
-          v-for="item in menuItems.slice(1, 5)"
-          :key="item.title"
-          :href="`#tab-${item.title}`"
-        >
-        {{ item.title }}
-        </v-tab>
-      </v-tabs>
-    </v-toolbar>
-    <div class="secondary text-xs-center hidden-sm-and-down">
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
-        <v-btn flat>Link Three</v-btn>
+        </v-menu><v-btn flat 
+        class="noupper" 
+        v-for="(item, index) in menuItems.slice(1, 5)" :key="index" @click=""
+        >{{ item.title }}</v-btn>
     </div>
     <v-container grid-list-lg>
         <v-layout row wrap>
@@ -347,8 +324,7 @@ export default {
   border-radius: 28px;
 }
 
-.toolbar__content{
-   justify-content: center;
+.topmenu{
 }
-
+.topmenu .btn{ margin: 0; height: 48px; }
 </style>

@@ -57,10 +57,10 @@
       </v-btn>
       <div class="rel">
         <v-btn fab icon small class="forward-icon secondary">
-          <v-icon color="black">arrow_forward_ios</v-icon>
+          <v-icon color="black">arrow_forward</v-icon>
         </v-btn>
         <v-btn fab icon small class="back-icon secondary">
-          <v-icon color="black">arrow_back_ios</v-icon>
+          <v-icon color="black">arrow_back</v-icon>
         </v-btn>
         <v-card-media
           src="/static/reviews/sskelett.jpg"

@@ -44,9 +44,9 @@
               <v-flex xs12>
                 <v-text-field
                 type="file"
-                label="Прикрепить файл макета"
-                hint="ваш макет"
-                v-model="vimpelfile"
+                label="Прикрепить файл"
+                hint="ваш файл"
+                v-model="file"
                 multiple
                 prepend-icon="attach_file"
                 ></v-text-field>
@@ -111,7 +111,7 @@ export default {
       vimpeladress: null,
       vimpelpayment: null,
       vimpelpaymentdetails: null,
-      vimpelfile: null,
+      file: null,
       rules: {
         required: (value) => !!value || 'Обязательное поле.',
         email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'

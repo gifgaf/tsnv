@@ -48,45 +48,18 @@
       <v-pagination :length="5" v-model="page" circle></v-pagination>
     </v-flex>
     <v-flex xs12 text-xs-center>
-      <BaseForm/>
+      <baseform/>
     </v-flex>
-    <!-- if img.width > 1200 => fullscreen???-->
-    <v-dialog v-model="picview" fullscreen>
-      <v-btn fab icon small @click.native="picview = false" class="close_icon secondary">
-        <v-icon color="black">close</v-icon>
-      </v-btn>
-      <div class="rel">
-        <v-btn fab icon small class="forward-icon secondary">
-          <v-icon color="black">arrow_forward</v-icon>
-        </v-btn>
-        <v-btn fab icon small class="back-icon secondary">
-          <v-icon color="black">arrow_back</v-icon>
-        </v-btn>
-        <v-card-media
-          src="/static/reviews/sskelett.jpg"
-          height="100vh"
-          @click.stop="picview = true"
-          auto
-        >
-        <v-btn class="social-icon primary--text">
-          VK
-        </v-btn>
-        <v-btn class="social-icon primary--text">
-          F
-        </v-btn>
-        </v-card-media>
-      </div>
-    </v-dialog>
   </v-layout>
 
 </template>
 <script>
-import BaseForm from '@/components/order_forms/BaseForm.vue'
+import baseform from '@/components/order_forms/baseform.vue'
+import picview from '@/components/picview.vue'
 export default {
-  components: { BaseForm },
+  components: { baseform, picview },
   data: () => ({
     page: 1,
-    picview: false,
     userreviews: [
       { name: 'Ольга',
         сity: 'Москва',

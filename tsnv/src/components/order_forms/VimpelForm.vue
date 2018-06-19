@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="dialog" origin="top left" max-width="800px">
+  <v-dialog v-model="dialog" origin="top center" max-width="800px">
     <v-btn fab icon small @click.native="dialog = false" class="close_icon secondary black--text">
       <v-icon>close</v-icon>
     </v-btn>

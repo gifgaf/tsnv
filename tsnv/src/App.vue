@@ -17,8 +17,8 @@
         <v-icon left class="secondary--text">phone</v-icon>
         (812) 335-86-61
       </span>
-      <CallbackForm></CallbackForm>
-      <VimpelForm class="px-2"></VimpelForm>
+      <callbackform></callbackform>
+      <vimpelform class="px-2"></vimpelform>
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -76,7 +76,7 @@
         <v-icon left class="secondary--text">phone</v-icon>
         (812) 335-86-61
         </span>
-        <CallbackForm class="likebutton"></CallbackForm>
+        <callbackform class="likebutton"></callbackform>
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-tabs>
@@ -124,14 +124,14 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <ReViews/>
+              <reviews/>
               <news/>
               <catalog/>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >
             <nav>
-              <VimpelForm/>
+              <vimpelform/>
               <h2 class="primary mb-1">Спец-предложения</h2>
                 <v-card class="secondary mb-2">
                   <v-card-media src="./static/special_offer/9maya.png" height="140px">
@@ -257,14 +257,14 @@
 </template>
 
 <script>
-import VimpelForm from '@/components/order_forms/VimpelForm.vue'
-import CallbackForm from '@/components/order_forms/CallbackForm.vue'
+import vimpelform from '@/components/order_forms/vimpelform.vue'
+import callbackform from '@/components/order_forms/callbackform.vue'
 import catalog from '@/components/catalog.vue'
 import news from '@/components/news.vue'
-import ReViews from '@/components/ReViews.vue'
+import reviews from '@/components/reviews.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, catalog, news, ReViews },
+  components: { vimpelform, callbackform, catalog, news, reviews },
   data () {
     return {
       drawer: false,

@@ -1,7 +1,9 @@
 <template>
   <v-layout wrap>
+  <picview/>
     <v-flex xs12 text-xs-center>
       <h1 class="primary--text">Результаты поиска: «бонданки»</h1>
+      <h1 class="primary--text">Слайдер</h1>
       <h1 class="primary--text">Отзывы наших клиентов</h1>
     </v-flex>
     <v-flex xs12
@@ -27,7 +29,7 @@
                 :src="item.src"
                 height="200px"
                 style="cursor: pointer;"
-                @click.stop="picview = true"
+                @click.native.stop = "dialog = true"
               >
               </v-card-media>
             </v-flex>
@@ -38,7 +40,7 @@
           <v-btn icon color="red--text">
             <v-icon>favorite</v-icon>
           </v-btn>
-          <v-btn icon color="primary--text">
+          <v-btn icon color="primary--text" >
             <v-icon>share</v-icon>
           </v-btn>
         </v-card-actions>

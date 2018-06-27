@@ -249,7 +249,9 @@
           </v-flex>
         </v-layout>
          <div class="bottom__footer">
-           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.
+            <br>
+           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.<br>
+           Отказ от ответственности | Политика конфиденциальности | Согласие с рассылкой
          </div>
       </v-container>
     </v-footer>
@@ -269,13 +271,13 @@ export default {
     return {
       drawer: false,
       menuItems: [
-        { icon: '', title: 'О компании' },
-        { icon: '', title: 'Продукция от А до Я' },
-        { icon: '', title: 'Как заказать' },
-        { icon: '', title: 'Требования к макетам' },
-        { icon: '', title: 'Контакты' },
-        { icon: '', title: 'Новости' },
-        { icon: '', title: 'Отзывы' }
+        { icon: 'home', title: 'О компании' },
+        { icon: 'sort_by_alpha', title: 'Продукция от А до Я' },
+        { icon: 'help', title: 'Как заказать' },
+        { icon: 'save_alt', title: 'Требования к макетам' },
+        { icon: 'contacts', title: 'Контакты' },
+        { icon: 'new_releases', title: 'Новости' },
+        { icon: 'rate_review', title: 'Отзывы' }
       ],
       contactItems: [
         { icon: 'email', title: 'tsnv@bk.ru' },

@@ -67,10 +67,10 @@
                   :rules="[rules.required]"
                 >
                   <div slot="label" @click.stop="" class="terms">
-                    Do you accept the
-                    <a href="javascript:;" @click.stop="terms = true">terms</a>
-                    and
-                    <a href="javascript:;" @click.stop="conditions = true">conditions?</a>
+                    Вы согласны с условиями
+                    <a href="javascript:;" @click.stop="terms = true">Конфиденциальности</a>
+                    и
+                    <a href="javascript:;" @click.stop="conditions = true">Правил использования</a>
                   </div>
                 </v-checkbox>
               </v-flex>

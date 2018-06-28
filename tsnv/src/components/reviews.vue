@@ -1,6 +1,5 @@
 <template>
   <v-layout wrap>
-  <picview/>
     <v-flex xs12 text-xs-center>
       <h1 class="primary--text">Результаты поиска: «бонданки»</h1>
       <h1 class="primary--text">Страница товара слайдер btn загрузить макет</h1>
@@ -29,15 +28,16 @@
                 :src="item.src"
                 height="200px"
                 style="cursor: pointer;"
-                @click.native.stop = "dialog = true"
+                @click.stop = "pic_dialog = true"
               >
+                <picview/>
               </v-card-media>
             </v-flex>
           </v-layout>
         </v-container>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn icon color="red--text">
+          <v-btn icon color="red--text" @click.stop="pic_dialog = true" >
             <v-icon>favorite</v-icon>
           </v-btn>
           <v-btn icon color="primary--text" >
@@ -50,7 +50,7 @@
       <v-pagination :length="5" v-model="page" circle></v-pagination>
     </v-flex>
     <v-flex xs12 text-xs-center>
-      <baseform/>
+    <baseform/>
     </v-flex>
   </v-layout>
 

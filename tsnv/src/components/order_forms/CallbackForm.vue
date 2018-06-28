@@ -33,12 +33,12 @@
               v-model="terms"
               color="green"
             >
-              <div slot="label" @click.stop="" class="terms">
-                Do you accept the
-                <a href="javascript:;" @click.stop="terms = true">terms</a>
-                and
-                <a href="javascript:;" @click.stop="conditions = true">conditions?</a>
-              </div>
+            <div slot="label" @click.stop="" class="terms">
+              Вы согласны с условиями
+              <a href="javascript:;" @click.stop="terms = true">Конфиденциальности</a>
+              и
+              <a href="javascript:;" @click.stop="conditions = true">Правил использования</a>
+            </div>
             </v-checkbox>
           </v-flex>
           </v-layout>
@@ -60,7 +60,7 @@ export default {
   data () {
     return {
       dialog: false,
-      terms: true,
+      terms: false,
       title: '',
       phonemask: '(###) ### - ####',
       patronphone: '',

@@ -1,6 +1,6 @@
 <template>
   <!-- if img.width > 1200 => fullscreen???-->
-  <v-dialog v-model="dialog" fullscreen>
+  <v-dialog v-model="dialog">
     <v-btn fab icon small @click.native="dialog = false" class="close_icon secondary">
       <v-icon color="black">close</v-icon>
     </v-btn>
@@ -32,7 +32,7 @@
 export default {
   data () {
     return {
-      dialog: false
+      dialog: true
     }
   }
 }

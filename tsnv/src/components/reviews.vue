@@ -3,7 +3,7 @@
   <picview/>
     <v-flex xs12 text-xs-center>
       <h1 class="primary--text">Результаты поиска: «бонданки»</h1>
-      <h1 class="primary--text">Слайдер</h1>
+      <h1 class="primary--text">Страница товара слайдер btn загрузить макет</h1>
       <h1 class="primary--text">Отзывы наших клиентов</h1>
     </v-flex>
     <v-flex xs12

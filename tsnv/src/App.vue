@@ -193,8 +193,7 @@
                   </v-list-tile-content>
                 </v-list-tile>
                 <v-divider inset></v-divider>
-                <v-spacer></v-spacer>
-                <v-btn flat left color="orange">Все отзывы</v-btn>
+                <v-btn flat color="orange">Все отзывы</v-btn>
               </v-list>
             </nav>
           </v-flex>

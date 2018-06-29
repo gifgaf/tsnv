@@ -37,7 +37,7 @@
         </v-container>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn icon color="red--text" @click.stop="pic_dialog = true" >
+          <v-btn icon color="red--text">
             <v-icon>favorite</v-icon>
           </v-btn>
           <v-btn icon color="primary--text" >

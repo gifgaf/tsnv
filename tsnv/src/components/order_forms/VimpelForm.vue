@@ -8,7 +8,7 @@
         <v-layout wrap>
           <v-flex xs12 class="mt-0 mb-3">
             <v-select
-              class="in"
+              class="select_title"
               :items="products"
               v-model="a1"
               label="Заказать: Вымпел"
@@ -16,8 +16,7 @@
               combobox
               full-width="true"
               flat
-
-            ></v-select>
+             ></v-select>
           </v-flex>
           <v-flex xs12 sm6 md6>
             <v-select
@@ -85,22 +84,20 @@
               v-model="vimpelshape"
             >
               <template slot="selection" slot-scope="data">
+                <v-list-tile-avatar>
+                  <img :src="data.item.avatar">
+                </v-list-tile-avatar>
                 <v-list-tile-content>
-                  <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
+                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
                 </v-list-tile-content>
-                <v-list-tile-action>
-                  <v-icon> {{ data.item.icon }} </v-icon>
-                </v-list-tile-action>
               </template>
               <template slot="item" slot-scope="data">
-                <template>
-                  <v-list-tile-content>
-                    <v-list-tile-title app> {{ data.item.item }} </v-list-tile-title>
-                  </v-list-tile-content>
-                  <v-list-tile-action>
-                    <v-icon> {{ data.item.icon }} </v-icon>
-                  </v-list-tile-action>
-                </template>
+                <v-list-tile-content>
+                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
+                </v-list-tile-content>                    
+                <v-list-tile-avatar>
+                  <img :src="data.item.avatar">
+                </v-list-tile-avatar>
               </template>
             </v-select>
           </v-flex>
@@ -265,11 +262,15 @@ export default {
       vimpelStitch: ['обстрочка шнуром', 'дополнение кистями в цвет шнура', 'обстрочка шнуром + дополнение кистями (серебро и золото)', 'дополнение бахромой'],
       vimpelPrint: ['Одна сторона', 'Две стороны (+20% к стоимости)'],
       vimpelShape: [
-        {icon: 'flag', item: 'Прямоугольный', avatar: ''},
-        {icon: 'flag', item: 'Пятиугольный1', avatar: ''},
-        {icon: 'flag', item: 'Треугольный', avatar: ''},
-        {icon: 'flag', item: 'Пятиугольный2', avatar: ''},
-        {icon: 'flag', item: 'Прямоугольный', avatar: ''}
+        {icon: 'bookmark', title: 'Прямоугольный', avatar: '/static/vimpel/vf_01.svg'},
+        {icon: 'flag', title: 'Пятиугольный-1', avatar: '/static/vimpel/vf_02.svg'},
+        {icon: 'flag', title: 'Пятиугольный-2', avatar: '/static/vimpel/vf_03.svg'},
+        {icon: 'flag', title: 'Пятиугольный-3', avatar: '/static/vimpel/vf_04.svg'},
+        {icon: 'flag', title: 'Треугольный', avatar: '/static/vimpel/vf_05.svg'},
+        {icon: 'flag', title: 'Закругленный', avatar: '/static/vimpel/vf_06.svg'},
+        {icon: 'flag', title: 'Щит', avatar: '/static/vimpel/vf_07.svg'},
+        {icon: 'flag', title: 'Вырезной', avatar: '/static/vimpel/vf_08.svg'},
+        {icon: 'flag', title: 'Герб', avatar: '/static/vimpel/vf_09.svg'}
       ],
       vimpelFurniture: [
         {icon: 'flag', title: 'золотой', avatar: '/static/vimpel/goldcord.png'},
@@ -310,9 +311,8 @@ export default {
 }
 
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
-.in {border-bottom: 1px solid #060084; background-color: #ECEFF1!important;}
+.select_title {border-bottom: 1px solid #060084; background-color: #ECEFF1!important;}
 .icon{font-size: 24px!important;}
-.terms{ font-size: 14px!important; }
-
+.terms{ font-size: 14px!important;}
 
 </style>

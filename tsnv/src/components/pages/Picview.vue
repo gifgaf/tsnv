@@ -13,7 +13,7 @@
     <v-card class="crystal">
     <v-card-media
       src="/static/reviews/flag.jpg"
-      height="72vh"
+      height="75vh"
       contain
       style="cursor: pointer;"
       @click=""

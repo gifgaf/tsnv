@@ -52,7 +52,7 @@ main h1
   font-size 30px
   transform scaleX(0.94)
   line-height 1.0
-  margin-top 9px
+  margin 9px 0 9px 0
 main h2
   font-size 27px 
   font-weight 500
@@ -84,6 +84,39 @@ input[type = file]
 
 .noshadow
   box-shadow none!important
+
+.tsn_price
+  width 100%
+  font-size 90%
+  vertical-align middle
+  border-collapse collapse
+  background hsla(0,100%,100%,1.0)
+.tsn_price caption
+  font-size 20px 
+  font-weight 600
+  margin 8px 0
+.tsn_price caption span
+  white-space nowrap
+.tsn_price_from
+  font-size 12px 
+  font-weight 500
+  text-align right
+  color hsla(0,0%,50%,1.0)
+  background hsla(50,100%,97%,1.0)
+  margin 8px 0 0
+  padding 0 8px 0 0
+  border-top 1px solid #d7d7de
+.tsn_price thead
+  color white
+  background #060084
+.tsn_price th, td
+  padding 6px
+.tsn_price tr:not(:first-child)
+  border-top 1px solid #d7d7de
+.tb-container
+  width: 100%;
+  overflow-y: auto;
+  _overflow: auto;
 
 @media only screen and (min-width 960px){
     .container{

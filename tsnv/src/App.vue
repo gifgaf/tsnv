@@ -17,8 +17,8 @@
         <v-icon left class="secondary--text">phone</v-icon>
         (812) 335-86-61
       </span>
-      <callbackform></callbackform>
-      <vimpelform class="px-2"></vimpelform>
+      <CallbackForm></CallbackForm>
+      <VimpelForm class="px-2"></VimpelForm>
       <v-divider></v-divider>
       <v-list-tile ripple v-for="item in menuItems" :key="item.title" @click="">
         <v-list-tile-action>
@@ -76,7 +76,7 @@
         <v-icon left class="secondary--text">phone</v-icon>
         (812) 335-86-61
         </span>
-        <callbackform class="likebutton"></callbackform>
+        <CallbackForm class="likebutton"></CallbackForm>
       </v-toolbar-items>
       <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-tabs>
@@ -112,26 +112,28 @@
                 ref="search"
                 >
               </v-text-field>
-            <v-list class="transparent">
-              <v-list-tile 
-                ripple dense 
-                class="secondary mb-1 elevation-1" 
-                v-for="item in popmenuItems" :key="item.title" @click="">
-                <v-list-tile-content >{{ item.title }}</v-list-tile-content>
-              </v-list-tile>
-            </v-list>
+              <v-list class="transparent">
+                <v-list-tile 
+                  ripple dense 
+                  class="secondary mb-1 elevation-1" 
+                  v-for="item in popmenuItems" :key="item.title" @click="">
+                  <v-list-tile-content >{{ item.title }}</v-list-tile-content>
+                </v-list-tile>
+              </v-list>
             </nav>
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <reviews/>
-              <news/>
-              <catalog/>
+              <Vimpels/>
+              <Reviews/>
+              <News/>
+              <Catalog/>
+              <SearchResult/>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >
             <nav>
-              <vimpelform/>
+              <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>
                 <v-card class="secondary mb-2">
                   <v-card-media src="./static/special_offer/9maya.png" height="140px">
@@ -250,7 +252,7 @@
          <div class="bottom__footer">
             <br>
            &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.<br>
-           Отказ от ответственности | Политика конфиденциальности | Согласие с рассылкой
+           Отказ от ответственности | Политика конфиденциальности
          </div>
       </v-container>
     </v-footer>
@@ -258,14 +260,16 @@
 </template>
 
 <script>
-import vimpelform from '@/components/order_forms/vimpelform.vue'
-import callbackform from '@/components/order_forms/callbackform.vue'
-import catalog from '@/components/catalog.vue'
-import news from '@/components/news.vue'
-import reviews from '@/components/reviews.vue'
+import VimpelForm from '@/components/order_forms/VimpelForm.vue'
+import CallbackForm from '@/components/order_forms/CallbackForm.vue'
+import Catalog from '@/components/pages/Catalog.vue'
+import News from '@/components/pages/News.vue'
+import Reviews from '@/components/pages/Reviews.vue'
+import Vimpels from '@/components/pages/Vimpels.vue'
+import SearchResult from '@/components/pages/SearchResult.vue'
 export default {
   name: 'app',
-  components: { vimpelform, callbackform, catalog, news, reviews },
+  components: { VimpelForm, CallbackForm, Catalog, News, Reviews, Vimpels, SearchResult },
   data () {
     return {
       drawer: false,
@@ -325,7 +329,5 @@ export default {
   border-radius: 28px;
 }
 
-.topmenu{
-}
 .topmenu .btn{ margin: 0; height: 48px; }
 </style>

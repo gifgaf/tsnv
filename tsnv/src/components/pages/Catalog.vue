@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12 text-xs-center mb-3>
-      <h1 class="primary--text  mb-2">Продукция от А до Я</h1>
+      <h1 class="primary--text">Продукция от А до Я</h1>
       <v-btn
       fab small light color="secondary" class='mx-0 my-0 noupper'
       v-for="item in abc"

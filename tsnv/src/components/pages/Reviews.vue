@@ -1,8 +1,6 @@
 <template>
   <v-layout wrap>
     <v-flex xs12 text-xs-center>
-      <h1 class="primary--text">Результаты поиска: «бонданки»</h1>
-      <h1 class="primary--text">Страница товара слайдер btn загрузить макет</h1>
       <h1 class="primary--text">Отзывы наших клиентов</h1>
     </v-flex>
     <v-flex xs12
@@ -30,36 +28,26 @@
                 style="cursor: pointer;"
                 @click.stop = "pic_dialog = true"
               >
-                <picview/>
+                <Picview/>
               </v-card-media>
             </v-flex>
           </v-layout>
         </v-container>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn icon color="red--text">
-            <v-icon>favorite</v-icon>
-          </v-btn>
-          <v-btn icon color="primary--text" >
-            <v-icon>share</v-icon>
-          </v-btn>
-        </v-card-actions>
       </v-card>
     </v-flex>
     <v-flex xs12 text-xs-center>
       <v-pagination :length="5" v-model="page" circle></v-pagination>
     </v-flex>
     <v-flex xs12 text-xs-center>
-    <baseform/>
+    <BaseForm/>
     </v-flex>
   </v-layout>
-
 </template>
 <script>
-import baseform from '@/components/order_forms/baseform.vue'
-import picview from '@/components/picview.vue'
+import BaseForm from '@/components/order_forms/BaseForm.vue'
+import Picview from '@/components/pages/Picview.vue'
 export default {
-  components: { baseform, picview },
+  components: { BaseForm, Picview },
   data: () => ({
     page: 1,
     userreviews: [

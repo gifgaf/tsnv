@@ -1,10 +1,9 @@
 <template>
-  <v-card>
     <div class="tb-container">
       <table class="tsn_price">
         <caption>Cигнальные, светоотражающие жилеты с&nbsp;логотипом <span>(руб. за 1 шт.)</span>
         </caption>
-        <thead dark>
+        <thead>
           <tr>
             <th colspan="2" rowspan="2">Модель</th>
             <th rowspan="2">Место нанесения логотипа</th>
@@ -101,7 +100,6 @@
       </table>
       <p class="tsn_price_from">Цены от 10 марта 2018</p>
     </div>
-  </v-card>
 </template>
 
 <script>
@@ -114,4 +112,5 @@ export default {
 </script>
 
 <style scoped>
+  .crystal{background-color:transparent;}
 </style>

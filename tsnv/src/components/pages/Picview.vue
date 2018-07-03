@@ -12,7 +12,7 @@
     </v-btn>
     <v-card class="crystal">
     <v-card-media
-      src="/static/reviews/flag.jpg"
+      src="/static/reviews/sskelet.jpg"
       height="75vh"
       contain
       style="cursor: pointer;"

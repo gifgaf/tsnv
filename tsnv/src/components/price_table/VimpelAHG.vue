@@ -1,8 +1,10 @@
 <template>
+  <v-layout wrap>
+    <v-flex xs12 text-xs-center>
+      <h3 text-xs-center>Cигнальные, светоотражающие жилеты с&nbsp;логотипом <span>(руб. за 1 шт.)</span></h3>
+    </v-flex>
     <div class="tb-container">
       <table class="tsn_price">
-        <caption>Cигнальные, светоотражающие жилеты с&nbsp;логотипом <span>(руб. за 1 шт.)</span>
-        </caption>
         <thead>
           <tr>
             <th colspan="2" rowspan="2">Модель</th>
@@ -100,6 +102,7 @@
       </table>
       <p class="tsn_price_from">Цены от 10 марта 2018</p>
     </div>
+  </v-layout>
 </template>
 
 <script>

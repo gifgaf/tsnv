@@ -19,7 +19,12 @@
                 contain
               ></v-card-media>
             </v-flex>
-            <v-flex xs12 md8>
+            <v-flex xs12 md8 v-if="item.picsrc">
+              <v-card-text>
+                {{ item.description }}
+              </v-card-text>
+            </v-flex>
+            <v-flex xs12 v-else>
               <v-card-text>
                 {{ item.description }}
               </v-card-text>

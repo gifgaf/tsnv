@@ -201,9 +201,9 @@
           </v-flex>
         </v-layout>
     </v-container>
-    <back-to-top visibleoffset="200"><v-icon >arrow_upward</v-icon></back-to-top>
+    <back-to-top visibleoffset="600"><v-icon >arrow_upward</v-icon></back-to-top>
     <v-footer height="100%" class='primary'>
-      <v-container grid-list-lg>
+      <v-container grid-list-lg justify-center>
         <v-layout row wrap>
           <v-flex xs12 sm3>
             <v-card dark flat class="transparent pl-5 black08">
@@ -250,13 +250,12 @@
             </v-card>
           </v-flex>
         </v-layout>
-         <div class="bottom__footer">
-            <br>
-           &copy;1992-2018 Компания ТСН. При копировании материалов сайта, активная ссылка на www.tsnv.ru обязательна.<br>
-           Отказ от ответственности | Политика конфиденциальности
-         </div>
       </v-container>
     </v-footer>
+    <div class="bottom__footer">
+      &copy;1992-2018 Компания ТСН. При копировании материалов сайта, актиссылка на www.tsnv.ru обязательна.<br>
+      Условия использования | Политика конфиденциальности
+    </div>
   </v-app>
 </template>
 
@@ -308,7 +307,7 @@ export default {
         { icon: '', title: 'Широкоформатная печать на ткани', description: 'Изготовление штор, занавесов, ролл штор с фото, покрывал, скатертей...' },
         { icon: '', title: 'Широкоформатная печать', description: 'Фотообои на стену, баннеры, плакаты, фотопечать на ткани.' },
         { icon: '', title: 'Изготовление флагштоков', description: 'Флагштоков мобильных, флагштоков-мачт, фасадных, настольных, автомобильных и офисных.' },
-        { icon: '', title: 'Корпоративные и праздничные подарки', description: 'Футболки, подушки, пазлы, тарелки, кружки, подарочные мешочки, календари на ткани, сумки.' },
+        { icon: '', title: 'Корпоративные подарки', description: 'Футболки, подушки, пазлы, тарелки, кружки, подарочные мешочки, календари на ткани, сумки.' },
         { icon: '', title: 'Печать наклеек', description: 'На шампанское, на упаковку, на продукцию.' },
         { icon: '', title: 'Наградная продукция', description: 'Ленты мисс, ленты выпускника, вымпелы.' },
         { icon: '', title: 'Для спорта и тимбилдинга', description: 'Стартовые майки, спортивные номера, волчатники, нанесение на спортивную форму.' },
@@ -331,4 +330,7 @@ export default {
 }
 
 .topmenu .btn{ margin: 0; height: 48px; }
+
+.footer_bg{
+  background: url(/static/footer_fon.jpg) }
 </style>

@@ -9,8 +9,10 @@ import 'vue-awesome-swiper/dist/swiper.min.css'
 import './stylus/main.styl'
 import 'vuetify/dist/vuetify.min.css'
 import 'babel-polyfill'
+import BackToTop from 'vue-backtotop'
 
 Vue.use(VueAwesomeSwiper /*, { default global options } */)
+Vue.use(BackToTop)
 
 Vue.use(Vuetify, { theme: {
   primary: '#060084',

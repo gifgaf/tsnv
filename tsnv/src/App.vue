@@ -201,6 +201,7 @@
           </v-flex>
         </v-layout>
     </v-container>
+    <back-to-top visibleoffset="200"><v-icon >arrow_upward</v-icon></back-to-top>
     <v-footer height="100%" class='primary'>
       <v-container grid-list-lg>
         <v-layout row wrap>

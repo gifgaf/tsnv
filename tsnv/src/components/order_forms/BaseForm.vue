@@ -1,7 +1,7 @@
 <template>
     <v-dialog v-model="dialog" origin="top left" max-width="800px">
-        <v-btn fab icon small @click.native="dialog = false" class="close_icon secondary black--text">
-          <v-icon>close</v-icon>
+        <v-btn fab icon small @click.native="dialog = false" class="secondary close_icon black--text">
+          <v-icon size="24px">close</v-icon>
         </v-btn>
         <v-card>
           <v-container grid-list-lg>
@@ -111,7 +111,6 @@ export default {
 .card__actions {justify-content: center;}
 .container.grid-list-lg .layout .flex{padding: 0 8px;}
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
-.icon{font-size: 24px!important;}
 .terms{ font-size: 14px!important; }
 
 </style>

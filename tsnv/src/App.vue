@@ -202,60 +202,7 @@
         </v-layout>
     </v-container>
     <back-to-top visibleoffset="600"><v-icon >arrow_upward</v-icon></back-to-top>
-    <v-footer height="100%" class='primary'>
-      <v-container grid-list-lg justify-center>
-        <v-layout row wrap>
-          <v-flex xs12 sm3>
-            <v-card dark flat class="transparent pl-5 black08">
-              <ul>
-                <li v-for="item in menuItems" :key="item.title" @click="">
-                {{item.title}}
-                </li>
-              </ul>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm3>
-            <v-card dark flat class="transparent pl-5">
-              <ul>
-                <li v-for="item in partItems.slice(0,6)" :key="item.title" @click="">
-                {{item.title}}
-                </li>
-              </ul>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm3>
-            <v-card dark flat class="transparent pl-5 black08">
-              <ul>
-                <li v-for="item in partItems.slice(6,12)" :key="item.title" @click="">
-                {{item.title}}
-                </li>
-              </ul>
-            </v-card>
-          </v-flex>
-          <v-flex xs12 sm3>
-            <v-card flat class="transparent pl-5">
-              <v-text-field 
-                placeholder="Поиск"
-                append-icon="search"
-                id="search"
-                flat
-                solo
-                clearable
-                key="search"
-                v-model="search"
-                ref="search"
-                >
-              </v-text-field>
-              <v-btn block color="secondary noupper">Заказать звонок</v-btn>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-footer>
-    <div class="bottom__footer">
-      &copy;1992-2018 Компания ТСН. При копировании материалов сайта, актиссылка на www.tsnv.ru обязательна.<br>
-      Условия использования | Политика конфиденциальности
-    </div>
+    <Footer/>
   </v-app>
 </template>
 
@@ -267,9 +214,10 @@ import News from '@/components/pages/News.vue'
 import Reviews from '@/components/pages/Reviews.vue'
 import Vimpels from '@/components/pages/Vimpels.vue'
 import SearchResult from '@/components/pages/SearchResult.vue'
+import Footer from '@/components/Footer.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, Catalog, News, Reviews, Vimpels, SearchResult },
+  components: { VimpelForm, CallbackForm, Catalog, News, Reviews, Vimpels, SearchResult, Footer },
   data () {
     return {
       drawer: false,
@@ -331,6 +279,4 @@ export default {
 
 .topmenu .btn{ margin: 0; height: 48px; }
 
-.footer_bg{
-  background: url(/static/footer_fon.jpg) }
 </style>

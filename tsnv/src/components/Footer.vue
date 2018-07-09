@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-footer dark height="100%" class='primary'>
+  <v-footer height="100%" class='primary'>
     <v-container grid-list-md class="footer_maxsize">
       <v-layout row wrap>
         <v-flex  xs12 sm9 class="secondary--text">
@@ -22,18 +22,35 @@
           >
           </v-text-field>
         </v-flex>
+        <v-flex xs12 sm3>
+            <v-list dark class='primary'>
+              <v-list-group
+                v-for="item in menuItems"
+                :key="item.title"
+                :prepend-icon="item.icon"
+                no-action
+              >
+                <v-list-tile slot="activator">
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile v-for="subItem in item.items" :key="subItem.title" @click="">
+                  <v-list-tile-content>
+                    <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                  </v-list-tile-content>
+                  <v-list-tile-action>
+                    <v-icon>{{ subItem.action }}</v-icon>
+                  </v-list-tile-action>
+                </v-list-tile>
+              </v-list-group>
+            </v-list>
+          </v-card>
+        </v-flex>
+
       </v-layout>
       <v-layout row wrap>
-        <v-flex  xs12 sm3>
-          <v-card dark flat class="transparent">
-              <ul>
-                <li v-for="item in menuItems" :key="item.title">
-                {{item.title}}
-                </li>
-              </ul>
-            </v-card>
-        </v-flex>
-        <v-flex  xs12 sm3>
+        <v-flex xs12 sm3>
         блаблабла04
         </v-flex>
         <v-flex  xs12 sm3>
@@ -57,13 +74,25 @@ export default {
   data () {
     return {
       menuItems: [
-        { icon: 'home', title: 'О компании' },
-        { icon: 'sort_by_alpha', title: 'Продукция от А до Я' },
-        { icon: 'help', title: 'Как заказать' },
-        { icon: 'save_alt', title: 'Требования к макетам' },
-        { icon: 'contacts', title: 'Контакты' },
-        { icon: 'new_releases', title: 'Новости' },
-        { icon: 'rate_review', title: 'Отзывы' }
+        { icon: 'home',
+          title: 'О компании',
+          items: [
+            { title: 'Новости' },
+            { title: 'Отзывы' }
+          ]
+        },
+        { icon: 'sort_by_alpha',
+          title: 'Продукция от А до Я'
+        },
+        { icon: 'help',
+          title: 'Как заказать'
+        },
+        { icon: 'save_alt',
+          title: 'Требования к макетам'
+        },
+        { icon: 'contacts',
+          title: 'Контакты'
+        }
       ]
     }
   }

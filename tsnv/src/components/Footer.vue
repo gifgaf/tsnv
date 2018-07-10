@@ -4,6 +4,7 @@
     <v-container grid-list-md class="footer_maxsize">
       <v-layout row wrap>
         <v-flex xs12 sm9 class="white--text">
+        <img src="/static/tsn-logo.svg" alt="logo" class="mr-2"><br>
         <strong>(812) 335-86-61</strong>, Россия, 191014,  Санкт-Петербург, ул. Литовская, 8<br class='hidden-xs-and-up'>
         <strong>Время работы:</strong> пн-пт, с 10:00 до 18:00 (без обеда)<br>
         <strong>Выдача заказов:</strong> с 09:00 до 19:00
@@ -45,7 +46,7 @@
             </template>
           </v-list>
         </v-flex>
-        <v-flex xs12 sm3>
+        <v-flex xs12 sm3 class="hidden-xs-only">
           <v-list dark class="transparent">
             <template v-for="(item, index) in partItems.slice(0, 4)">
               <v-list-tile
@@ -63,7 +64,7 @@
             </template>
           </v-list>
         </v-flex>
-        <v-flex xs12 sm3>
+        <v-flex xs12 sm3 class="hidden-xs-only">
           <v-list dark class="transparent">
             <template v-for="(item, index) in partItems.slice(4, 8)">
               <v-list-tile
@@ -81,7 +82,7 @@
             </template>
           </v-list>
         </v-flex>
-        <v-flex xs12 sm3>
+        <v-flex xs12 sm3 class="hidden-xs-only">
           <v-list dark class="transparent">
             <template v-for="(item, index) in partItems.slice(8, 12)">
               <v-list-tile

@@ -57,7 +57,7 @@
       <v-toolbar-title class="secondary--text">
       <img src="/static/tsn-logo.svg" alt="logo">
       </v-toolbar-title>
-      <v-text-field 
+      <!--<v-text-field 
         class="mx-2"
         color="amber darken-1"
         clearable
@@ -66,7 +66,11 @@
         dark
         flat
         solo
-      ></v-text-field>
+      ></v-text-field>-->
+      <v-spacer></v-spacer>
+      <v-btn icon class="white--text">
+        <v-icon>search</v-icon>
+      </v-btn>
       <v-toolbar-items class="hidden-sm-and-down">
         <span class="likebutton">
         <v-icon left class="secondary--text">email</v-icon>
@@ -83,7 +87,7 @@
     </v-toolbar>
     <div class="topmenu secondary text-xs-center hidden-sm-and-down elevation-3">
         <v-menu offset-y open-on-hover>
-          <v-btn slot="activator" flat class="noupper" @click="">О компании <v-icon right>arrow_drop_down</v-icon></v-btn>
+          <v-btn slot="activator" flat class="noupper" @click=""> О компании <v-icon right>arrow_drop_down</v-icon></v-btn>
           <v-list>
             <v-list-tile v-for="(item, index) in menuItems.slice(5, 7)" :key="index" @click="">
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>

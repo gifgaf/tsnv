@@ -26,31 +26,43 @@
         </v-list-tile-action>
         <v-list-tile-content>{{ item.title }}</v-list-tile-content>
       </v-list-tile>
-      <v-list-tile>
-        <v-text-field 
-          placeholder="Выбор по названию"
-          append-icon="search"
-          id="search"
-          solo
-          flat
-          clearable
-          single-line
-          key="search"
-          v-model="search"
-          ref="search"
-          >
-        </v-text-field>
-      </v-list-tile>
-      <v-list-tile 
-        ripple 
-        v-for="item in popmenuItems" 
-        :key="item.title" 
-        @click="">
-        <v-list-tile-action>
-          <v-icon left>{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>{{ item.title }}</v-list-tile-content>
-      </v-list-tile>
+    </v-list>
+    <v-text-field 
+      placeholder="Выбор по названию"
+      append-icon="search"
+      id="search"
+      clearable
+      solo
+      flat
+      single-line
+      key="search"
+      v-model="search"
+      ref="search"
+      >
+    </v-text-field>
+    <v-list class="transparent">
+      <v-list-group
+        v-for="item in popmenuItems"
+        v-model="item.active"
+        :key="item.title"
+        :prepend-icon="item.icon"
+        :append-icon="item.append"
+        ripple
+      >
+        <v-list-tile slot="activator">
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile v-for="subItem in item.items" :key="subItem.title" @click="">
+          <v-list-tile-content>
+            <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+          </v-list-tile-content>
+          <v-list-tile-action>
+            <v-icon>{{ subItem.icon }}</v-icon>
+          </v-list-tile-action>
+        </v-list-tile>
+      </v-list-group>
     </v-list>
     </v-navigation-drawer>
     <v-toolbar class="primary" light dense flat>
@@ -101,38 +113,15 @@
     <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex  xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
-            <nav>
-            <h2 class="primary mb-2">Наша продукция</h2>
-              <v-text-field 
-                placeholder="Выбор по названию"
-                append-icon="search"
-                id="search"
-                clearable
-                solo
-                flat
-                single-line
-                key="search"
-                v-model="search"
-                ref="search"
-                >
-              </v-text-field>
-              <v-list class="transparent">
-                <v-list-tile 
-                  ripple dense 
-                  class="secondary mb-1 elevation-1" 
-                  v-for="item in popmenuItems" :key="item.title" @click="">
-                  <v-list-tile-content >{{ item.title }}</v-list-tile-content>
-                </v-list-tile>
-              </v-list>
-            </nav>
+            <Goods/>
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
+              <SearchResult/>
               <Vimpels/>
               <Reviews/>
               <News/>
               <Catalog/>
-              <SearchResult/>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >
@@ -213,6 +202,7 @@
 <script>
 import VimpelForm from '@/components/order_forms/VimpelForm.vue'
 import CallbackForm from '@/components/order_forms/CallbackForm.vue'
+import Goods from '@/components/Goods.vue'
 import Catalog from '@/components/pages/Catalog.vue'
 import News from '@/components/pages/News.vue'
 import Reviews from '@/components/pages/Reviews.vue'
@@ -221,7 +211,7 @@ import SearchResult from '@/components/pages/SearchResult.vue'
 import Footer from '@/components/Footer.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, Catalog, News, Reviews, Vimpels, SearchResult, Footer },
+  components: { VimpelForm, CallbackForm, Goods, Catalog, News, Reviews, Vimpels, SearchResult, Footer },
   data () {
     return {
       drawer: false,
@@ -234,23 +224,60 @@ export default {
         { icon: 'new_releases', title: 'Новости' },
         { icon: 'rate_review', title: 'Отзывы' }
       ],
+      popmenuItems: [
+        {
+          icon: 'local_activity',
+          title: 'Банданы',
+          append: ''
+        },
+        {
+          icon: 'local_activity',
+          title: 'Баннеры',
+          append: ''
+        },
+        {
+          icon: 'local_activity',
+          title: 'Флаги',
+          items: [
+            { title: 'Флаги с логотипом на флагштоки' },
+            { title: 'Ручные флаги' },
+            { title: 'Флаги на стену' },
+            { title: 'Настольные флаги' },
+            { title: 'Знамена' },
+            { title: 'Мобильные флаги' },
+            { title: 'Флажки на палочке' },
+            { title: 'Гирлянды из флагов' },
+            { title: 'Флаги расцвечивания ' }
+          ]
+        },
+        {
+          icon: 'local_activity',
+          title: 'Футболки с логотипом',
+          append: ''
+        },
+        {
+          icon: 'local_activity',
+          title: 'Фартуки',
+          active: true,
+          items: [
+            { title: 'List Item' }
+          ]
+        },
+        {
+          icon: 'local_activity',
+          title: 'Шарфы',
+          append: ''
+        },
+        {
+          icon: 'local_activity',
+          title: 'Этикетки на бутылки',
+          append: ''
+        }
+      ],
       contactItems: [
         { icon: 'email', title: 'tsnv@bk.ru' },
         { icon: 'phone', title: '(812) 335-86-61' },
         { icon: 'phone_callback', title: 'Перезвоните мне' }
-      ],
-      popmenuItems: [
-        { icon: 'flag', title: 'Банданы' },
-        { icon: 'flag', title: 'Баннеры' },
-        { icon: 'flag', title: 'Бейсболки' },
-        { icon: 'flag', title: 'Вымпелы' },
-        { icon: 'flag', title: 'Флаги' },
-        { icon: '', title: 'Флажки на палочке' },
-        { icon: 'flag', title: 'Флагштоки' },
-        { icon: 'flag', title: 'Фотообои' },
-        { icon: 'flag', title: 'Фото на подарки' },
-        { icon: 'flag', title: 'Фотошторы' },
-        { icon: 'flag', title: 'Футболки с логотипом' }
       ],
       lorem: `Мы занимаемся изготовлением всех видов продукции для рекламных целей, спорта, подарков и пр. которые делаются из ткани. Наша специализация – это изготовление флагов всех видов: флагов стран, флагов с логотипом, настольных флагов, флагов "парус", "виндер", "пляжный", автофлагов. Также выполним изготовление вымпелов, платков с логотипом, шарфов, бандан, галстуков и бейсболок, что востребовано сейчас очень широко. Для того, чтобы вы могли заказать все в одном месте, мы печатаем не только на ткани, но и на бумаге, и холсте, и баннере. Печать плакатов и постеров, печать баннеров — все это мы сделаем для вас.`
     }

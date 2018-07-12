@@ -117,11 +117,11 @@
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
-              <SearchResult/>
               <Vimpels/>
               <Reviews/>
               <News/>
               <Catalog/>
+              <SearchResult/>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >
@@ -129,7 +129,7 @@
               <VimpelForm/>
               <h2 class="primary mb-1">Спец-предложения</h2>
                 <v-card class="secondary mb-2">
-                  <v-card-media src="./static/special_offer/9maya.png" height="140px">
+                  <v-card-media src="/static/special_offer/9maya.png" height="140px">
                   </v-card-media>
                   <v-card-actions>
                     <v-btn flat round block>9 мая</v-btn>
@@ -153,7 +153,6 @@
                     <span>Jgznm Павел Пиляк !!!link, программист, написал нам новый сайт, оставляйтотзывы, самые интересные пожелания будут учтены.</span>
                 </v-card-title>
                 <v-card-actions>
-                  <v-spacer></v-spacer>
                   <v-btn flat color="orange">Все новости</v-btn>
                 </v-card-actions>
               </v-card>

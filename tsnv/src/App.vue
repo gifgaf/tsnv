@@ -30,13 +30,11 @@
     <v-text-field 
       placeholder="Выбор по названию"
       append-icon="search"
-      id="search"
       clearable
       solo
       flat
       single-line
       key="search"
-      v-model="search"
       ref="search"
       >
     </v-text-field>
@@ -69,20 +67,8 @@
       <v-toolbar-title class="secondary--text">
       <img src="/static/tsn-logo.svg" alt="logo">
       </v-toolbar-title>
-      <!--<v-text-field 
-        class="mx-2"
-        color="amber darken-1"
-        clearable
-        append-icon="search"
-        label="Поиск..."
-        dark
-        flat
-        solo
-      ></v-text-field>-->
       <v-spacer></v-spacer>
-      <v-btn icon class="white--text">
-        <v-icon>search</v-icon>
-      </v-btn>
+      <SearchForm/>
       <v-toolbar-items class="hidden-sm-and-down">
         <span class="likebutton">
         <v-icon left class="secondary--text">email</v-icon>
@@ -208,9 +194,10 @@ import Reviews from '@/components/pages/Reviews.vue'
 import Vimpels from '@/components/pages/Vimpels.vue'
 import SearchResult from '@/components/pages/SearchResult.vue'
 import Footer from '@/components/Footer.vue'
+import SearchForm from '@/components/SearchForm.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, Goods, Catalog, News, Reviews, Vimpels, SearchResult, Footer },
+  components: { VimpelForm, CallbackForm, Goods, Catalog, News, Reviews, Vimpels, SearchResult, Footer, SearchForm },
   data () {
     return {
       drawer: false,

@@ -60,7 +60,7 @@ export default {
           icon: 'local_activity',
           title: 'Флаги',
           items: [
-            { title: 'Флаги с логотипом на флагштоки' },
+            { title: 'Флаги на флагштоки' },
             { title: 'Ручные флаги' },
             { title: 'Флаги на стену' },
             { title: 'Настольные флаги' },
@@ -91,6 +91,11 @@ export default {
         {
           icon: 'local_activity',
           title: 'Этикетки на бутылки',
+          append: ''
+        },
+        {
+          icon: 'local_activity',
+          title: 'блэкджек со шлюхами',
           append: ''
         }
       ]

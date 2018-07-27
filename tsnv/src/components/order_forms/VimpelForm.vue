@@ -311,7 +311,7 @@ export default {
 }
 
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
-.select_title {border-bottom: 1px solid #060084; background-color: #ECEFF1!important;}
+.select_title {font-size: 24px!important;/*border-bottom: 1px solid #060084; background-color: #ECEFF1!important;*/}
 .icon{font-size: 24px!important;}
 .terms{ font-size: 14px!important;}
 

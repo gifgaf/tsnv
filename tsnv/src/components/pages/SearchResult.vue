@@ -1,7 +1,21 @@
 <template>
   <v-layout wrap>
-    <v-flex xs12 text-xs-center>
-      <h1 class="primary--text" text-xs-center>Результаты поиска: «банданы»</h1>
+    <v-flex xs12>
+      <h1 class="primary--text text-xs-center">Искать</h1>
+      <v-text-field
+        placeholder="Поиск"
+        clearable
+        width=100%;
+        class="xs-12"
+        solo
+        single-line
+        key="search"
+        ref="search"
+        >
+      </v-text-field>
+    </v-flex>
+    <v-flex xs12>
+      <p>Банданы - это не только красивая тряпка, но и минус 3-4 килограмма лишнего, надоевшего жира.</p>
     </v-flex>
     <v-flex xs12 sm6 lg3
        v-for="item in bandanasearch" 
@@ -25,15 +39,11 @@
         </v-card-actions>
       </v-card>
     </v-flex>
-    <v-flex>
-      <p>Банданы - это не только красивая тряпка, но и минус 4-5 килограмма лишнего, надоевшего жира.</p>
-    </v-flex>
     <br><br><br><br><br>
     <v-flex>
-      <p>Определите, wtf какая информация является наиболее значимой для ваших пользователей в процессе сужения круга возможных вариантов заказа. Выделите приоритеты в этом контенте и создайте последовательную миниатюрную информационную архитектуру из деталей в каждом описании элемента listing page. Это облегчит пользователям выбор и сделает поиск более эффективным.</p>
-      <h2>Карточки товара!!!! В компонент!!!!</h2>
-      <p>Результаты поиска по слову «бонданки», отображаем ссылку на страницу если есть, если нету ...... не забыть 404!!!<br>
-      форма обратной связи на страницу 404 в виде задайте с вопрос типа: "Чиво в супе не хватает?"</p>
+    <h1 class="primary--text text-xs-center">404</h1>
+      <p> That’s an error.
+          The requested URL /iouyiuy/htt was not found on this server. That’s all we know</p>
     </v-flex>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
            :id="i.id" :alt="i.title" :title="i.title" v-bind:href="i.link" target="_blank">

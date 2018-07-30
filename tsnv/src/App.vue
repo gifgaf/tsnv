@@ -68,7 +68,6 @@
       <img src="/static/tsn-logo.svg" alt="logo">
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <SearchForm/>
       <v-toolbar-items class="hidden-sm-and-down">
         <span class="likebutton">
         <v-icon left class="secondary--text">email</v-icon>
@@ -80,6 +79,7 @@
         </span>
         <CallbackForm class="likebutton"></CallbackForm>
       </v-toolbar-items>
+      <v-btn fab flat small class="secondary black--text" @click=""> <v-icon>search</v-icon></v-btn>
       <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-tabs>
     </v-toolbar>
@@ -87,27 +87,30 @@
         <v-menu offset-y open-on-hover>
           <v-btn slot="activator" flat class="noupper" @click=""> О компании <v-icon right>arrow_drop_down</v-icon></v-btn>
           <v-list>
-            <v-list-tile v-for="(item, index) in menuItems.slice(5, 7)" :key="index" @click="">
+            <v-list-tile v-for="(item, index) in menuItems.slice(1, 3)" :key="index" @click="">
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
         </v-menu><v-btn flat 
         class="noupper" 
-        v-for="(item, index) in menuItems.slice(1, 5)" :key="index" @click=""
+        v-for="(item, index) in menuItems.slice(3, 7)" :key="index" @click=""
         >{{ item.title }}</v-btn>
     </div>
-    <v-container grid-list-lg>
+    <v-container grid-list-md>
         <v-layout row wrap>
           <v-flex xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <Goods/>
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
             <main>
+              <SearchResult/>
               <Vimpels/>
               <Reviews/>
               <News/>
               <Catalog/>
-              <SearchResult/>
+              <v-flex class='xs4 text-xs-center' >
+                <VimpelForm class='text-xs-center'></VimpelForm>
+              </v-flex>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >
@@ -194,21 +197,20 @@ import Reviews from '@/components/pages/Reviews.vue'
 import Vimpels from '@/components/pages/Vimpels.vue'
 import SearchResult from '@/components/pages/SearchResult.vue'
 import Footer from '@/components/Footer.vue'
-import SearchForm from '@/components/SearchForm.vue'
 export default {
   name: 'app',
-  components: { VimpelForm, CallbackForm, Goods, Catalog, News, Reviews, Vimpels, SearchResult, Footer, SearchForm },
+  components: { VimpelForm, CallbackForm, Goods, Catalog, News, Reviews, Vimpels, SearchResult, Footer },
   data () {
     return {
       drawer: false,
       menuItems: [
         { icon: 'home', title: 'О компании' },
+        { icon: 'new_releases', title: 'Новости' },
+        { icon: 'rate_review', title: 'Отзывы' },
         { icon: 'sort_by_alpha', title: 'Продукция от А до Я' },
         { icon: 'help', title: 'Как заказать' },
         { icon: 'save_alt', title: 'Требования к макетам' },
-        { icon: 'location_on', title: 'Контакты' },
-        { icon: 'new_releases', title: 'Новости' },
-        { icon: 'rate_review', title: 'Отзывы' }
+        { icon: 'location_on', title: 'Контакты' }
       ],
       popmenuItems: [
         {
@@ -281,5 +283,5 @@ export default {
 }
 
 .topmenu .btn{ margin: 0; height: 48px; }
-
+.icon{font-size: 24px!important;}
 </style>

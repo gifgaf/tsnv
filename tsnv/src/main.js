@@ -4,14 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'vue-awesome-swiper/dist/swiper.min.css'
 import './stylus/main.styl'
 import 'vuetify/dist/vuetify.min.css'
 import 'babel-polyfill'
 import BackToTop from 'vue-backtotop'
 
-Vue.use(VueAwesomeSwiper /*, { default global options } */)
 Vue.use(BackToTop)
 
 Vue.use(Vuetify, { theme: {

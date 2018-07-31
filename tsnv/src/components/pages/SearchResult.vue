@@ -14,7 +14,7 @@
         >
       </v-text-field>
     </v-flex>
-    <v-flex xs12>
+    <!--<v-flex xs12>
       <p>Банданы - это не только красивая тряпка, но и минус 3-4 килограмма лишнего, надоевшего жира.</p>
     </v-flex>
     <v-flex xs12 sm6 lg3
@@ -38,13 +38,8 @@
           <v-btn flat color="secondary">Подробнее</v-btn>
         </v-card-actions>
       </v-card>
-    </v-flex>
+    </v-flex>-->
     <br><br><br><br><br>
-    <v-flex>
-    <h1 class="primary--text text-xs-center">404</h1>
-      <p> That’s an error.
-          The requested URL /iouyiuy/htt was not found on this server. That’s all we know</p>
-    </v-flex>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
            :id="i.id" :alt="i.title" :title="i.title" v-bind:href="i.link" target="_blank">
       <div v-html="i.content"></div>
@@ -96,13 +91,13 @@ export default {
     return {
       logoArray: logoArray,
       bandanasearch: [
-        {title: 'Бандана «Команда»', description: 'Разные-разные, голубые, красные', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
+        {title: 'Бандана «Команда»', description: 'Самая популярная модель. Треугольная форма...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         },
-        {title: 'Баннеры', description: 'Ну очень большие, но по пять', picsrc: '/static/catalog/banners.jpg'
+        {title: 'Баннеры', description: 'Заказать баннер у нас можно по e-mail и оплатить при получении...', picsrc: '/static/catalog/banners.jpg'
         },
-        {title: 'Бандана «Бафф»', description: 'Разные-разные, голубые, красные', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
+        {title: 'Бандана «Бафф»', description: 'Бесшовная технология, легкий трикотаж, хорошо тянется...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         },
-        {title: 'Бандана «Хатимаки»', description: 'Разные-разные, голубые, красные', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
+        {title: 'Бандана «Хатимаки»', description: 'Оригинальная бандана, в виде ленты, завязывающийся на...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         }
       ]
     }

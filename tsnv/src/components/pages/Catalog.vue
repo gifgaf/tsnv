@@ -22,8 +22,11 @@
           @click=""
         >
         </v-card-media>
-        <v-card-title primary-title class="justify-center">
-            <div class="headblock"> {{ item.title }} </div>
+        <v-card-title primary-title>
+          <div>
+            <h3 class="headline mb-0">{{item.title}}</h3>
+            <div>{{item.description}}</div>
+          </div>
         </v-card-title>
       </v-card>
     </v-flex>
@@ -55,7 +58,7 @@
         },
         {title: 'Фотошторы', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/curtains.jpg'
         },
-        {title: 'Футболки с логотипом', description: 'Разные-разные, голубые, красные, жёлтые, зелёные', picsrc: '/static/catalog/tshirts.jpg'
+        {title: 'Футболки с логотипом', description: 'Разные-разные, голубые, красные, жёлтые...', picsrc: '/static/catalog/tshirts.jpg'
         }
       ]
     })

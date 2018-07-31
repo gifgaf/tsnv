@@ -34,10 +34,8 @@
               color="green"
             >
             <div slot="label" @click.stop="" class="terms">
-              Вы согласны с условиями
-              <a href="javascript:;" @click.stop="terms = true">Конфиденциальности</a>
-              и
-              <a href="javascript:;" @click.stop="conditions = true">Правил использования</a>
+              Вы согласны с
+              <a href="javascript:;" @click.stop="terms = true">Условиями обработки персональных данных</a>
             </div>
             </v-checkbox>
           </v-flex>

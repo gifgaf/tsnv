@@ -91,12 +91,14 @@
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile>
           </v-list>
-        </v-menu><v-btn flat 
-        class="noupper" 
-        v-for="(item, index) in menuItems.slice(3, 7)" :key="index" @click=""
+        </v-menu>
+        <v-btn 
+          flat 
+          class="noupper" 
+          v-for="(item, index) in menuItems.slice(3, 7)" :key="index" @click=""
         >{{ item.title }}</v-btn>
     </div>
-    <v-container grid-list-md>
+    <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <Goods/>
@@ -108,9 +110,6 @@
               <Reviews/>
               <News/>
               <Catalog/>
-              <v-flex class='xs4 text-xs-center' >
-                <VimpelForm class='text-xs-center'></VimpelForm>
-              </v-flex>
             </main>
           </v-flex>
           <v-flex xs12 sm4 md3 lg2 >

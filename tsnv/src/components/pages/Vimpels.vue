@@ -12,13 +12,17 @@
     <v-flex xs12 text-xs-center>
       <v-btn round dark class="noupper" color="primary">Скачать крой</v-btn>
     </v-flex>
+    <v-flex xs12 md4 offset-md4 >
+      <VimpelForm></VimpelForm>
+    </v-flex>
   </v-layout>
 </template>
 
 <script>
+import VimpelForm from '@/components/order_forms/VimpelForm.vue'
 import VimpelAHG from '@/components/price_table/VimpelAHG.vue'
 export default {
-  components: { VimpelAHG },
+  components: { VimpelForm, VimpelAHG },
   data () {
     return {
     }

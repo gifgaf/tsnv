@@ -7,7 +7,7 @@
           <v-container grid-list-lg>
             <v-layout wrap>
               <v-flex xs12 text-xs-center class="my-4">
-                <h3>Оставить отзыв</h3>
+                <h3>Ваш комментарий</h3>
               </v-flex>
               <v-flex xs12>
                 <v-text-field
@@ -66,12 +66,10 @@
                   color="green"
                   :rules="[rules.required]"
                 >
-                  <div slot="label" @click.stop="" class="terms">
-                    Вы согласны с условиями
-                    <a href="javascript:;" @click.stop="terms = true">Конфиденциальности</a>
-                    и
-                    <a href="javascript:;" @click.stop="conditions = true">Правил использования</a>
-                  </div>
+                <div slot="label" @click.stop="" class="terms">
+                  Вы согласны с
+                  <a href="javascript:;" @click.stop="terms = true">Условиями обработки персональных данных</a>
+                </div>
                 </v-checkbox>
               </v-flex>
             </v-layout>

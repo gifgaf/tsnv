@@ -14,7 +14,7 @@
         >
       </v-text-field>
     </v-flex>
-    <!--<v-flex xs12>
+    <v-flex xs12>
       <p>Банданы - это не только красивая тряпка, но и минус 3-4 килограмма лишнего, надоевшего жира.</p>
     </v-flex>
     <v-flex xs12 sm6 lg3
@@ -38,7 +38,7 @@
           <v-btn flat color="secondary">Подробнее</v-btn>
         </v-card-actions>
       </v-card>
-    </v-flex>-->
+    </v-flex>
     <br><br><br><br><br>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
            :id="i.id" :alt="i.title" :title="i.title" v-bind:href="i.link" target="_blank">

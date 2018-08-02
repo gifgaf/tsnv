@@ -11,73 +11,53 @@
               class="select_title"
               :items="products"
               v-model="a1"
-              label="Заказать: Вымпел"
-              solo
+              label="Выберите товар"
               combobox
-              full-width="true"
-              flat
              ></v-select>
           </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12>
+            <v-text-field
+            label="Ваше имя"
+            required
+            prepend-icon="person"
+            hint="Ваше имя"
+            v-model="title"
+            :rules="[rules.required]"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12>
+            <v-text-field 
+            label="Email"
+            required
+            prepend-icon="email"
+            hint="емайл"
+            v-model="email"
+            :rules="[rules.required, rules.email]"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12>
+          <v-text-field
+            placeholder="Ваш телефон*"
+            required
+            prepend-icon="phone"
+            hint="xxx xxxxxxx"
+            :mask="phonemask"
+            :rules="[rules.required]"
+            v-model="patronphone"
+            prefix="+7"
+          ></v-text-field>
+          </v-flex>
+          <v-flex xs12 text-xs-center>
+          <h4>Свойства вымпела</h4>
+          </v-flex>
+          <v-flex xs12>
             <v-select
              label="Модель вымпела"
              :items="vimpelModel"
              v-model="vimpelmodel"
             ></v-select>
           </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-text-field
-            label="Количество вымпелов"
-            hint="Сколько вымпелов тербуется" 
-            v-model="vimpelamount"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              label="Размер вымпела"
-              :items="vimpelSize"
-              v-model="vimpelsize"
-              combobox
-            ></v-select>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              label="Обстрочка вымпела"
-              :items="vimpelStitch"
-              v-model="vimpelstitch"
-            ></v-select>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              label="Цвет шнура и\или кистей"
-              :items="vimpelFurniture"
-              v-model="vimpelfurniture"
-            >
-              <template slot="selection" slot-scope="data">
-                <v-list-tile-avatar>
-                  <img :src="data.item.avatar">
-                </v-list-tile-avatar>
-                <v-list-tile-content>
-                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
-                </v-list-tile-content>
-              </template>
-              <template slot="item" slot-scope="data">
-                <v-list-tile-content>
-                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
-                </v-list-tile-content>                    
-                <v-list-tile-avatar>
-                  <img :src="data.item.avatar">
-                </v-list-tile-avatar>
-              </template>
-            </v-select>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-radio-group column>
-              <v-radio label="Одна сторона" value="radio-1" color="primary"></v-radio>
-              <v-radio label="Две стороны (+20% к стоимости)" value="radio-2" color="primary"></v-radio>
-            </v-radio-group>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12>
             <v-select
               label="Форма вымпела"
               :items="vimpelShape"
@@ -101,7 +81,107 @@
               </template>
             </v-select>
           </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12>
+            <v-text-field
+            label="Количество вымпелов"
+            hint="Сколько вымпелов тербуется" 
+            v-model="vimpelamount"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12>
+            <v-select
+              label="Размер вымпела"
+              :items="vimpelSize"
+              v-model="vimpelsize"
+              combobox
+            ></v-select>
+          </v-flex>
+          <v-flex xs12>
+            <v-select
+              label="Обстрочка вымпела"
+              :items="vimpelStitch"
+              v-model="vimpelstitch"
+            ></v-select>
+          </v-flex>
+          <v-flex xs12>
+            <v-select
+              label="Цвет шнура и\или кистей"
+              :items="vimpelFurniture"
+              v-model="vimpelfurniture"
+            >
+              <template slot="selection" slot-scope="data">
+                <v-list-tile-avatar>
+                  <img :src="data.item.avatar">
+                </v-list-tile-avatar>
+                <v-list-tile-content>
+                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
+                </v-list-tile-content>
+              </template>
+              <template slot="item" slot-scope="data">
+                <v-list-tile-content>
+                  <v-list-tile-title app> {{ data.item.title }} </v-list-tile-title>
+                </v-list-tile-content>                    
+                <v-list-tile-avatar>
+                  <img :src="data.item.avatar">
+                </v-list-tile-avatar>
+              </template>
+            </v-select>
+          </v-flex>
+          <v-flex xs12>
+            <v-radio-group column>
+              <v-radio label="Одна сторона" value="radio-1" color="primary"></v-radio>
+              <v-radio label="Две стороны (+20% к стоимости)" value="radio-2" color="primary"></v-radio>
+            </v-radio-group>
+          </v-flex>
+          <v-flex xs12 text-xs-center>
+            <h4>Доставка</h4>
+          </v-flex>
+          <v-flex xs12>
+            <v-select
+              label="Выберите вид доставки"
+              :items="vimpelDelivery"
+              v-model="vimpeldelivery"
+              hint="Способ доставки"
+            ></v-select>
+          </v-flex>
+          <v-flex xs12>
+            <v-text-field
+            label="Адрес доставки"
+            hint="Ваш адрес"
+            v-model="vimpeladress"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 text-xs-center>
+            <h4>Оплата</h4>
+          </v-flex>
+          <v-flex xs12>
+            <v-select
+              label="Оплата"
+              :items="vimpelPayment"
+              v-model="vimpelpayment"
+              hint="Оплата" 
+            ></v-select>
+          </v-flex>
+          <v-flex xs12>
+            <v-text-field
+            label="Добавить реквизиты"
+            hint="ваши реквизиты" 
+            v-model="vimpeldummy"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 text-xs-center>
+            <h4>Дополнительно</h4>
+          </v-flex>
+          <v-flex xs12>
+            <v-text-field 
+              label="Комментарий к заказу" 
+              hint="дополнительно"
+              multi-line
+              rows="3"
+              v-model="vimpelpaymentdetails"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 sm6>
             <v-text-field
             type="file"
             label="Прикрепить файл макета"
@@ -110,7 +190,7 @@
             prepend-icon="attach_file"
             ></v-text-field>
           </v-flex>
-          <v-flex xs12 sm6 md6>
+          <v-flex xs12 sm6>
             <v-menu
               lazy
               transition="scale-transition"
@@ -130,77 +210,6 @@
               <v-date-picker v-model="vimpeldate"  locale="ru-RU" no-title scrolautosave>
               </v-date-picker>
             </v-menu>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              label="Оплата"
-              :items="vimpelPayment"
-              v-model="vimpelpayment"
-              hint="Оплата" 
-            ></v-select>
-          </v-flex>
-          <v-flex xs12>
-            <v-text-field
-            label="Добавить реквизиты"
-            hint="ваши реквизиты" 
-            v-model="vimpeldummy"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-select
-              label="Доставка"
-              :items="vimpelDelivery"
-              v-model="vimpeldelivery"
-              hint="Способ доставки"
-            ></v-select>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-text-field
-            label="Адрес доставки"
-            hint="Ваш адрес"
-            v-model="vimpeladress"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12>
-            <v-text-field
-            label="Ваше имя"
-            required
-            prepend-icon="person"
-            hint="Ваше имя"
-            v-model="title"
-            :rules="[rules.required]"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-            <v-text-field 
-            label="Email"
-            required
-            prepend-icon="email"
-            hint="емайл"
-            v-model="email"
-            :rules="[rules.required, rules.email]"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12 sm6 md6>
-          <v-text-field
-            placeholder="Ваш телефон"
-            required
-            prepend-icon="phone"
-            hint="xxx xxxxxxx"
-            :mask="phonemask"
-            :rules="[rules.required]"
-            v-model="patronphone"
-            prefix="+7"
-          ></v-text-field>
-          </v-flex>
-          <v-flex xs12>
-            <v-text-field 
-              label="Комментарий к заказу" 
-              hint="дополнительно"
-              multi-line
-              rows="3"
-              v-model="vimpelpaymentdetails"
-            ></v-text-field>
           </v-flex>
           <v-flex xs12 class="mt-3">
             <v-checkbox
@@ -256,7 +265,7 @@ export default {
         email: (value) => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) || 'E-mail must be valid'
       },
       vimpelModel: ['Атласный твердый с прокладкой', 'Атласный мягкий', 'Бумажный ламинированный'],
-      vimpelSize: ['10х15 см', '15х21 см', '21х30 см', '30х40 см', 'Указать размер: '],
+      vimpelSize: ['10х15 см', '15х21 см', '21х30 см', '30х40 см', 'Укажите размер: '],
       vimpelStitch: ['обстрочка шнуром', 'дополнение кистями в цвет шнура', 'обстрочка шнуром + дополнение кистями (серебро и золото)', 'дополнение бахромой'],
       vimpelPrint: ['Одна сторона', 'Две стороны (+20% к стоимости)'],
       vimpelShape: [

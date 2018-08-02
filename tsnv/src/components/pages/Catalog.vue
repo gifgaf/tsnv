@@ -14,7 +14,7 @@
       v-for="item in cards" 
       :key="item.title"
     >
-      <v-card class="">
+      <v-card class="" height="328px">
         <v-card-media
           :src="item.picsrc"
           height="220px"
@@ -58,7 +58,7 @@
         },
         {title: 'Фотошторы', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/curtains.jpg'
         },
-        {title: 'Футболки с логотипом', description: 'Разные-разные, голубые, красные, жёлтые...', picsrc: '/static/catalog/tshirts.jpg'
+        {title: 'Футболки с логотипом', description: 'Разные-разные, голубые, красные, жёлтые, голубые, красные, жёлтые...', picsrc: '/static/catalog/tshirts.jpg'
         }
       ]
     })

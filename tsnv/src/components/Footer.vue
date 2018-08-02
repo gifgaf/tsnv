@@ -9,21 +9,6 @@
         <strong class='secondary--text'>Время работы:</strong> пн-пт, с 10:00 до 18:00 (без обеда)<br>
         <strong class='secondary--text'>Выдача заказов:</strong> с 09:00 до 19:00
         </v-flex>
-        <v-flex xs12 sm3>
-          <v-text-field 
-          placeholder="Поиск"
-          append-icon="search"
-          id="search"
-          flat
-          solo
-          clearable
-          light
-          key="search"
-          v-model="search"
-          ref="search"
-          >
-          </v-text-field>
-        </v-flex>
         </v-layout>
         <v-layout row wrap>
         <v-flex xs12 sm3>

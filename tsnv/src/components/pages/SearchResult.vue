@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12>
-      <h1 class="primary--text text-xs-center">Искать</h1>
+      <h1 class="primary--text text-xs-center">Результат поиска по запросу «футболка»</h1>
       <v-text-field
         placeholder="Поиск"
         clearable
@@ -15,7 +15,14 @@
       </v-text-field>
     </v-flex>
     <v-flex xs12>
-      <p>Банданы - это не только красивая тряпка, но и минус 3-4 килограмма лишнего, надоевшего жира.</p>
+      <p>Похожие запросы: 
+      <a href="#">футболка женская</a>,
+      <a href="#">футболка мужская</a>,
+      <a href="#">смешные футболки</a>
+      </p>
+    </v-flex>
+    <v-flex xs12>
+    <h4>К нашему удивлению продукт не найден, идите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
     </v-flex>
     <v-flex xs12 sm6 lg3
        v-for="item in bandanasearch" 
@@ -39,7 +46,7 @@
         </v-card-actions>
       </v-card>
     </v-flex>
-    <br><br><br><br><br>
+    <br>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
            :id="i.id" :alt="i.title" :title="i.title" v-bind:href="i.link" target="_blank">
       <div v-html="i.content"></div>
@@ -47,6 +54,12 @@
     <v-btn fab flat small class="white" target="_blank">
           <v-icon class="primary--text">color_lens</v-icon>
     </v-btn>
+    <br><br><br><br>
+    <v-flex xs12>
+    <h1>
+    404. That’s an error.
+The requested URL /indus.htm was not found on this server.</h1>
+    </v-flex>
   </v-layout>
 </template>
 

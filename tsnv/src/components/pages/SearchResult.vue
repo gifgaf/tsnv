@@ -21,14 +21,11 @@
       <a href="#">смешные футболки</a>
       </p>
     </v-flex>
-    <v-flex xs12>
-    <h4>К нашему удивлению продукт не найден, идите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
-    </v-flex>
     <v-flex xs12 sm6 lg3
        v-for="item in bandanasearch" 
       :key="item.title"
     >
-      <v-card>
+      <v-card height="412px">
         <v-card-media
           :src="item.picsrc"
           height="220px"
@@ -46,6 +43,9 @@
         </v-card-actions>
       </v-card>
     </v-flex>
+    <v-flex xs12>
+    <h4>К нашему удивлению продукт не найден, идите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
+    </v-flex>
     <br>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
            :id="i.id" :alt="i.title" :title="i.title" v-bind:href="i.link" target="_blank">
@@ -56,9 +56,13 @@
     </v-btn>
     <br><br><br><br>
     <v-flex xs12>
-    <h1>
-    404. That’s an error.
-The requested URL /indus.htm was not found on this server.</h1>
+    <h1><span class="display-3 primary--text">Whoops, 404.</span> 
+    The page you were looking for does not exist</h1>
+    <v-btn class="white">
+      get me out of here
+    </v-btn>
+
+
     </v-flex>
   </v-layout>
 </template>

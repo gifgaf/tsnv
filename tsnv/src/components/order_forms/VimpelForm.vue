@@ -47,8 +47,8 @@
             prefix="+7"
           ></v-text-field>
           </v-flex>
-          <v-flex xs12 text-xs-center>
-          <h4>Свойства вымпела</h4>
+          <v-flex xs12 >
+          <h4 class="grey lighten-4 gray--text">Свойства вымпела</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -134,7 +134,7 @@
             </v-radio-group>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4>Доставка</h4>
+            <h4 class="grey lighten-4 gray--text">Доставка</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -152,7 +152,7 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4>Оплата</h4>
+            <h4 class="grey lighten-4 gray--text">Оплата</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -170,7 +170,10 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4>Дополнительно</h4>
+            <h4 class="grey lighten-4 gray--text">Аксессуары</h4>
+          </v-flex>
+          <v-flex xs12 text-xs-center>
+            <h4 class="grey lighten-4">Дополнительно</h4>
           </v-flex>
           <v-flex xs12>
             <v-text-field 
@@ -321,5 +324,6 @@ export default {
 .select_title {font-size: 24px!important;/*border-bottom: 1px solid #060084; background-color: #ECEFF1!important;*/}
 .icon{font-size: 24px!important;}
 .terms{ font-size: 14px!important;}
+.titlefon{background-color: #ffe8a9!important;}
 
 </style>

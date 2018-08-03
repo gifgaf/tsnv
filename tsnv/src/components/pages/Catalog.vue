@@ -14,7 +14,7 @@
       v-for="item in cards" 
       :key="item.title"
     >
-      <v-card class="" height="328px">
+      <v-card class="" height="360px">
         <v-card-media
           :src="item.picsrc"
           height="220px"

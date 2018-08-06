@@ -10,7 +10,10 @@
       <VimpelAHG></VimpelAHG>
     </v-flex>
     <v-flex xs12 text-xs-center>
-      <v-btn round dark class="noupper" color="primary">Скачать крой</v-btn>
+      <v-btn round dark class="noupper" color="primary">
+      Скачать крой
+      <v-icon dark right>archive</v-icon>
+      </v-btn>
     </v-flex>
     <v-flex xs12 md4 offset-md4 >
       <VimpelForm></VimpelForm>

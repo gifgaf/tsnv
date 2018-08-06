@@ -1,6 +1,5 @@
 <template>
   <nav>
-    <h2 class="primary mb-2">Наша продукция</h2>
     <v-text-field 
       placeholder="Выбор по названию"
       append-icon="search"

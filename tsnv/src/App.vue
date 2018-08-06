@@ -101,6 +101,7 @@
     <v-container grid-list-lg>
         <v-layout row wrap>
           <v-flex xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
+            <h2 class="primary mb-2">Наша продукция</h2>
             <Goods/>
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>

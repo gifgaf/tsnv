@@ -25,7 +25,7 @@
        v-for="item in bandanasearch" 
       :key="item.title"
     >
-      <v-card height="412px">
+      <v-card>
         <v-card-media
           :src="item.picsrc"
           height="220px"

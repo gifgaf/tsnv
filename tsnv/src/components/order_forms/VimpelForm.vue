@@ -6,49 +6,18 @@
     <v-card>
       <v-container grid-list-lg>
         <v-layout wrap>
-          <v-flex xs12 class="mt-0 mb-3">
+          <v-flex xs12 class="mt-0 mb-3 primary">
             <v-select
               class="select_title"
               :items="products"
               v-model="a1"
               label="Выберите товар"
               combobox
+              dark
              ></v-select>
           </v-flex>
           <v-flex xs12>
-            <v-text-field
-            label="Ваше имя"
-            required
-            prepend-icon="person"
-            hint="Ваше имя"
-            v-model="title"
-            :rules="[rules.required]"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12>
-            <v-text-field 
-            label="Email"
-            required
-            prepend-icon="email"
-            hint="емайл"
-            v-model="email"
-            :rules="[rules.required, rules.email]"
-            ></v-text-field>
-          </v-flex>
-          <v-flex xs12>
-          <v-text-field
-            placeholder="Ваш телефон*"
-            required
-            prepend-icon="phone"
-            hint="xxx xxxxxxx"
-            :mask="phonemask"
-            :rules="[rules.required]"
-            v-model="patronphone"
-            prefix="+7"
-          ></v-text-field>
-          </v-flex>
-          <v-flex xs12 >
-          <h4 class="grey lighten-4 gray--text">Свойства вымпела</h4>
+          <h4 class="grey lighten-4 gray--text text-xs-center" >Свойства вымпела</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -173,7 +142,39 @@
             <h4 class="grey lighten-4 gray--text">Аксессуары</h4>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="grey lighten-4">Дополнительно</h4>
+            <h4 class="grey lighten-4">Персональные данные</h4>
+          </v-flex>
+          <v-flex xs12>
+            <v-text-field
+            label="Ваше имя"
+            required
+            prepend-icon="person"
+            hint="Ваше имя"
+            v-model="title"
+            :rules="[rules.required]"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 sm6>
+            <v-text-field 
+            label="Email"
+            required
+            prepend-icon="email"
+            hint="емайл"
+            v-model="email"
+            :rules="[rules.required, rules.email]"
+            ></v-text-field>
+          </v-flex>
+          <v-flex xs12 sm6>
+          <v-text-field
+            placeholder="Ваш телефон*"
+            required
+            prepend-icon="phone"
+            hint="xxx xxxxxxx"
+            :mask="phonemask"
+            :rules="[rules.required]"
+            v-model="patronphone"
+            prefix="+7"
+          ></v-text-field>
           </v-flex>
           <v-flex xs12>
             <v-text-field 

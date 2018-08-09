@@ -15,7 +15,7 @@
     </v-text-field>
     <v-list class="transparent">
       <v-list-group
-        v-for="item in popmenuItems"
+        v-for="item in Goods"
         v-model="item.active"
         :key="item.title"
         :append-icon="item.append"
@@ -44,7 +44,7 @@
 export default {
   data () {
     return {
-      popmenuItems: [
+      Goods: [
         {
           icon: 'local_activity',
           title: 'Банданы',
@@ -94,7 +94,7 @@ export default {
         },
         {
           icon: 'local_activity',
-          title: 'блэкджек со шлюхами',
+          title: 'блэкджек без шлюх',
           append: ''
         }
       ]

@@ -40,7 +40,7 @@
     </v-text-field>
     <v-list class="transparent">
       <v-list-group
-        v-for="item in popmenuItems"
+        v-for="item in Goods"
         v-model="item.active"
         :key="item.title"
         :prepend-icon="item.icon"
@@ -63,6 +63,7 @@
       </v-list-group>
     </v-list>
     </v-navigation-drawer>
+<!--header-->
     <v-toolbar class="primary" light dense flat>
       <v-toolbar-title class="secondary--text">
       <img src="/static/tsn-logo.svg" alt="logo">
@@ -83,6 +84,7 @@
       <v-toolbar-side-icon class="secondary /*hidden-md-and-up*/" light @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-tabs>
     </v-toolbar>
+<!--topmenu-->
     <div class="topmenu secondary text-xs-center hidden-sm-and-down elevation-3">
         <v-menu offset-y open-on-hover>
           <v-btn slot="activator" flat class="noupper" @click=""> О компании <v-icon right>arrow_drop_down</v-icon></v-btn>
@@ -204,7 +206,7 @@ export default {
     return {
       drawer: false,
       menuItems: [
-        { icon: 'home', title: 'О компании' },
+        { icon: 'home', title: 'О компании', src: '' },
         { icon: 'new_releases', title: 'Новости' },
         { icon: 'rate_review', title: 'Отзывы' },
         { icon: 'sort_by_alpha', title: 'Продукция от А до Я' },
@@ -212,7 +214,7 @@ export default {
         { icon: 'save_alt', title: 'Требования к макетам' },
         { icon: 'location_on', title: 'Контакты' }
       ],
-      popmenuItems: [
+      Goods: [
         {
           icon: 'local_activity',
           title: 'Банданы',

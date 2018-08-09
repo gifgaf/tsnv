@@ -1,7 +1,7 @@
 <template>
 <nav>
   <v-footer height="100%" class='primary'>
-    <v-container grid-list-md class="footer_maxsize">
+    <v-container grid-list-lg class="footer_maxsize">
       <v-layout row wrap>
         <v-flex xs12 sm9 class="white--text">
         <img src="/static/tsn-logo.svg" alt="logo" class="mr-2"><br>

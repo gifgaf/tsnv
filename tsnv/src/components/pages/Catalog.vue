@@ -66,18 +66,9 @@
 </script>
 
 <style scoped>
-.container.grid-list-lg .layout .flex{
-  padding: 5px;
-}
 .card{
   padding: 5px;
   color: rgba(0,0,0,.8);
   border: 1px solid #e4dfec;
-}
-.headblock {
-    font-size: 21px!important;
-    font-weight: 700!important;
-    line-height: 21px!important;
-    transform: scaleX(0.94);
 }
 </style>

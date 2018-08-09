@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12>
-      <h1 class="primary--text text-xs-center">Результат поиска по запросу «футболка»</h1>
+      <h1 class="primary--text text-xs-center">какого года?</h1>
       <v-text-field
         placeholder="Поиск"
         clearable
@@ -20,6 +20,9 @@
       <a href="#">футболка мужская</a>,
       <a href="#">смешные футболки</a>
       </p>
+    </v-flex>
+    <v-flex xs12>
+    <h1 class="primary--text text-xs-center">Результат поиска по запросу «бандана»</h1>
     </v-flex>
     <v-flex xs12 sm6 lg3
        v-for="item in bandanasearch" 

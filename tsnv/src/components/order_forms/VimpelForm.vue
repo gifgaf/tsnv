@@ -6,18 +6,17 @@
     <v-card>
       <v-container grid-list-lg>
         <v-layout wrap>
-          <v-flex xs12 class="mt-0 mb-3 primary">
+          <v-flex xs12 class="mt-0 mb-3">
             <v-select
               class="select_title"
               :items="products"
               v-model="a1"
               label="Выберите товар"
               combobox
-              dark
              ></v-select>
           </v-flex>
           <v-flex xs12>
-          <h4 class="grey lighten-4 gray--text text-xs-center" >Свойства вымпела</h4>
+          <h4 class="fon text-xs-center" >Свойства вымпела</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -103,7 +102,7 @@
             </v-radio-group>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="grey lighten-4 gray--text">Доставка</h4>
+            <h4 class="fon">Доставка</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -121,7 +120,7 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="grey lighten-4 gray--text">Оплата</h4>
+            <h4 class="fon">Оплата</h4>
           </v-flex>
           <v-flex xs12>
             <v-select
@@ -139,10 +138,10 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="grey lighten-4 gray--text">Аксессуары</h4>
+            <h4 class="fon">Аксессуары</h4>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="grey lighten-4">Персональные данные</h4>
+            <h4 class="fon">Персональные данные</h4>
           </v-flex>
           <v-flex xs12>
             <v-text-field
@@ -312,19 +311,14 @@ export default {
 
 <style scoped>
 .dialog__container{width: 100%; position: relative;}
-.tabs__div{ text-transform: unset!important;}
-.radio-group .input-group{display: inline-block;}
-.card__actions {justify-content: center;}
-.container.grid-list-lg .layout .flex{padding: 0 8px;}
 
-.tabs__item {
-  background-color: #060084!important;
-}
+.card__actions {justify-content: center;}
+
+
 
 .close_icon{ position: absolute; right: 0%; top:0%; z-index: 1;}
-.select_title {font-size: 24px!important;/*border-bottom: 1px solid #060084; background-color: #ECEFF1!important;*/}
 .icon{font-size: 24px!important;}
 .terms{ font-size: 14px!important;}
-.titlefon{background-color: #ffe8a9!important;}
+.fon{background-color: #e2f1d8; padding: 8px 0;}
 
 </style>

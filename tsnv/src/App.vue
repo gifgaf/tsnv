@@ -286,4 +286,13 @@ export default {
 
 .topmenu .btn{ margin: 0; height: 48px; }
 .icon{font-size: 24px!important;}
+
+.vue-back-to-top{
+  position: fixed;
+  z-index: 200;
+  cursor:pointer;
+  background-color: rgba(255, 179, 37, 0.7);
+  padding: 9px;
+  border-radius: 24px;
+}
 </style>

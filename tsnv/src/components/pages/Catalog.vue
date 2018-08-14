@@ -40,7 +40,7 @@
       abc: [
         'Все', 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ж', 'З', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Ц', 'Ш', 'Э'],
       cards: [
-        {title: 'Банданы', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/bandanas.jpg'
+        {title: 'Спортивная форма', description: 'Печать фамилий и логотипов', picsrc: '/static/catalog/bandanas.jpg'
         },
         {title: 'Баннеры', description: 'Ну очень большие, но по пять', picsrc: '/static/catalog/banners.jpg'
         },
@@ -48,7 +48,7 @@
         },
         {title: 'Вымпелы', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/vimpels.jpg'
         },
-        {title: 'Флаги', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/flags.jpg'
+        {title: 'Печать на ткани (для производителей)', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/flags.jpg'
         },
         {title: 'Флажки на палочке', description: 'Разные-разные, голубые, красные', picsrc: '/static/catalog/stickflags.jpg'
         },

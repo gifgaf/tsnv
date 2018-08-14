@@ -91,11 +91,6 @@ export default {
           icon: 'local_activity',
           title: 'Этикетки на бутылки',
           append: ''
-        },
-        {
-          icon: 'local_activity',
-          title: 'блэкджек без шлюх',
-          append: ''
         }
       ]
     }

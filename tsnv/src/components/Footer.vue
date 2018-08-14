@@ -3,7 +3,7 @@
   <v-footer height="100%" class='primary'>
     <v-container grid-list-lg class="footer_maxsize">
       <v-layout row wrap>
-        <v-flex xs12 sm9 class="white--text">
+        <v-flex xs12 class="white--text">
         <img src="/static/tsn-logo.svg" alt="logo" class="mr-2"><br>
         <strong class='secondary--text'>(812) 335-86-61</strong> Россия, 191014,  Санкт-Петербург, ул. Литовская, 8<br class='hidden-xs-and-up'>
         <strong class='secondary--text'>Время работы:</strong> пн-пт, с 10:00 до 18:00 (без обеда)<br>

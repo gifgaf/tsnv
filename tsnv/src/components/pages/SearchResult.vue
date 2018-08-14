@@ -36,7 +36,7 @@
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">{{item.title}}</h3>
-            <div>{{item.description}}</div>
+            <div class="desc">{{item.description}}</div>
           </div>
         </v-card-title>
         <v-card-actions>
@@ -111,9 +111,9 @@ export default {
     return {
       logoArray: logoArray,
       bandanasearch: [
-        {title: 'Бандана «Команда»', description: 'Самая популярная модель. Треугольная форма...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
+        {title: 'Виндеры (флаги “парус”, “крыло” и др.)', description: 'Самая популярная модель. Треугольная форма...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         },
-        {title: 'Баннеры', description: 'Заказать баннер у нас можно по e-mail и оплатить при получении...', picsrc: '/static/catalog/banners.jpg'
+        {title: 'Спортивная форма', description: 'печать фамилий и логотипов', picsrc: '/static/catalog/banners.jpg'
         },
         {title: 'Бандана «Бафф»', description: 'Бесшовная технология, легкий трикотаж, хорошо тянется...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         },
@@ -127,4 +127,6 @@ export default {
 
 <style scoped>
 .icon{font-size: 32px!important;}
+/*.headline{height:60px; line-height: 1.2!important; overflow: hidden; }
+.desc{height:60px; overflow: hidden;}*/
 </style>

@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12>
-      <h1 class="primary--text text-xs-center">какого года?</h1>
+      <h1 class="primary--text text-xs-center">Поиск</h1>
       <v-text-field
         placeholder="Поиск"
         clearable
@@ -21,8 +21,11 @@
       <a href="#">смешные футболки</a>
       </p>
     </v-flex>
-    <v-flex xs12>
-    <h1 class="primary--text text-xs-center">Результат поиска по запросу «бандана»</h1>
+    <v-flex xs12 text-xs-right>
+    <h2 class="text-xs-center">Результат поиска по запросу «бандана»</h2>
+      <v-spacer></v-spacer>
+      <v-btn fab small flat class="primary"><v-icon>wallpaper</v-icon></v-btn>
+      <v-btn fab small flat class="primary"><v-icon>notes</v-icon></v-btn>
     </v-flex>
     <v-flex xs12 sm6 lg3
        v-for="item in bandanasearch" 
@@ -47,7 +50,7 @@
       </v-card>
     </v-flex>
     <v-flex xs12>
-    <h4>К нашему удивлению продукт не найден, идите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
+    <h4>К нашему удивлению продукт не найден, пойдите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
     </v-flex>
     <br>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
@@ -111,7 +114,7 @@ export default {
     return {
       logoArray: logoArray,
       bandanasearch: [
-        {title: 'Виндеры (флаги “парус”, “крыло” и др.)', description: 'Самая популярная модель. Треугольная форма...', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
+        {title: 'Виндеры', description: 'Флаги “парус”, “крыло” и др.', picsrc: '/static/bandanas_img/bandana_model1_xl.jpg'
         },
         {title: 'Спортивная форма', description: 'печать фамилий и логотипов', picsrc: '/static/catalog/banners.jpg'
         },

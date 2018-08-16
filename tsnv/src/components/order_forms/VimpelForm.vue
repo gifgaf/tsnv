@@ -6,6 +6,9 @@
     <v-card>
       <v-container grid-list-lg>
         <v-layout wrap>
+          <v-flex xs12>
+          <h4 class="fon text-xs-center">Заказать вымпел</h4>
+          </v-flex>
           <v-flex xs12 class="mt-0 mb-3">
             <v-select
               class="select_title"
@@ -14,18 +17,11 @@
               label="Выберите товар"
               combobox
              ></v-select>
-          </v-flex>
-          <v-flex xs12>
-          <h4 class="fon text-xs-center" >Свойства вымпела</h4>
-          </v-flex>
-          <v-flex xs12>
             <v-select
              label="Модель вымпела"
              :items="vimpelModel"
              v-model="vimpelmodel"
             ></v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-select
               label="Форма вымпела"
               :items="vimpelShape"
@@ -48,30 +44,22 @@
                 </v-list-tile-avatar>
               </template>
             </v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-text-field
             label="Количество вымпелов"
             hint="Сколько вымпелов тербуется" 
             v-model="vimpelamount"
             ></v-text-field>
-          </v-flex>
-          <v-flex xs12>
             <v-select
               label="Размер вымпела"
               :items="vimpelSize"
               v-model="vimpelsize"
               combobox
             ></v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-select
               label="Обстрочка вымпела"
               :items="vimpelStitch"
               v-model="vimpelstitch"
             ></v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-select
               label="Цвет шнура и\или кистей"
               :items="vimpelFurniture"
@@ -94,8 +82,6 @@
                 </v-list-tile-avatar>
               </template>
             </v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-radio-group column>
               <v-radio label="Одна сторона" value="radio-1" color="primary"></v-radio>
               <v-radio label="Две стороны (+20% к стоимости)" value="radio-2" color="primary"></v-radio>
@@ -111,8 +97,6 @@
               v-model="vimpeldelivery"
               hint="Способ доставки"
             ></v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-text-field
             label="Адрес доставки"
             hint="Ваш адрес"
@@ -129,8 +113,6 @@
               v-model="vimpelpayment"
               hint="Оплата" 
             ></v-select>
-          </v-flex>
-          <v-flex xs12>
             <v-text-field
             label="Добавить реквизиты"
             hint="ваши реквизиты" 
@@ -138,7 +120,7 @@
             ></v-text-field>
           </v-flex>
           <v-flex xs12 text-xs-center>
-            <h4 class="fon">Аксессуары</h4>
+            <h4 class="fon">Аксессуары!!!!!!!!!!!!!!!!!!</h4>
           </v-flex>
           <v-flex xs12 text-xs-center>
             <h4 class="fon">Персональные данные</h4>

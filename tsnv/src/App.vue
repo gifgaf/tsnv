@@ -101,12 +101,14 @@
         >{{ item.title }}</v-btn>
     </div>
     <v-container grid-list-lg>
+<!--goods-->
         <v-layout row wrap>
           <v-flex xs12 sm2 md3 lg2 class='hidden-sm-and-down'>
             <h2 class="primary mb-2">Наша продукция</h2>
             <Goods/>
           </v-flex>
           <v-flex xs12 sm8 md6 lg8>
+<!--TinyMCE-->
             <main>
               <SearchResult/>
               <Vimpels/>
@@ -115,6 +117,7 @@
               <Catalog/>
             </main>
           </v-flex>
+<!--aside-menu-->
           <v-flex xs12 sm4 md3 lg2 >
             <nav>
               <VimpelForm/>
@@ -133,6 +136,7 @@
                     <v-btn flat round block>1 мая</v-btn>
                   </v-card-actions>
                 </v-card>
+<!--News-->
               <h2 class="primary">Новости</h2>
               <v-card flat class="mb-2 news">
                 <v-card-title>
@@ -147,6 +151,7 @@
                   <v-btn flat color="orange">Все новости</v-btn>
                 </v-card-actions>
               </v-card>
+<!--Reviews-->
               <h2 class="primary">Отзывы</h2>
               <v-list three-line>
                 <v-list-tile 

@@ -1,7 +1,7 @@
 <template>
   <v-layout wrap>
     <v-flex xs12>
-      <h1 class="primary--text text-xs-center">Поиск</h1>
+      <h1 class="primary--text text-xs-center">Поиск по сайту</h1>
       <v-text-field
         placeholder="Поиск"
         clearable
@@ -50,7 +50,7 @@
       </v-card>
     </v-flex>
     <v-flex xs12>
-    <h4>К нашему удивлению продукт не найден, пойдите в сад. По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
+    <h4>По запросу kaisd ничего не найдено. Попробуйте другие ключевые слова.</h4>
     </v-flex>
     <br>
     <v-btn fab flat small class="white" v-for="i of logoArray" :key="i.id"
@@ -62,8 +62,9 @@
     </v-btn>
     <br><br><br><br>
     <v-flex xs12>
-    <h1><span class="display-3 primary--text">Whoops, 404.</span> 
-    The page you were looking for does not exist</h1>
+    <h1><span class="display-3 primary--text">Упс, 404</span>
+    <img src="/static/404.svg">
+    Страница которую вы ищете не существует</h1>
     <v-btn class="white">
       get me out of here
     </v-btn>
